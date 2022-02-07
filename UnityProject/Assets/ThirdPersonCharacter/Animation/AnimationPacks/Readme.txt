@@ -1,0 +1,1 @@
+Assets for third person prototyping from Mixamo
