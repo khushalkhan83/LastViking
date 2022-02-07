@@ -1,0 +1,1702 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1137305049, guid: a4865f1ab4504ed8a368670db22f409c, type: 3}
+  m_Name: InspectorConfig
+  m_EditorClassIdentifier: 
+  enableOdinInInspector: 1
+  defaultEditorBehaviour: 8
+  processMouseMoveInInspector: 1
+  drawingConfig:
+    configs:
+    - DrawnTypeName: Game.QuestSystem.Data.QuestData, Assembly-CSharp
+      EditorTypeName: Sirenix.OdinInspector.Editor.OdinEditor, Sirenix.OdinInspector.Editor
+    - DrawnTypeName: Game.QuestSystem.Map.Managers.QuestManager, Assembly-CSharp
+      EditorTypeName: Sirenix.OdinInspector.Editor.OdinEditor, Sirenix.OdinInspector.Editor
+    - DrawnTypeName: Game.QuestSystem.Map.Managers.QuestsManager, Assembly-CSharp
+      EditorTypeName: Sirenix.OdinInspector.Editor.OdinEditor, Sirenix.OdinInspector.Editor
+    - DrawnTypeName: Game.QuestSystem.Map.Stages.QuestStage, Assembly-CSharp
+      EditorTypeName: Sirenix.OdinInspector.Editor.OdinEditor, Sirenix.OdinInspector.Editor
+    - DrawnTypeName: Game.QuestSystem.Models.QuestsModel, Assembly-CSharp
+      EditorTypeName: Sirenix.OdinInspector.Editor.OdinEditor, Sirenix.OdinInspector.Editor
+    - DrawnTypeName: Game.Objectives.ActionControllersMapper, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.ActionsProvider, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.ConditionControllersMapper, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.ConditionDataMapper, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.ConditionModelMapper, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.ConditionsProvider, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.ObjectiveData, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.ObjectivesModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.ObjectivesProvider, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Actions.ActivateTokenActionData, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Actions.ApplyModificatorActionData, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Actions.ChangeControllersStateActionData, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Actions.ChoiseItemActionData, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Actions.OutLineMineableStoneActionData, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Actions.RewardBluePrintsActionData, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Actions.RewardGoldActionData, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Actions.RewardItemActionData, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Data.Conditions.Static.AnimalKillConditionData,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Data.Conditions.Static.BreakWorldObjectConditionData,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Data.Conditions.Static.BuildItemAnyConditionData,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Data.Conditions.Static.BuildItemConditionData,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Data.Conditions.Static.BuyShelterConditionData,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Data.Conditions.Static.ConsumeItemConditionData,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Data.Conditions.Static.CookItemConditionData,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Data.Conditions.Static.CraftItemConditionData,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Data.Conditions.Static.EnemyKillAnyConditionData,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Data.Conditions.Static.EnemyKillConditionData,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Data.Conditions.Static.KeepFoodConditionData,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Data.Conditions.Static.KeepHealthConditionData,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Data.Conditions.Static.KeepWaterConditionData,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Data.Conditions.Static.LoginLeaderboardConditionData,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Data.Conditions.Static.MineResourceConditionData,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Data.Conditions.Static.PickupBlueprintConditionData,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Data.Conditions.Static.PickupCoinConditionData,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Data.Conditions.Static.PickupItemConditionData,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Data.Conditions.Static.RaiseFoodConditionData,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Data.Conditions.Static.RaiseHealthConditionData,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Data.Conditions.Static.RaiseWaterConditionData,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Data.Conditions.Static.ReachPlaceLeaderboardConditionData,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Data.Conditions.Static.ReachScoreLeadboardConditionData,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Data.Conditions.Static.RepairAnyItemConditionData,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Data.Conditions.Static.RepairItemConditionData,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Data.Conditions.Static.ResourceCollectConditionData,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Data.Conditions.Static.SubscribeDiscordConditionData,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Data.Conditions.Static.TombInteractConditionData,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Data.Conditions.Static.UpgradeShelterConditionData,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Stacks.ObjectivesStack, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Stacks.ObjectivesWindow, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Stacks.StacksProvider, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Stacks.Conditions.StackObjectiveConditionShelterExist,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Stacks.Conditions.StackObjectiveConditionShelterNotMaxLevel,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Stacks.Conditions.Base.StackObjectiveCondition,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Stacks.Conditions.Base.StackObjectiveConditions,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Objectives.Stacks.Predefined.Tiers.Tier, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.ActionsLogModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.AddingInventoryItemsModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.AdvertisementsModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.AimModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.AnaliticsModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.AndroidTimingAdsModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.AnimalsModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.ApplicationCallbacksModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.ApplyItemModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.AttackDelayStatusViewModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.AutosaveModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.BarrierDamageReceiver, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.BarrierHealthModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.BloodEffectModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.BlueprintObjectsModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.BluePrintsModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.BuildingHealthModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.BuildingHotBarModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.BuildingModeModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.BuildingProcessModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.CampFireModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.CampFiresModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.CampFireViewModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.ChunksLoadersModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.CoastLootChestModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.CoinObjectsModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.CoinsModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.CollectCellDataModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.ColliderTriggerModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.ContainersModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.ControllersModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.CoroutineModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.CraftInteractViewModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.CraftModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.CraftViewModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.DamageReceiver, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.DeadManLootChestModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.DebugDamageReciver, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.DebugPrefabCreationModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.DebugTimeInteractViewModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.DebugTimeModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.DemolitionProcessModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.DiscordModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.DivideItemsModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.DropItemModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.EnableObjectivesButtonModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.EnemiesModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.EnemyHealthModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.EventLootModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.EventTokensModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.ExpandInventoryModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.ExpandsModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.FindTombModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.FirebaseModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.FishingModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.FixOldObjectivesModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.FixPlayerUndergroundModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.FullInventoryModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.FurnaceGroupModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.FurnaceModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.FurnaceViewModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.GameLateUpdateModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.GameSparksModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.GameTimeModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.GameUpdateModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.HotBarModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.InfoPanelDefenceViewModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.InfoPanelFoodViewModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.InfoPanelMedicineViewModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.InfoPanelModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.InfoPanelToolViewModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.InfoPanelViewModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.InfoPanelWeaponViewModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.InventoryDragAndDropModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.InventoryLootViewModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.InventoryModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.InventoryPlayerViewModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.InventoryRepairingModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.InventoryViewModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.ItemsDB, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.ItemsOwnershipModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.JoystickModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.LeaderboardViewModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.LightModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.LoadingCircleViewModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.LoadingModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.LocalizationModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.LocalNotificationsModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.LoomGroupModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.LoomModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.LoomViewModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.LootGroupModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.LoseMainViewModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.LoseViewModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.MainTargetHealthModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.MainTargetModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.MiniGameStateModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.ModelsSystem, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.ModelsSystemVariable, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.NetworkModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.ObjectivesNotificationModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.ObjectivesProgressModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.ObjectivesViewModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.ObjectivesWindowModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.OutLineBagPickupModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.OutLineBanana, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.OutLineBlueBarrelModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.OutLineCoconutModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.OutLineMineableStoneModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.PickUpsModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.PlacementModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.PlayerAudioModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.PlayerBleedingDamagerModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.PlayerColdDamagerModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.PlayerColdModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.PlayerConsumeModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.PlayerDamageReceiver, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.PlayerDeathModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.PlayerDrinkProcessModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.PlayerEatProcessModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.PlayerEventObjectivesModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.PlayerFoodBarViewModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.PlayerFoodModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.PlayerHealProcessModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.PlayerHealthBarViewModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.PlayerHealthModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.PlayerHungerDamagerModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.PlayerHungerModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.PlayerLandModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.PlayerMovementModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.PlayerObjectivesModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.PlayerPoisonDamagerModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.PlayerProfileModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.PlayerRespawnPoints, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.PlayerRespawnPointsModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.PlayerRunModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.PlayerScenesModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.PlayerStaminaModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.PlayerStaminaRegenerateModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.PlayerStatusViewModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.PlayerThirstDamagerModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.PlayerThirstModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.PlayerWaterBarViewModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.PlayerWaterModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.PurchasesViewModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.QualityModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.QuestsModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.RandomPlayerAvatarModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.RateMeViewModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.RealTimeModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.RepairingItemsModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.RepairViewModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.ResourceMessagesViewModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.RotateBuildablePreviewModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.SettingsViewModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.ShelterModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.SheltersModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.StarterPackModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.StartNightInfoModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.StatisticsModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.StatisticWorldObjectsNodel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.StatsEffectModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.TimingAdsModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.ToggleCampFireModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.TokensModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.TombModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.TombsModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.TouchpadModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.TreasureHuntLootChestModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.TreasureHuntModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.TreasureLootModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.TutorialDarkScreenModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.TutorialModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.TutorialProgressModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.UnloadUnusedAssetsModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.VersionModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.WaterfallProgressModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.WeaponAssetsLoadingModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.WorldCameraModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.WorldObjectDamageReceiver, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.WorldObjectModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.WorldObjectsModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.RemoteSettings.ExpandRemoteSettings, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.RemoteSettings.RemoteSettingsModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.RemoteSettings.Firebase.FirebaseRemoteKeyProvider,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Models.RemoteSettings.Firebase.FirebaseRemoteSettingsModel,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.LoadingSlider, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.RangeSpawner, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.RangeSpawnObject, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.HitInfo, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Target, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.PlayAudioBehaviuor, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.SetTriggerToAnimator, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.SetTriggerToAnimatorBear, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.SetTriggerToAnimatorZombie, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Bear.BearDamageReciver, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Bear.Death, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Bear.PointDetect, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Bear.PointDetectSoundBear, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Bear.RotateToPoint, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Bear.RotateToTarget, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Bear.RunToTarget, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Bear.Show, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Bear.WalkToPoint, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Boar.AggrSound, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Boar.Attack, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Boar.AttackSound, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Boar.BoarDamageReciver, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Boar.IdleBreathe, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Boar.IdleLookAround, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Boar.OnHit, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Boar.PointDetect, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Boar.PointDetectAwayFromTarget, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Boar.RotateToTarget, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Boar.RunToTarget, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Boar.Show, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Boar.WalkToPoint, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Chicken.ChickenDamageReciver, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Chicken.PointDetect, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Chicken.PointDetectOffPlayer, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Chicken.RotateToPoint, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Chicken.RunOffPlayer, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Chicken.SetTriggerIdleDeathChicken, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Chicken.WalkToPoint, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Skeleton.Attack, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Skeleton.Death, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Skeleton.RotateToPosition, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Skeleton.RotateToTarget, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Skeleton.RunToPosition, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Skeleton.RunToTarget, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Skeleton.Show, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Skeleton.SkeletonDamageReciver, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Skeleton.SkeletonWarriorDamageReciver, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Skeleton.StopMoving, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Skeleton.TargetDetect, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Wolf.PointDetect, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Wolf.PointDetectAwayFromTarget, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Wolf.RotateToTarget, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Wolf.RunToTarget, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Wolf.Show, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Wolf.WalkToPoint, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Wolf.WolfDamageReciver, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Zombie.Attack, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Zombie.Death, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Zombie.InitializationLinks, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Zombie.PointDetect, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Zombie.RotateToTarget, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Zombie.RunToTarget, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Zombie.RunToTargetZombieSound, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Zombie.RunToTransform, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Zombie.Show, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Zombie.StopMoving, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Zombie.StopMovingZombieSound, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Behaviours.Zombie.ZombieDamageReciver, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Events.Animals.OnTargetDeath, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.Events.Enemies.OnTargetDeath, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.States.Behaviours.Skeleton.OnHit, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.States.Behaviours.Zombie.OnHit, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.States.Conditions.Skeleton.PositionInFieldOfViewCondition,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.States.Conditions.Skeleton.PositionInRangeCondition,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.AI.States.Effects.Zombie.OnDeathEffect, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Audio.AudioConfigurationMapper, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Audio.AudioSourcesProvider, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Audio.AudiosProvider, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Audio.AudioSystem, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Audio.AudioSystemVariable, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Audio.EnvironmentAudioController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Audio.EnvironmentAudioModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Audio.OnceAudioThread, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.ActivateObjectsCursorViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.AimButtonViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.AndroidTimingAdsController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.AnimalPointSpawner, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.AttackButtonViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.AttackDelayStatusViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.AttackSessionCompletedController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.AutoRespawner, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.AutoSaveInfoViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.BarrelDropItemsOnDeath, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.BarrelObjectDeath, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.BleedingViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.BloodEffectViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.BombDestroyCursorViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.BuildingHotBarViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.BuildingSwitchButtonViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.CampFireCursorViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.CampFireHealthCursorViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.CampFireObjectController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.CampFireViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.CoastLootPopupViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.CoinsInfoViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.ColdStatusViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.ConstructionInfoPopupViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.ControllersSystem, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.CoreActivationController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.CraftInteractViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.CraftViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.CreatureHealthController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.DeadManLootPopupViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.DeathPlayerViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.DebugTimeInteractViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.DebugTimeViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.DemolitionProcessController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.DestroyableCursorViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.DestroyAfterLifeTimeController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.DestroyController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.DiscordButtonViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.DotCrosshairViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.EnemyActivatableSpawner, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.EnemyTriggerSpawner, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.EnvironmentLoadingViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.EventObjectiveProcessViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.FishingBitingViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.FishingInitViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.FishingPullViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.FoodBarViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.FurnaceCursorViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.FurnaceHealthCursorViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.FurnaceObjectController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.FurnaceViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.GameSparksAccountViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.GameSparksController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.GameSparksStartViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.HealthBarViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.HealthChangerViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.HotBarRepairingContainerViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.HotBarViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.HouseAttackedInfoViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.HungerStatusViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.IInventoryDragAndDropController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.InfoPanelDefenceViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.InfoPanelFoodViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.InfoPanelMedicineViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.InfoPanelToolViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.InfoPanelViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.InfoPanelWeaponViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.InventoryDragAndDropController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.InventoryInteractViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.InventoryIsFillPopupViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.InventoryLootViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.InventoryPlayerViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.ITreasureHuntLootController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.IUnloadUnusedAssetsController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.IWeaponAssetsLoadingController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.JoystickViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.JumpButtonViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.LoadingCircleViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.LoadingViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.LoomCursorViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.LoomHealthCursorViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.LoomObjectController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.LoomViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.LoseViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.MainIslandActivationController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.MainIslandChunksActivationController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.MainTargetController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.MainTargetView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.MineableCursorViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.MiniGameExitViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.NoSpaceForSaveGamePopupViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.NoSpaceForSaveLoadingPopupViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.NotificationContainerViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.NotificationObjectiveViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.ObjectiveInfoViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.ObjectivesButtonViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.ObjectivesViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.ObjectiveTimeDelayViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.ObjectiveViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.OpenCoastLootCursorViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.OpenDeadManLootCursorViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.OpenDoorCursorViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.OpenDoorHealthCursorViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.OpenLootCursorHealthViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.OpenLootCursorViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.PartDestroy, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.PickUpCursorViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.PickUpStuffCursorViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.PickUpTimeDelayCursorViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.PickUpTimeDelayHealthCursorViewController,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.PickUpTimeDelayTimerCursorViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.PickUpTimeDelayTimerHealthCursorViewController,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.PlaceButtonViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.PlacePartButtonViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.PlayerMovementControllerGround, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.PlayerMovementControllerWater, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.PlayerStatusViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.PoisoningViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.ProgressCursorViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.PurchasesViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.QualityController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.RateMeController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.RateMeViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.RepairViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.ResourceMessagesViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.ResourceReturner, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.RestartGamePopupViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.RestorableCursorViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.RotateButtonViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.RotatePartButtonViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.RunButtonViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.SaveInfoViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.SettingsButtonViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.SettingsViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.ShelterController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.ShelterDefaultViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.ShelterHealthBarViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.ShelterLevelView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.ShelterPopupViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.SheltersController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.ShelterUpgradeTableController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.ShelterView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.StaminaBarViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.StarterPackIconViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.StarterPackPopupViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.StartupController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.ThirstStatusViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.ToggleCampfireController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.ToggleInteractableCursorViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.TokensViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.TombCameraController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.TombController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.TombCursorViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.TombPopupViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.TouchpadViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.TrasureHuntInitViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.TreasureHuntLootController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.TreasureHuntLootPopupViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.TreasureLootPopupViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.TreasureLootTimerCursorViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.TutorialBarrelSpawner, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.TutorialCompletedController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.TutorialController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.TutorialDarkViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.TutorialDeathPlayerViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.TutorialObjectiveProcessViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.UnloadUnusedAssetsController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.VersionControlViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.VersionInfoViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.WaterBarViewController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.WaterController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.WaterfallActivationController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.WaterfallBombUnlockController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.WaterfallChunkEneterController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.WaterQualityProvider, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.WeaponAssetsLoadingController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.WorldEnemyObjectSpawner, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.WorldObjectController, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.WorldObjectDeath, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.WorldObjectSpawner, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.WorldObjectTriggerSpawner, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.Controllers.States.ControllerIDsCollectionNew,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.Controllers.States.ControllersState, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.Controllers.States.DebugControllerIDCollection,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.Controllers.States.Modificators.LocationModificator,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.Controllers.States.Modificators.MinigameModificator,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Controllers.Controllers.States.Modificators.TutorialModificator,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Interactables.AnimationActivatable, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Interactables.BombDestroyEnter, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Interactables.ComplexActivatable, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Interactables.GameObjectActivatable, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Interactables.IncrementalActivatable, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Interactables.ObjectsActivator, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Interactables.PlayableActivatable, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Interactables.PlayerRespawnPointsActivatable, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Interactables.SetChunkLoaderConfigActivatable, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Interactables.SoundActivatable, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Interactables.SpawnEnemiesActivatable, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Interactables.StuffPickup, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Interactables.TombInteractable, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Interactables.TriggerActivator, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Interactables.WaterfallEnter, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Interactables.WaterLevelActivatable, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Progressables.NonSavableProgressSpawner, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Progressables.ProgressResetter, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Progressables.SavableProgressSpawner, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Providers.ControllerStatesProvider, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Providers.ControllerStatesProviderNew, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Providers.EventLootProvider, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Providers.LocalizationDataProvider, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Providers.LocalizationLanguageProvider, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Providers.LocationModificatorsProvider, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Providers.MaterialsProvider, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Providers.MinigameModificatorProvider, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Providers.PlayerWeaponProvider, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Providers.PrefabsProvider, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Providers.SceneNamesProvider, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Providers.ShelterModelsProvider, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Providers.SpritesProvider, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Providers.StaticPlayerWeaponProvider, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Providers.StoneMineablesProvider, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Providers.TreasureConfigProvider, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Providers.TreasureHuntPlacesProvider, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Providers.TreasureLootGroupProvider, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Providers.WaveInfoProvider, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Providers.WorldObjectsProvider, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.ProductIDsProvider, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.PurchaseComplitedModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.PurchasersProvider, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.PurchasersStoreModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.PurchasesModel, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.BasicChaestSlotBuyGold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.BearDiedGold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.BoarDiedGold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.CampFireBoostGold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.CampFireSlotBuyGold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.ChickenDiedGold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.CoinOne, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.CraftBoostGold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.CraftSlotBuyGold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.DailyTaskRespinSlotGold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.DominationPackStore, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.EnemyWarriorDiedGold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.EpicChaestSlotBuyGold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.FoodAddonGold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.FoodChaestSlotBuyGold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.FurnaceBoostGold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.FurnaceSlotBuyGold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.GetDailyTaskGold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.GoldenPack1Store, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.GoldenPack2Store, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.GoldenPack3Store, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.GoldenPack4Store, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.GoldenPack5Store, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.GoldenPackWatch, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.HealthAddonGold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.InventoryExpandForeverGold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.LoomBoostGold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.LoomSlotBuyGold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.MilitaryChaestSlotBuyGold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.PlayerInventoryExpandGold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.PurchaseRewardedVideo, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.PurchaserGoldBase, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.PurchaseVideo, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.PurchaseVideoLoader, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.RateGameGiftGold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.RepairItemHigh01Gold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.RepairItemHigh02Gold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.RepairItemHigh03Gold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.RepairItemLow01Gold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.RepairItemLow02Gold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.RepairItemLow03Gold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.RepairItemMid01Gold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.RepairItemMid02Gold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.RepairItemMid03Gold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.ResurrectPlayerGold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.SurvivalPackStore, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.TombTakeItemsGold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.TreasureLootRespinSlotGold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.TreasureLootX2Gold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.WaterAddonGold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Purchases.Purchasers.ZombieDiedGold, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.StateMachine.Behaviours.ChangeCollider, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.StateMachine.Behaviours.DisableLootContainerWhenEmpty,
+        Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.StateMachine.Behaviours.Movement, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.StateMachine.Behaviours.TargetIsDie, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.StateMachine.Behaviours.TargetOutOfRange, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.StateMachine.Behaviours.TimerProcessEvent, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.StateMachine.Behaviours.TimerProcessUpdate, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.StateMachine.Conditions.CanTargetReachCondition, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.StateMachine.Conditions.HasTargetCondition, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.StateMachine.Conditions.IsTrueBoolParametrCondition, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.StateMachine.Conditions.TargetIDCondition, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.StateMachine.Conditions.TargetInFieldOfViewCondition, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.StateMachine.Conditions.TargetInRangeCondition, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.StateMachine.Conditions.TimeRemainingCondition, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.StateMachine.Conditions.TrueCondition, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.StateMachine.Effects.ChangeActivationBehaviorEffect, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.StateMachine.Effects.ChangeVisibleObjectsEffect, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.StateMachine.Effects.DestroyObjectEffect, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.StateMachine.Effects.DestroyRootAfterDelayEffect, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.StateMachine.Effects.PurchaseEffect, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.StateMachine.Effects.SetActivationBehaviorEffect, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.StateMachine.Effects.SetBoolEffect, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.StateMachine.Effects.SetColliderEffect, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.StateMachine.Effects.SetTargetEffect, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.StateMachine.Effects.TransitionToStateEffect, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.StateMachine.Events.Hit, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.StateMachine.Parametrs.TargetDetection, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.StateMachine.Parametrs.TargetProvider, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.StateMachine.Parametrs.TransformProvider, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.ActivateObjectsCursorView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.AddCellGoldView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.AddCellWatchView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.AddStatEffectView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.AddStatsEffectView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.AimButtonView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.AttackButtonView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.AttackDelayStatusView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.AttackSessionCompleteView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.AutoSaveInfoView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.BlackView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.BleedingView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.BloodEffectView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.BombDestroyCursorView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.BoostButtonGoldView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.BoostButtonWatchView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.BuildingCellOptionView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.BuildingCellView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.BuildingHotBarView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.BuildingSwitchButtonView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.CampFireCursorView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.CampFireHealthCursorView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.CampFireObjectView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.CampFireView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.CellView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.CoinsInfoView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.ColdStatusView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.ConstructionInfoPopupView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.CookCellView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.CraftCellView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.CraftInteractView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.CraftView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.CreatureHealthView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.DeathFaderView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.DeathPlayerView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.DebugTimeInteractView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.DebugTimeView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.DestroyableCursorView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.DisablableButtonView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.DiscordButtonView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.DividePopupView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.DotCrosshairView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.EnvironmentLoadingView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.FishingBitingView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.FishingInitView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.FishingPullView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.FoodBarView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.FurnaceCursorView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.FurnaceHealthCursorView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.FurnaceObjectView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.FurnaceView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.GameSparksAccountView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.GameSparksStartView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.GodModeView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.HealthBarView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.HotBarRepairingContainerView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.HotBarView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.HotRepairingView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.HouseAttackedInfoView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.HungerStatusView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.InfoPanelDefenceView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.InfoPanelFoodView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.InfoPanelMedicineView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.InfoPanelToolView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.InfoPanelView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.InfoPanelWeaponView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.InternetErrorView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.InventoryCampFireSectionView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.InventoryFurnaceSectionView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.InventoryHotBarView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.InventoryInteractView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.InventoryIsFillPopupView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.InventoryLoomSectionView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.InventoryLootSectionView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.InventoryLootView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.InventoryMainView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.InventoryPlayerDataView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.InventoryPlayerView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.JoystickView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.JumpButtonView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.LayersProvider, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.LeaderboardView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.LoadingCircleView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.LoomCursorView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.LoomHealthCursorView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.LoomObjectView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.LoomView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.LoseView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.MessageAppendBlueprintView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.MessageAppendCoinView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.MessageAppendResourceView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.MessageAttentionResourceView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.MessageCraftResourceView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.MessageDestroyResourceView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.MessagesFloatingTextView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.MineableCursorView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.MiniGameExitView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.NoSpaceForSavePopupView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.NotificationContainerView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.ObjectiveAttackProcessView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.ObjectiveInfoView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.ObjectiveProcessView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.ObjectiveRewardView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.ObjectivesButtonView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.ObjectivesView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.ObjectiveTimeDelayView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.ObjectiveView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.OpenDoorCursorView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.OpenDoorHealthCursorView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.OpenLootCursorView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.OpenLootHealthCursorView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.OpenTreasureLootCursorView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.PickUpCursorView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.PickUpStuffCursorView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.PickUpTimeDelayCursorView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.PickUpTimeDelayHealthCursorView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.PickUpTimeDelayTimerCursorView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.PickUpTimeDelayTimerHealthCursorView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.PlaceButtonView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.PlayerDataView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.PlayerStatusView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.PoisoningView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.ProgressCursorView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.PurchasesView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.QueueCellView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.RateMeView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.ReceiveDamageView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.RepairView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.ResourceCellView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.ResourceCostView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.ResourceMessagesView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.RestartGamePopupView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.RestorableCursorView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.RotateButtonView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.RouletteCellView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.RouletteSlotView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.RunButtonView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.SaveInfoView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.SettingsButtonView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.SettingsView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.ShelterCursorActivateView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.ShelterCursorBuyView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.ShelterCursorUpgradeView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.ShelterHealthBarView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.ShelterPopupView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.ShelterUpgradeTableView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.StaminaBarView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.StarterPackIconView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.StarterPackPopupView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.StarterPackView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.StartupView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.TableUpgradeShelterView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.ThirstStatusView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.ToggleInteractableCursorView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.TokensView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.TokensViewWorld, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.TombCursorView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.TombItemCellView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.TombPopupView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.TouchpadView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.TrasureHuntInitView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.TreasureHuntShovelIndicatorView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.TreasureLootPopupView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.TreasureLootTimerCursorView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.TutorialCompleteView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.TutorialDarkView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.TutorialDeathPlayerView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.UnlockSlotsGoldView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.UnlockSlotsWatchView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.VersionControlPopupView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.VersionInfoView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.ViewsMapper, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.ViewsProvider, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.ViewsSystem, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.ViewsSystemVariable, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.WaterBarView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.WeaveCellView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: Game.Views.Cell.HotBarCellView, Assembly-CSharp
+      EditorTypeName: 
+    - DrawnTypeName: EnemiesAttack.EnemiesAttackConfig, Assembly-CSharp
+      EditorTypeName: Sirenix.OdinInspector.Editor.OdinEditor, Sirenix.OdinInspector.Editor
+    - DrawnTypeName: EditorGameSettings, Assembly-CSharp
+      EditorTypeName: Sirenix.OdinInspector.Editor.OdinEditor, Sirenix.OdinInspector.Editor
