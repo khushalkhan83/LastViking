@@ -1,0 +1,182 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1507934484471003074
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1507934484471003075}
+  - component: {fileID: 1507934484471003078}
+  - component: {fileID: 1507934484471003073}
+  - component: {fileID: 1507934484471003072}
+  m_Layer: 12
+  m_Name: terrain_island_main_unity
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967263
+  m_IsActive: 0
+--- !u!4 &1507934484471003075
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507934484471003074}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!218 &1507934484471003078
+Terrain:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507934484471003074}
+  m_Enabled: 1
+  serializedVersion: 5
+  m_TerrainData: {fileID: 15600000, guid: ddbd70cb3bba69342a6cac050487d6e5, type: 2}
+  m_TreeDistance: 0
+  m_TreeBillboardDistance: 5
+  m_TreeCrossFadeLength: 0
+  m_TreeMaximumFullLODCount: 0
+  m_DetailObjectDistance: 0
+  m_DetailObjectDensity: 0
+  m_HeightmapPixelError: 1
+  m_SplatMapDistance: 2000
+  m_HeightmapMaximumLOD: 0
+  m_ShadowCastingMode: 1
+  m_DrawHeightmap: 1
+  m_DrawInstanced: 0
+  m_DrawTreesAndFoliage: 0
+  m_ReflectionProbeUsage: 0
+  m_MaterialTemplate: {fileID: 2100000, guid: 88c48eb158276fc4da056cfd7d88905d, type: 2}
+  m_BakeLightProbesForTrees: 0
+  m_PreserveTreePrototypeLayers: 0
+  m_DeringLightProbesForTrees: 1
+  m_ScaleInLightmap: 0.034133334
+  m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
+  m_GroupingID: 0
+  m_AllowAutoConnect: 0
+--- !u!154 &1507934484471003073
+TerrainCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507934484471003074}
+  m_Material: {fileID: 0}
+  m_Enabled: 1
+  m_TerrainData: {fileID: 15600000, guid: ddbd70cb3bba69342a6cac050487d6e5, type: 2}
+  m_EnableTreeColliders: 0
+--- !u!114 &1507934484471003072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507934484471003074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9de142b61c514c1409c234a8aada90f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+  - _id: 0
+    _prefab: {fileID: 0}
+    _container: {fileID: 0}
+    _positionRadiusRandom: 1
+    _rotationRandom: {x: 5, y: 360, z: 0}
+    _scaleMin: 0.5
+    _scaleMax: 1
+  - _id: 1
+    _prefab: {fileID: 0}
+    _container: {fileID: 0}
+    _positionRadiusRandom: 1
+    _rotationRandom: {x: 7, y: 360, z: 2}
+    _scaleMin: 0.5
+    _scaleMax: 1
+  - _id: 2
+    _prefab: {fileID: 0}
+    _container: {fileID: 0}
+    _positionRadiusRandom: 1
+    _rotationRandom: {x: 5, y: 336.9, z: 8}
+    _scaleMin: 0.9
+    _scaleMax: 1.5
+  - _id: 3
+    _prefab: {fileID: 1109747057983562, guid: 780a99c55ae2b6f438941e281f4bf30a, type: 3}
+    _container: {fileID: 0}
+    _positionRadiusRandom: 1
+    _rotationRandom: {x: 5, y: 360, z: 2}
+    _scaleMin: 1
+    _scaleMax: 1.1
+  - _id: 4
+    _prefab: {fileID: 1313812183689296, guid: 6a430bf3928e9684ba54bb96f5da729f, type: 3}
+    _container: {fileID: 0}
+    _positionRadiusRandom: 1
+    _rotationRandom: {x: 5, y: 360, z: 2}
+    _scaleMin: 1
+    _scaleMax: 1.1
+  - _id: 5
+    _prefab: {fileID: 1499087264114930, guid: 3e61b45a504453c4eaa7dfaee6552c8e, type: 3}
+    _container: {fileID: 0}
+    _positionRadiusRandom: 1
+    _rotationRandom: {x: 5, y: 360, z: 2}
+    _scaleMin: 1
+    _scaleMax: 1.1
+  - _id: 6
+    _prefab: {fileID: 1433520176203830, guid: a361ba26e128d8246b76c3bfdbcae229, type: 3}
+    _container: {fileID: 0}
+    _positionRadiusRandom: 1
+    _rotationRandom: {x: 0, y: 360, z: 0}
+    _scaleMin: 0.9
+    _scaleMax: 1.3
+  - _id: 7
+    _prefab: {fileID: 1783691461280828, guid: fbbc0188b49c88649897c652f637edd4, type: 3}
+    _container: {fileID: 0}
+    _positionRadiusRandom: 1
+    _rotationRandom: {x: 0, y: 360, z: 0}
+    _scaleMin: 0.9
+    _scaleMax: 1.1
+  - _id: 8
+    _prefab: {fileID: 1682164762522224, guid: 1ee4055c989097749876c066a44bce83, type: 3}
+    _container: {fileID: 0}
+    _positionRadiusRandom: 1
+    _rotationRandom: {x: 0, y: 360, z: 0}
+    _scaleMin: 0.9
+    _scaleMax: 1.1
+  - _id: 9
+    _prefab: {fileID: 0}
+    _container: {fileID: 0}
+    _positionRadiusRandom: 1
+    _rotationRandom: {x: 5, y: 360, z: 0}
+    _scaleMin: 0.9
+    _scaleMax: 1.5
+  - _id: 10
+    _prefab: {fileID: 1808775258886824, guid: 3d2c55f9fb4831a41bba840d8f9d4c7c, type: 3}
+    _container: {fileID: 0}
+    _positionRadiusRandom: 1
+    _rotationRandom: {x: 5, y: 360, z: 0}
+    _scaleMin: 0.9
+    _scaleMax: 1.5
+  - _id: 11
+    _prefab: {fileID: 1219340906305684, guid: 46f63808edb8f98489351af317a986e7, type: 3}
+    _container: {fileID: 0}
+    _positionRadiusRandom: 0.1
+    _rotationRandom: {x: 0, y: 360, z: 0}
+    _scaleMin: 1
+    _scaleMax: 1
+  - _id: 12
+    _prefab: {fileID: 1830296560428940, guid: 9c005dd74abfbae4ea11818267e28917, type: 3}
+    _container: {fileID: 0}
+    _positionRadiusRandom: 0.1
+    _rotationRandom: {x: 0, y: 360, z: 0}
+    _scaleMin: 0.5
+    _scaleMax: 1

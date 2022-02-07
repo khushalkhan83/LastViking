@@ -1,0 +1,163 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &2039854267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694292126657556001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e30ea03d35a939a47a31448f4e4cf929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _durationFade: 1
+  _containerAudio: {fileID: 9101439426590701007}
+--- !u!114 &2039854269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694292126657556001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1557a059040c5bd498a8f96dcaa63ee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _environmentOnceAudioThread: {fileID: 2039854267}
+  _colliderTriggerModel: {fileID: 1953038821421195977}
+  daySound: 97
+  nightSound: 97
+  _playerLayer:
+    serializedVersion: 2
+    m_Bits: 2048
+--- !u!1001 &3266816341426032566
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5987780657975114361, guid: a761ff1aaca7ee4418505d5808ab55a3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 524.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987780657975114361, guid: a761ff1aaca7ee4418505d5808ab55a3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 32.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987780657975114361, guid: a761ff1aaca7ee4418505d5808ab55a3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 177.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987780657975114361, guid: a761ff1aaca7ee4418505d5808ab55a3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987780657975114361, guid: a761ff1aaca7ee4418505d5808ab55a3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987780657975114361, guid: a761ff1aaca7ee4418505d5808ab55a3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987780657975114361, guid: a761ff1aaca7ee4418505d5808ab55a3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987780657975114361, guid: a761ff1aaca7ee4418505d5808ab55a3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987780657975114361, guid: a761ff1aaca7ee4418505d5808ab55a3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987780657975114361, guid: a761ff1aaca7ee4418505d5808ab55a3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987780657975114361, guid: a761ff1aaca7ee4418505d5808ab55a3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987780657975114361, guid: a761ff1aaca7ee4418505d5808ab55a3,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.0886
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987780657975114361, guid: a761ff1aaca7ee4418505d5808ab55a3,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 6.0886
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987780657975114361, guid: a761ff1aaca7ee4418505d5808ab55a3,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 6.0886
+      objectReference: {fileID: 0}
+    - target: {fileID: 2662910672029213079, guid: a761ff1aaca7ee4418505d5808ab55a3,
+        type: 3}
+      propertyPath: m_Name
+      value: trigger-variant-audioBox_custome
+      objectReference: {fileID: 0}
+    - target: {fileID: 2662910672029213079, guid: a761ff1aaca7ee4418505d5808ab55a3,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 2800000, guid: dc71d5b044828461da599c564a0abd04, type: 3}
+    - target: {fileID: 2662910672029213079, guid: a761ff1aaca7ee4418505d5808ab55a3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227930748438936774, guid: a761ff1aaca7ee4418505d5808ab55a3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 692d40b4d2dcfee41a8730ff15a3d240, type: 2}
+    - target: {fileID: 1227930748438936774, guid: a761ff1aaca7ee4418505d5808ab55a3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a761ff1aaca7ee4418505d5808ab55a3, type: 3}
+--- !u!1 &694292126657556001 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2662910672029213079, guid: a761ff1aaca7ee4418505d5808ab55a3,
+    type: 3}
+  m_PrefabInstance: {fileID: 3266816341426032566}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &9101439426590701007 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5987780657975114361, guid: a761ff1aaca7ee4418505d5808ab55a3,
+    type: 3}
+  m_PrefabInstance: {fileID: 3266816341426032566}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1953038821421195977 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3912649865816468863, guid: a761ff1aaca7ee4418505d5808ab55a3,
+    type: 3}
+  m_PrefabInstance: {fileID: 3266816341426032566}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694292126657556001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3f14d96ef02ddc4b8ce43b02698039b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

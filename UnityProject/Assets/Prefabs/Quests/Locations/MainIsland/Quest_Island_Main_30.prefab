@@ -1,0 +1,344 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1352757213961879931
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2602796294293400729}
+  - component: {fileID: 4421128323360542272}
+  m_Layer: 0
+  m_Name: Stage (2) - cutscene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2602796294293400729
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352757213961879931}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7694145749960416250}
+  m_Father: {fileID: 4314651991765401275}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4421128323360542272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352757213961879931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c4373198300979468e0a8446d5801ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggers:
+  - {fileID: 0}
+--- !u!1 &4314651991765401273
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4314651991765401275}
+  - component: {fileID: 4314651991765401272}
+  m_Layer: 0
+  m_Name: Quest_Island_Main_30
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &4314651991765401275
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4314651991765401273}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4705151082526659511}
+  - {fileID: 2602796294293400729}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4314651991765401272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4314651991765401273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b1cdcf897a82cf4b9fe18005256886b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest: {fileID: 11400000, guid: 09ed353058901cd468ce632f154b27b2, type: 2}
+  stages:
+  - {fileID: 3346939402561732440}
+  - {fileID: 4421128323360542272}
+--- !u!1 &5858868910112343133
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4705151082526659511}
+  - component: {fileID: 3346939402561732440}
+  m_Layer: 0
+  m_Name: Stage (1) - upgrade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &4705151082526659511
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5858868910112343133}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 818888126625391659}
+  m_Father: {fileID: 4314651991765401275}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3346939402561732440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5858868910112343133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c4373198300979468e0a8446d5801ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggers:
+  - {fileID: 2041783246803282464}
+--- !u!114 &3484377762585856038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7950114089309064869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76409e4d6ce068d48b91e494b9f30bfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sideQuest: {fileID: 11400000, guid: 25c4f92ac8864854ea5a78313f2bd1a8, type: 2}
+--- !u!1001 &8429690036921473328
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4705151082526659511}
+    m_Modifications:
+    - target: {fileID: 8472890848420314053, guid: e365adde67b96ac4abc1d303257ed302,
+        type: 3}
+      propertyPath: m_Name
+      value: QuestTrigger shelterUpgrade-regular
+      objectReference: {fileID: 0}
+    - target: {fileID: 9196631933446012187, guid: e365adde67b96ac4abc1d303257ed302,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 558.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 9196631933446012187, guid: e365adde67b96ac4abc1d303257ed302,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 30.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 9196631933446012187, guid: e365adde67b96ac4abc1d303257ed302,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 173.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 9196631933446012187, guid: e365adde67b96ac4abc1d303257ed302,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9196631933446012187, guid: e365adde67b96ac4abc1d303257ed302,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9196631933446012187, guid: e365adde67b96ac4abc1d303257ed302,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9196631933446012187, guid: e365adde67b96ac4abc1d303257ed302,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9196631933446012187, guid: e365adde67b96ac4abc1d303257ed302,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9196631933446012187, guid: e365adde67b96ac4abc1d303257ed302,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9196631933446012187, guid: e365adde67b96ac4abc1d303257ed302,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9196631933446012187, guid: e365adde67b96ac4abc1d303257ed302,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 871401155879035527, guid: e365adde67b96ac4abc1d303257ed302,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 871401155879035527, guid: e365adde67b96ac4abc1d303257ed302,
+        type: 3}
+      propertyPath: onEnableEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3484377762585856038}
+    - target: {fileID: 871401155879035527, guid: e365adde67b96ac4abc1d303257ed302,
+        type: 3}
+      propertyPath: onEnableEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TryActivate
+      objectReference: {fileID: 0}
+    - target: {fileID: 871401155879035527, guid: e365adde67b96ac4abc1d303257ed302,
+        type: 3}
+      propertyPath: onEnableEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e365adde67b96ac4abc1d303257ed302, type: 3}
+--- !u!4 &818888126625391659 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9196631933446012187, guid: e365adde67b96ac4abc1d303257ed302,
+    type: 3}
+  m_PrefabInstance: {fileID: 8429690036921473328}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7950114089309064869 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1920852077479909269, guid: e365adde67b96ac4abc1d303257ed302,
+    type: 3}
+  m_PrefabInstance: {fileID: 8429690036921473328}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2041783246803282464 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7541727716913394448, guid: e365adde67b96ac4abc1d303257ed302,
+    type: 3}
+  m_PrefabInstance: {fileID: 8429690036921473328}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b0598218f8879e4f929ef8674693fdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &8488790685494302363
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2602796294293400729}
+    m_Modifications:
+    - target: {fileID: 1530634248017447871, guid: efd83f2b7409d6f449de5f4143e400cc,
+        type: 3}
+      propertyPath: m_Name
+      value: QuestTrigger ShelterUpgrade-cutscene
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236361486931889505, guid: efd83f2b7409d6f449de5f4143e400cc,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236361486931889505, guid: efd83f2b7409d6f449de5f4143e400cc,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236361486931889505, guid: efd83f2b7409d6f449de5f4143e400cc,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236361486931889505, guid: efd83f2b7409d6f449de5f4143e400cc,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236361486931889505, guid: efd83f2b7409d6f449de5f4143e400cc,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236361486931889505, guid: efd83f2b7409d6f449de5f4143e400cc,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236361486931889505, guid: efd83f2b7409d6f449de5f4143e400cc,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236361486931889505, guid: efd83f2b7409d6f449de5f4143e400cc,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236361486931889505, guid: efd83f2b7409d6f449de5f4143e400cc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236361486931889505, guid: efd83f2b7409d6f449de5f4143e400cc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236361486931889505, guid: efd83f2b7409d6f449de5f4143e400cc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: efd83f2b7409d6f449de5f4143e400cc, type: 3}
+--- !u!4 &7694145749960416250 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2236361486931889505, guid: efd83f2b7409d6f449de5f4143e400cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 8488790685494302363}
+  m_PrefabAsset: {fileID: 0}

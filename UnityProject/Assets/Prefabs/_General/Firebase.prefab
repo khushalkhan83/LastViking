@@ -1,0 +1,143 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7138244776340474508
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7138244776340474510}
+  - component: {fileID: 7138244776340474504}
+  - component: {fileID: 7138244776340474509}
+  - component: {fileID: 7138244776340474511}
+  m_Layer: 0
+  m_Name: Firebase
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7138244776340474510
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7138244776340474508}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7138244776340474504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7138244776340474508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16156863f05e60144b8083ccfb785e0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7138244776340474509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7138244776340474508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14bd0158cdf431b4e88d5a29142ec8da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _applyChangesAfterFetch: 1
+  _campfireRemoteSettings:
+    _buySlotGold: 25
+    _boostGoldPerSlot: 10
+  _inventoryRemoteSettings:
+    _expandSlotGold: 25
+    _expandForeverSlotGold: 50
+  _craftRemoteSettings:
+    _buySlotGold: 25
+    _boostGoldPerSlot: 10
+  _furnaceRemoteSettings:
+    _buySlotGold: 25
+    _boostGoldPerSlot: 10
+  _loomRemoteSettings:
+    _buySlotGold: 25
+    _boostGoldPerSlot: 10
+  _healthAddonRemoteSettings:
+    _addonGold: 25
+  _foodAddonRemoteSettings:
+    _addonGold: 25
+  _waterAddonRemoteSettings:
+    _addonGold: 25
+  _basicChestRemoteSettings:
+    _buySlotGold: 60
+  _foodChestRemoteSettings:
+    _buySlotGold: 10
+  _militaryChestRemoteSettings:
+    _buySlotGold: 45
+  _skipObjectivesRemoteSettings:
+    _skipGold: 35
+  _resurrectRemoteSettings:
+    _resurrectGold: 100
+  _tombRemoteSettings:
+    _takeItemsGold: 100
+  _repairRemoteSettings:
+    _itemHighGold01: 35
+    _itemHighGold02: 30
+    _itemHighGold03: 45
+    _itemMidGold01: 23
+    _itemMidGold02: 18
+    _itemMidGold03: 35
+    _itemLowGold01: 12
+    _itemLowGold02: 10
+    _itemLowGold03: 15
+--- !u!114 &7138244776340474511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7138244776340474508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1e5f5d49e46424d957e7f45e00e4a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+  - CampFireSettings_BuySlotGold
+  - CampFireSettings_BoostGoldPerSlot
+  - Inventory_ExpandSlotGold
+  - CraftSettings_BuySlotGold
+  - CraftSettings_BoostGoldPerSlot
+  - FurnaceSettings_BuySlotGold
+  - FurnaceSettings_BoostGoldPerSlot
+  - LoomSettings_BuySlotGold
+  - LoomSettings_BoostGoldPerSlot
+  - HealthAddonGold
+  - FoodAddonGold
+  - WaterAddonGold
+  - BasicChest_BuySlotGold
+  - FoodChest_BuySlotGold
+  - MilitaryChest_BuySlotGold
+  - SkipObjectives_SkipGold
+  - Resurrect_Gold
+  - Tomb_TakeItemsGold
+  - Repair_ItemHighGold01
+  - Repair_ItemHighGold02
+  - Repair_ItemHighGold03
+  - Repair_ItemMidGold01
+  - Repair_ItemMidGold02
+  - Repair_ItemMidGold03
+  - Repair_ItemLowGold01
+  - Repair_ItemLowGold02
+  - Repair_ItemLowGold03

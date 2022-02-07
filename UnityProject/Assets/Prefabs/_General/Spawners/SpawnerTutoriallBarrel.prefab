@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6759714018548647663
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6759714018548647662}
+  m_Layer: 0
+  m_Name: SpawnerTutoriallBarrel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6759714018548647662
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6759714018548647663}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6759714018829049310}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6759714018829049311
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6759714018829049310}
+  - component: {fileID: 6759714018829049309}
+  - component: {fileID: 8316876166051813}
+  m_Layer: 0
+  m_Name: Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6759714018829049310
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6759714018829049311}
+  m_LocalRotation: {x: 0.018955674, y: 0.1096923, z: -0.113245845, w: 0.9873114}
+  m_LocalPosition: {x: 553.139, y: 28.396, z: 174.112}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6759714018548647662}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 3.5700002, y: 12.282001, z: -12.702001}
+--- !u!114 &6759714018829049309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6759714018829049311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f86d7451efb0114448ea3b382c10f952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    _uuid: 98ed2562563fc8f439f2fb531a00682e
+    IsHasObject: 1
+  _id: e.0
+  _worldObjectID: 18
+  _colorGhost: {r: 1, g: 0.7882833, b: 0.07058823, a: 0.57254905}
+  _mesh: {fileID: 4300000, guid: b40e5a6b7d4d1a549be2ff97377ac486, type: 3}
+--- !u!114 &8316876166051813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6759714018829049311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c01cdc6686eb6b47954769e1e995d7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    _uuid: c2f059b91c02c584b887580fda984c08
+    NeedSpawnCoins: 1
+  _coinsCount: 3
+  _dropShiftPosition: {x: 0, y: 1.5, z: 0}
+  _colorGhost: {r: 0.98448956, g: 1, b: 0.36470592, a: 1}
+  _mesh: {fileID: 4300004, guid: 9c674ce94be65f14087db2676b4c3a0e, type: 3}

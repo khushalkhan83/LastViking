@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5429232738676857533
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5039964195537410198}
+  - component: {fileID: 3239580460107235026}
+  - component: {fileID: 8692272746299210472}
+  - component: {fileID: 6008077060079916177}
+  m_Layer: 0
+  m_Name: AudioBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5039964195537410198
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5429232738676857533}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 454.5234, y: 32.201706, z: 326.00894}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3239580460107235026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5429232738676857533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e30ea03d35a939a47a31448f4e4cf929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _durationFade: 10
+  _audioSystem: {fileID: 0}
+  _containerAudio: {fileID: 5039964195537410198}
+  _startVolume: 0
+--- !u!114 &8692272746299210472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5429232738676857533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1557a059040c5bd498a8f96dcaa63ee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _environmentOnceAudioThread: {fileID: 3239580460107235026}
+  _environmentAudioModel: {fileID: 6008077060079916177}
+--- !u!114 &6008077060079916177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5429232738676857533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeb387b55eeba8841b38fa9cf5ca7eda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    _uuid: 01527bf5a24df114991511dfa95cb609
+    EnvironmentTimeOfDayID: 0
+  _environmentAudioConfigs:
+  - _environmentTimeOfDayID: 1
+    _audioID: 58
+    _timeStart: 6
+    _timeEnd: 11
+  - _environmentTimeOfDayID: 2
+    _audioID: 58
+    _timeStart: 11
+    _timeEnd: 19
+  - _environmentTimeOfDayID: 3
+    _audioID: 58
+    _timeStart: 19
+    _timeEnd: 6

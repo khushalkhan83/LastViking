@@ -1,0 +1,129 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3636503720424905275
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3636503720424905273}
+  - component: {fileID: 3636503720424905274}
+  - component: {fileID: 2811325571845324194}
+  - component: {fileID: 1642013069996517358}
+  m_Layer: 0
+  m_Name: Building
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3636503720424905273
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3636503720424905275}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 374.81268, y: -96.54281, z: 55.503006}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3636503720424905274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3636503720424905275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d44f130e1baf6664bbcd3cb4b690c75d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BuildingSupport: 1
+  UsePhysics: 1
+  PartsCollection: {fileID: 11400000, guid: b9bc0339c8c213b44bbf9791c0d02380, type: 2}
+  UseDefaultPreviewMaterial: 0
+  CustomPreviewMaterial: {fileID: 0}
+  PreviewAllowedColor: {r: 0, g: 1, b: 0, a: 0.8509804}
+  PreviewDeniedColor: {r: 1, g: 0, b: 0, a: 0.8509804}
+  Parts: []
+  Sockets: []
+  Areas: []
+  DefaultState: 4
+--- !u!114 &2811325571845324194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3636503720424905275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23d027b3bbaba4f4fac86fd35ab3dc7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BuilderCamera: {fileID: 0}
+  ActionDistance: 6
+  SnapThreshold: 5
+  OutOfRangeDistance: 0
+  OverlapAngles: 35
+  LockRotation: 0
+  FreeLayers:
+    serializedVersion: 2
+    m_Bits: 4234241
+  SocketLayers:
+    serializedVersion: 2
+    m_Bits: 1048576
+  RayDetection: 1
+  CameraType: 0
+  RaycastOffset: 1
+  RaycastOriginTransform: {fileID: 0}
+  RaycastAnchorTransform: {fileID: 0}
+  UsePlacementMode: 1
+  ResetModeAfterPlacement: 0
+  UseDestructionMode: 1
+  ResetModeAfterDestruction: 0
+  UseEditionMode: 1
+  UsePreviewCamera: 0
+  PreviewCamera: {fileID: 0}
+  PreviewLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  PreviewMovementType: 0
+  PreviewGridSize: 1
+  PreviewGridOffset: 0
+  PreviewSmoothTime: 5
+  Source: {fileID: 0}
+  PlacementClips: []
+  DestructionClips: []
+  CurrentMode: 0
+  SelectedPrefab: {fileID: 0}
+  SelectedIndex: 0
+  CurrentPreview: {fileID: 0}
+  CurrentEditionPreview: {fileID: 0}
+  CurrentRemovePreview: {fileID: 0}
+  CurrentRotationOffset: {x: 0, y: 0, z: 0}
+  AllowPlacement: 1
+  AllowDestruction: 1
+  AllowEdition: 1
+  HasSocket: 0
+  CurrentSocket: {fileID: 0}
+  LastSocket: {fileID: 0}
+--- !u!114 &1642013069996517358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3636503720424905275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fd45c94d4b2fe44ba5a962ad8262d8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
