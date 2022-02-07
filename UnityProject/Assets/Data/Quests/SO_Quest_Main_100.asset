@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554b7f0d5b6ba95459b21a916b8c5717, type: 3}
+  m_Name: SO_Quest_Main_100
+  m_EditorClassIdentifier: 
+  nextQuest: {fileID: 0}
+  targetShipLevel: 11
+  enemiesAttackConfig: {fileID: 0}
+  questItemData: {fileID: 0}
+  stages:
+  - num: 10
+    showPopup: 1
+    useLocID: 1
+    description: "\u0417\u0430\u0433\u043E\u0442\u043E\u0432\u0438\u0442\u044C \u043F\u0440\u0438\u043F\u0430\u0441\u044B 
+      \u0435\u0434\u044B"
+    descriptionKey: 501
+    icon: {fileID: 21300000, guid: 27cc0e05c294a76418211a1710828a43, type: 3}
+    canUpgradeShelter: 0
+    playUpdateQuestSound: 0
+    triggerDatas:
+    - data:
+        triggerType: 0
+        id: 0
+        actionsGroup:
+          actions: []
+  - num: 20
+    showPopup: 1
+    useLocID: 1
+    description: "\u0421\u0442\u0430\u0442\u044C \u0437\u0430 \u0448\u0442\u0443\u0440\u0432\u0430\u043B"
+    descriptionKey: 502
+    icon: {fileID: 21300000, guid: 5dddae09e16ba8d4998baa660a94ea51, type: 3}
+    canUpgradeShelter: 0
+    playUpdateQuestSound: 0
+    triggerDatas:
+    - data:
+        triggerType: 0
+        id: 0
+        actionsGroup:
+          actions: []
+  - num: 30
+    showPopup: 0
+    useLocID: 0
+    description: "(cutscene) \u0443\u043F\u043B\u044B\u0432\u0430\u0435\u043C"
+    descriptionKey: 0
+    icon: {fileID: 21300000, guid: c69735a1b227b4a4bac77e944799da46, type: 3}
+    canUpgradeShelter: 0
+    playUpdateQuestSound: 1
+    triggerDatas:
+    - data:
+        triggerType: 0
+        id: 0
+        actionsGroup:
+          actions: []
+  - num: 40
+    showPopup: 0
+    useLocID: 0
+    description: GameOver
+    descriptionKey: 0
+    icon: {fileID: 0}
+    canUpgradeShelter: 0
+    playUpdateQuestSound: 0
+    triggerDatas:
+    - data:
+        triggerType: 0
+        id: 0
+        actionsGroup:
+          actions: []

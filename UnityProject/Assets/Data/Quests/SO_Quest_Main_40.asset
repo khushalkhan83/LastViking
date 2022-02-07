@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554b7f0d5b6ba95459b21a916b8c5717, type: 3}
+  m_Name: SO_Quest_Main_40
+  m_EditorClassIdentifier: 
+  nextQuest: {fileID: 11400000, guid: d7ce41db1f3798f4f9ae97188c0ebafe, type: 2}
+  targetShipLevel: 5
+  enemiesAttackConfig: {fileID: 11400000, guid: 2bd167f779cc5b34a9b1372053ab0115,
+    type: 2}
+  questItemData: {fileID: 11400000, guid: 5368c92f3a0c0ed4aa3f0f7a7f3a2552, type: 2}
+  stages:
+  - num: 10
+    showPopup: 0
+    useLocID: 1
+    description: Upgrade
+    descriptionKey: 483
+    icon: {fileID: 0}
+    canUpgradeShelter: 0
+    playUpdateQuestSound: 0
+    triggerDatas:
+    - data:
+        triggerType: 0
+        id: 0
+        actionsGroup:
+          actions: []
+  - num: 20
+    showPopup: 0
+    useLocID: 1
+    description: Upgrade
+    descriptionKey: 483
+    icon: {fileID: 21300000, guid: 1bb7e82279cad1949a67d45f56ec41f7, type: 3}
+    canUpgradeShelter: 1
+    playUpdateQuestSound: 0
+    triggerDatas:
+    - data:
+        triggerType: 0
+        id: 0
+        actionsGroup:
+          actions: []
+  - num: 30
+    showPopup: 0
+    useLocID: 0
+    description: Cutscene
+    descriptionKey: 0
+    icon: {fileID: 21300000, guid: c69735a1b227b4a4bac77e944799da46, type: 3}
+    canUpgradeShelter: 0
+    playUpdateQuestSound: 1
+    triggerDatas:
+    - data:
+        triggerType: 0
+        id: 0
+        actionsGroup:
+          actions: []

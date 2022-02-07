@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 567a6d29facfb1645ada1be451d488f3, type: 3}
+  m_Name: ObjectivesStack_consume_meat_coocked_chicken
+  m_EditorClassIdentifier: 
+  stackType: 0
+  objectivesType: 5
+  objectives:
+  - {fileID: 11400000, guid: 418475c1e1a0bdc43a2188fd69a0a3e4, type: 2}
+  - {fileID: 11400000, guid: f6fe78f3321dcb84d8456985c2f7993b, type: 2}
+  - {fileID: 11400000, guid: 05fd0e7dbe7413b49a39a18da6e04d13, type: 2}
+  subStacks: []
+  useItselfForReroll: 0
+  conditionsPerObjective: []
+  datas:
+  - objectiveName: ObjectiveConsumeCookedChickenMeat(+)
+    objective: {fileID: 11400000, guid: 418475c1e1a0bdc43a2188fd69a0a3e4, type: 2}
+    conditionsOk: 1
+    done: 1
+    stack: {fileID: 11400000}
+    compoziteStack: {fileID: 0}
+  - objectiveName: ObjectiveConsumeCookedBoarMeat(+)
+    objective: {fileID: 11400000, guid: c5c436970da92b84b99060898ae957bf, type: 2}
+    conditionsOk: 1
+    done: 1
+    stack: {fileID: 11400000}
+    compoziteStack: {fileID: 0}
+  - objectiveName: ObjectiveConsumeCookedBearMeat(-)
+    objective: {fileID: 11400000, guid: c8f94b5821915ec4da5318ed890bcd84, type: 2}
+    conditionsOk: 1
+    done: 0
+    stack: {fileID: 11400000}
+    compoziteStack: {fileID: 0}
+  notCompleatedData:
+  - objectiveName: ObjectiveConsumeCookedBearMeat(-)
+    objective: {fileID: 11400000, guid: c8f94b5821915ec4da5318ed890bcd84, type: 2}
+    conditionsOk: 1
+    done: 0
+    stack: {fileID: 11400000}
+    compoziteStack: {fileID: 0}
+  completedData:
+  - objectiveName: ObjectiveConsumeCookedChickenMeat(+)
+    objective: {fileID: 11400000, guid: 418475c1e1a0bdc43a2188fd69a0a3e4, type: 2}
+    conditionsOk: 1
+    done: 1
+    stack: {fileID: 11400000}
+    compoziteStack: {fileID: 0}
+  - objectiveName: ObjectiveConsumeCookedBoarMeat(+)
+    objective: {fileID: 11400000, guid: c5c436970da92b84b99060898ae957bf, type: 2}
+    conditionsOk: 1
+    done: 1
+    stack: {fileID: 11400000}
+    compoziteStack: {fileID: 0}
+  progress: 0.6666667

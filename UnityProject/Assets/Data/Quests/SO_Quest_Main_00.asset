@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554b7f0d5b6ba95459b21a916b8c5717, type: 3}
+  m_Name: SO_Quest_Main_00
+  m_EditorClassIdentifier: 
+  nextQuest: {fileID: 11400000, guid: 1dc708f750fff3a43b1570fedcc1d9cf, type: 2}
+  targetShipLevel: 1
+  enemiesAttackConfig: {fileID: 0}
+  questItemData: {fileID: 11400000, guid: 44a6baa78d692ee47a69844509f82ed2, type: 2}
+  stages:
+  - num: 10
+    showPopup: 1
+    useLocID: 1
+    description: "\u041D\u0430\u0439\u0442\u0438 \u0432\u044B\u0436\u0438\u0432\u0448\u0435\u0433\u043E"
+    descriptionKey: 488
+    icon: {fileID: 21300000, guid: 04a3b88ac55d5744b81592f403c32eac, type: 3}
+    canUpgradeShelter: 0
+    playUpdateQuestSound: 1
+    triggerDatas:
+    - data:
+        triggerType: 0
+        id: 0
+        actionsGroup:
+          actions: []
+  - num: 20
+    showPopup: 1
+    useLocID: 1
+    description: "\u041F\u043E\u0431\u0435\u0434\u0438 \u043A\u0440\u0430\u043A\u0435\u043D\u0430"
+    descriptionKey: 487
+    icon: {fileID: 21300000, guid: 8db2bf3d204d01740b96eb7116d293b8, type: 3}
+    canUpgradeShelter: 0
+    playUpdateQuestSound: 1
+    triggerDatas:
+    - data:
+        triggerType: 0
+        id: 0
+        actionsGroup:
+          actions: []
+  - num: 30
+    showPopup: 1
+    useLocID: 1
+    description: "\u0417\u0430\u0431\u0435\u0440\u0438 \u0447\u0435\u0440\u0442\u0435\u0436\u0438
+      \u043A\u043E\u0440\u0430\u0431\u043B\u044F"
+    descriptionKey: 484
+    icon: {fileID: 21300000, guid: c5f54e97ef17cdf44aaaafa47434d9c4, type: 3}
+    canUpgradeShelter: 0
+    playUpdateQuestSound: 0
+    triggerDatas:
+    - data:
+        triggerType: 0
+        id: 0
+        actionsGroup:
+          actions: []
+  - num: 40
+    showPopup: 0
+    useLocID: 1
+    description: "\u041F\u0440\u043E\u043A\u0430\u0447\u0430\u0439\u0442\u0435 shelter"
+    descriptionKey: 483
+    icon: {fileID: 21300000, guid: 1bb7e82279cad1949a67d45f56ec41f7, type: 3}
+    canUpgradeShelter: 1
+    playUpdateQuestSound: 1
+    triggerDatas:
+    - data:
+        triggerType: 0
+        id: 3
+        actionsGroup:
+          actions:
+          - actionType: 0
+            activateQuestAction:
+              quest: {fileID: 0}
+            activateStageAction:
+              stage: 5
+  - num: 50
+    showPopup: 0
+    useLocID: 0
+    description: "(\u043A\u0430\u0442 \u0441\u0446\u0435\u043D\u0430) \u041F\u0440\u043E\u043A\u0430\u0447\u043A\u0430
+      shelter"
+    descriptionKey: 0
+    icon: {fileID: 21300000, guid: c69735a1b227b4a4bac77e944799da46, type: 3}
+    canUpgradeShelter: 0
+    playUpdateQuestSound: 1
+    triggerDatas:
+    - data:
+        triggerType: 0
+        id: 4
+        actionsGroup:
+          actions:
+          - actionType: 1
+            activateQuestAction:
+              quest: {fileID: 0}
+            activateStageAction:
+              stage: 0
