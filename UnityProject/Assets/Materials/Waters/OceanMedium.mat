@@ -1,0 +1,183 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: OceanMedium
+  m_Shader: {fileID: 4800000, guid: 185747a30da8d8d4b890f1bf047bc6d7, type: 3}
+  m_ShaderKeywords: BLINN_PHONG FOAM NORMALMAP REFLECTION USE_DISPLACEMENT USE_FILTERING
+    USE_FOAM USE_MEAN_SKY_RADIANCE _ENABLEREFLECTIONS_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3000
+  stringTagMap: {}
+  disabledShaderPasses:
+  - RefractionPass
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FoamTexture:
+        m_Texture: {fileID: 2800000, guid: 0086c80050230be4a878802f0a2dd208, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Height:
+        m_Texture: {fileID: 2800000, guid: 37847ca1c393be0488868e083221d984, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _HeightTexture:
+        m_Texture: {fileID: 2800000, guid: 37847ca1c393be0488868e083221d984, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 37847ca1c393be0488868e083221d984, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal:
+        m_Texture: {fileID: 2800000, guid: 38c1e3b8e2a405f428f7a600b0e21abf, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalTexture:
+        m_Texture: {fileID: 2800000, guid: 223a4de3d1969b34f88174ee6b7746c4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ReflectionTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ReflectionTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ShoreTexture:
+        m_Texture: {fileID: 2800000, guid: 6f78ef805fb5d4540b432b65835ca455, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SkyTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _AmbientDensity: 0.729
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _Density: 0.07
+    - _DepthTransparency: 0.12
+    - _DetailNormalMapScale: 1
+    - _DiffuseDensity: 0.352
+    - _Distortion: 0.959
+    - _DstBlend: 0
+    - _EnableCustomFog: 0
+    - _EnableReflections: 1
+    - _Fade: 34
+    - _FoamBlend: 6.4
+    - _FoamContrast: 0.187
+    - _FoamIntensity: 3.9
+    - _FoamSpeed: 40
+    - _FoamTiling: 118.2
+    - _FoamVisibility: 0.315
+    - _FogDistance: 125
+    - _FogFade: 1.4
+    - _Gloss: 0.6
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _HeightIntensity: 1
+    - _LightWrapping: 3.34
+    - _Metallic: 0
+    - _Mode: 0
+    - _NormalIntensity: 1
+    - _NormalTiling: 100
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _RadianceFactor: 1
+    - _ReflectionIntensity: 0.534
+    - _Refraction: 0.82
+    - _RefractionScale: 0.0081
+    - _Shininess: 0.5
+    - _ShoreFade: 0.58
+    - _ShoreTransparency: 9.65
+    - _SmoothnessTextureChannel: 0
+    - _Specular: 1.5
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _TextureTiling: 1
+    - _UVSec: 0
+    - _UnderwaterMode: 0
+    - _UseDisplacement: 1
+    - _UseFiltering: 1
+    - _UseFoam: 1
+    - _UseMeanSky: 1
+    - _UsePhong: 1
+    - _WaterClarity: 1.9
+    - _WaterTransparency: 14.6
+    - _WaveAmplitudeFactor: 4
+    - _WaveHeight: -0.18
+    - _WaveScale: 1
+    - _WaveSpeed: 40
+    - _WaveSteepness: 0.44
+    - _WaveTiling: 1
+    - _ZWrite: 1
+    m_Colors:
+    - Ocean_ColorBase: {r: 0, g: 0.4627451, b: 1, a: 1}
+    - _Color: {r: 0, g: 0, b: 0, a: 0.6509804}
+    - _DeepWaterColor: {r: 0.1514329, g: 0.38679248, b: 0.3776704, a: 1}
+    - _DepthColor: {r: 0.0039, g: 0.00196, b: 0.145, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FoamColor: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 1}
+    - _FoamNoise: {r: 0.1, g: 0.3, b: 0.1, a: 0.3}
+    - _FoamRanges: {r: 2, g: 3, b: 100, a: 1}
+    - _FoamTiling: {r: 2, g: 0.5, b: 0, a: 1}
+    - _FogColor: {r: 1, g: 1, b: 1, a: 1}
+    - _HorizontalExtinction: {r: 3, g: 10, b: 12, a: 1}
+    - _LightDidection: {r: 9.66, g: -6.8, b: -3.41, a: 1}
+    - _LightDirection: {r: 0, g: 0.79978853, b: 0.6002823, a: 0}
+    - _MainColor: {r: 0.13207547, g: 0.42882377, b: 0.5283019, a: 1}
+    - _RefractionValues: {r: 0.3, g: 0.01, b: 1, a: 1}
+    - _ShoreColor: {r: 0, g: 0.82232714, b: 1, a: 1}
+    - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SpecularValues: {r: 12, g: 768, b: 0.15, a: 1}
+    - _SurfaceColor: {r: 0, g: 0.52315855, b: 1, a: 1}
+    - _WaveAmplitude: {r: 0.05, g: 0.1, b: 0.2, a: 0.3}
+    - _WaveHeight: {r: 0, g: 0, b: 0, a: 1}
+    - _WaveScale: {r: 0.017, g: 1, b: 0.017, a: 1}
+    - _WaveSpeed: {r: -0.02, g: 1, b: -0.01, a: 1}
+    - _WavesIntensity: {r: 3, g: 2, b: 2, a: 10}
+    - _WavesNoise: {r: 0.05, g: 0.15, b: 0.03, a: 0.05}
+    - _WindDirection: {r: 3, g: 5, b: 0, a: 1}
