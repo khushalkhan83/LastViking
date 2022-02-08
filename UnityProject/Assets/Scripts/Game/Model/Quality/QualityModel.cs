@@ -49,6 +49,9 @@ namespace Game.Models
 
         public Data _Data => _data;
 
+        private EditorGameSettings EditorGameSettings => EditorGameSettings.Instance;
+
+
         public QualityID QualityID
         {
             get
@@ -72,7 +75,8 @@ namespace Game.Models
 
         public string VSyncText => _frameRateProvider.GetData(VSyncCount).Text;
 
-        public Sprite TargetFrameRateIcon {
+        public Sprite TargetFrameRateIcon
+        {
             get { return _frameRateProvider.GetData(VSyncCount).Icon; }
         }
 
@@ -159,13 +163,15 @@ namespace Game.Models
 
         public void SetVSyncCount(int vSyncCount)
         {
-            var last = VSyncCount;
+            int performanceTestVSyncTargetValue = 0;
+            
+            if (EditorGameSettings.IsPerformanceTest)
+                vSyncCount = performanceTestVSyncTargetValue;
+
             VSyncCount = vSyncCount;
 
-            if (vSyncCount != last)
-            {
+            if (vSyncCount != performanceTestVSyncTargetValue)
                 OnChangeFrameRate?.Invoke();
-            }
         }
 
         public event Action OnChangeAudioLevel;

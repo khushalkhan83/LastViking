@@ -28,8 +28,8 @@ class MainBuildPreprocessor : IPreprocessBuild
         // HandleDebugSettings();
         // if (buildDeclined) throw new BuildFailedException(buildDeclinedMessage);
 
-        HandleAnalitics();
-        if (buildDeclined) throw new BuildFailedException(buildDeclinedMessage);
+        // HandleAnalitics();
+        // if (buildDeclined) throw new BuildFailedException(buildDeclinedMessage);
 
         // HandleOBBLoadingScene("OBB Loading scene name");
         // if (buildDeclined) throw new BuildFailedException(buildDeclinedMessage); // add correct scene here
@@ -37,30 +37,30 @@ class MainBuildPreprocessor : IPreprocessBuild
         HandleArchitecture();
         if (buildDeclined) throw new BuildFailedException(buildDeclinedMessage);
 
-        LocalizationCheck();
-        if (buildDeclined) throw new BuildFailedException(buildDeclinedMessage);
+        // LocalizationCheck();
+        // if (buildDeclined) throw new BuildFailedException(buildDeclinedMessage);
     }
 
     private void LocalizationCheck()
     {
         if (buildDeclined) throw new BuildFailedException(buildDeclinedMessage);
 
-        window = EditorWindow.GetWindow<LocalizationEditor>();
-        window.StartLocalization();
-        do
-        {
-            if(window.state == LocalizationEditor.State.ProcessingLocalizationFromURL)
-            {
-                window.WWWUpdate();
-            }
+        // window = EditorWindow.GetWindow<LocalizationEditor>();
+        // window.StartLocalization();
+        // do
+        // {
+        //     if(window.state == LocalizationEditor.State.ProcessingLocalizationFromURL)
+        //     {
+        //         window.WWWUpdate();
+        //     }
 
-            if(window.state == LocalizationEditor.State.Error)
-            {
-                buildDeclined = true;
-                buildDeclinedMessage = "Ошибка при обновлении локализации";
-            }
+        //     if(window.state == LocalizationEditor.State.Error)
+        //     {
+        //         buildDeclined = true;
+        //         buildDeclinedMessage = "Ошибка при обновлении локализации";
+        //     }
 
-        } while (window.state != LocalizationEditor.State.Idle);
+        // } while (window.state != LocalizationEditor.State.Idle);
     }
 
     private void HandleArchitecture()

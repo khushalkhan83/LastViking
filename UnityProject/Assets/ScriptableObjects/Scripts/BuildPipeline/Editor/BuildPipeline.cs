@@ -113,13 +113,14 @@ namespace BuildAutomation
         #region Configs
 
         private const int _bytesInMegabyte = 1048576;
-        readonly static string[] _scenesPaths = new string[5]
+        readonly static string[] _scenesPaths = new string[6]
         {
             "Assets/Intro/Scenes/IntroLoadingScene.unity",
             "Assets/Intro/Scenes/Intro.unity",
             "Assets/Scenes/LoadingScene.unity",
             "Assets/Scenes/CoreScene.unity",
-            "Assets/Scenes/VikingsIslandScene_lands.unity"
+            "Assets/Scenes/VikingsIslandScene_lands.unity",
+            "Assets/Scenes/PreloadScene.unity",
         };
 
         #region BuildSettingPresets

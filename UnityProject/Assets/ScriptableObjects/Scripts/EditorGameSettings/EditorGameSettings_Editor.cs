@@ -51,6 +51,8 @@ public partial class EditorGameSettings
     [TabGroup("Editor")]
     [SerializeField] private bool _blockPopupsOnStart = false;
 
+    [TabGroup("Editor")]
+    [SerializeField] private bool _isPerformanceTest = false;
 
     public bool FixSectorPerfomance
 #if UNITY_EDITOR
@@ -71,7 +73,7 @@ public partial class EditorGameSettings
 
 #endif
 
-    public bool EmulateSceneLight => ApplicationHelper.IsEditorApplication() ? _emulateSceneLight: false;
+    public bool EmulateSceneLight => ApplicationHelper.IsEditorApplication() ? _emulateSceneLight : false;
 
 
     public bool AddDebugItemsOnGameStart => Debug.isDebugBuild ? _addDebugItemsOnGameStart : false;
@@ -90,7 +92,12 @@ public partial class EditorGameSettings
         }
     }
 
-    public bool ShowControllersSystemLogs => Debug.isDebugBuild ? _showControllersInitLogs: false;
+    public bool ShowControllersSystemLogs => Debug.isDebugBuild ? _showControllersInitLogs : false;
     public bool ShowNullCoordinatesSpawnPopup => Debug.isDebugBuild ? _showNullCoordinatesSpawnPopup : false;
     public bool BlockPopupsOnStart => Debug.isDebugBuild ? _blockPopupsOnStart : false;
+    public bool IsPerformanceTest
+    {
+        get => _isPerformanceTest;
+        set => _isPerformanceTest = value;
+    }
 }

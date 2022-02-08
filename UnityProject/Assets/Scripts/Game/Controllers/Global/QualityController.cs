@@ -17,7 +17,7 @@ namespace Game.Controllers
 
         private QualityModel QualityModel => ModelsSystem.Instance._qualityModel;
         private StorageModel StorageModel => ModelsSystem.Instance._storageModel;
-
+        private EditorGameSettings EditorGameSettings => EditorGameSettings.Instance;
         public Shader ShaderVegetation => _shaderVegetation;
         public Shader ShaderEnvironment => _shaderEnvironment;
         public Shader ShaderTools => _shaderTools;
@@ -45,7 +45,7 @@ namespace Game.Controllers
             }
 
             bool targetFrameRateFirstInit = QualityModel.VSyncCount <= 0;
-            if(QualityModel.VSyncNeverSeted)
+            if (QualityModel.VSyncNeverSeted)
             {
                 QualityModel.SetVSyncCount(QualityModel.GetDefaultVSyncForSelectedQualityConfig());
             }
@@ -79,7 +79,7 @@ namespace Game.Controllers
         private void SetupQualitySettings(QualityConfig qualityConfig)
         {
             QualitySettings.SetQualityLevel((int)qualityConfig.QuaityID - 1, true);
-            
+
             ShaderVegetation.maximumLOD = (int)qualityConfig.ShaderLODVegetationID;
             ShaderEnvironment.maximumLOD = (int)qualityConfig.ShaderLODEnvironmentID;
             ShaderTools.maximumLOD = (int)qualityConfig.ShaderLODToolsID;
@@ -112,8 +112,10 @@ namespace Game.Controllers
 
         private void SetUpVSCountAndFrameRate()
         {
-            int vs = QualityModel.VSyncCount;
-            int frameRate = QualityModel.TargetFrameRateData.FrameRate;
+            bool isPerformanceTest = EditorGameSettings.IsPerformanceTest;
+
+            int vs = isPerformanceTest ? 0 : QualityModel.VSyncCount;
+            int frameRate = isPerformanceTest ? 120 : QualityModel.TargetFrameRateData.FrameRate;
             SetUpVSCountAndFrameRate(vs,frameRate);
         }
 
@@ -121,16 +123,16 @@ namespace Game.Controllers
         {
             Debug.Log("before: " + QualitySettings.vSyncCount + " " + Application.targetFrameRate);
             QualitySettings.vSyncCount = vSyncCount;
-            #if UNITY_IOS 
+#if UNITY_IOS
                 Application.targetFrameRate = frames;
-            #endif
+#endif
             Debug.Log("after: " + QualitySettings.vSyncCount + " " + Application.targetFrameRate);
-            
+
             Debug.Log("Ref rate: " + Screen.currentResolution.refreshRate);
             // HandleVSync();
         }
 
-        
+
         private void HandleVSyncAndMaxFrameRate()
         {
             Application.targetFrameRate = 120;

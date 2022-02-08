@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
@@ -73,17 +73,19 @@ namespace Gamekit3D
         void UpdateCameraSettings()
         {
             keyboardAndMouseCamera.Follow = follow;
-            keyboardAndMouseCamera.LookAt = lookAt;
+            if (!EditorGameSettings.Instance.IsPerformanceTest)
+                keyboardAndMouseCamera.LookAt = lookAt;
             keyboardAndMouseCamera.m_XAxis.m_InvertInput = keyboardAndMouseInvertSettings.invertX;
             keyboardAndMouseCamera.m_YAxis.m_InvertInput = keyboardAndMouseInvertSettings.invertY;
 
             controllerCamera.m_XAxis.m_InvertInput = controllerInvertSettings.invertX;
             controllerCamera.m_YAxis.m_InvertInput = controllerInvertSettings.invertY;
             controllerCamera.Follow = follow;
-            controllerCamera.LookAt = lookAt;
+            if (!EditorGameSettings.Instance.IsPerformanceTest)
+                controllerCamera.LookAt = lookAt;
 
             keyboardAndMouseCamera.Priority = inputChoice == InputChoice.KeyboardAndMouse ? 1 : 0;
             controllerCamera.Priority = inputChoice == InputChoice.Controller ? 1 : 0;
         }
-    } 
+    }
 }

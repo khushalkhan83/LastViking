@@ -33,6 +33,9 @@ namespace Game.Controllers
 
         void IController.Start()
         {
+            if (EditorGameSettings.Instance.IsPerformanceTest)
+                return;
+                
             if (!TutorialDarkScreenModel.HasShown)
             {
                 if (!TutorialModel.IsStart)
