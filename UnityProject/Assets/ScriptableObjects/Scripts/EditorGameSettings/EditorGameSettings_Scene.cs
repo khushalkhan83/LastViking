@@ -34,14 +34,15 @@ public partial class EditorGameSettings
     [DisableIf("EditorInPlayMode")]
     public CustomePlayModeStartPoint playModeStartPoint;
 
-    #if UNITY_EDITOR
+
+#if UNITY_EDITOR
 
     [TabGroup("Scene")] [Button] void RestartCore() => EditorApplication.ExecuteMenuItem("EditorTools/RestartCore");
     [TabGroup("Scene")] [Button] void EmulateRestartGam() => EditorApplication.ExecuteMenuItem("EditorTools/EmulateRestartGame");
     [TabGroup("Scene")] [Button] void SaveGame() => EditorApplication.ExecuteMenuItem("EditorTools/Save game");
     [TabGroup("Scene")] [Button] void OpenEnvironmentGenerator() => EditorApplication.ExecuteMenuItem("EditorTools/Windows/CodeGeneratorWindow_2.0");
 
-    #endif
+#endif
 
     [TabGroup("Scene")]
     public ScenesProfile scenesProfile_Default;

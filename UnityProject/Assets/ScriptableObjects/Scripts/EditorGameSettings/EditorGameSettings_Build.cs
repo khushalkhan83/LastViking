@@ -15,6 +15,8 @@ public partial class EditorGameSettings
     [Tooltip("Позволяет отправлять аналитику в дебаг билдах")]
     public bool enableAnalitics;
 
+    public bool googlePlayGamesServicesAreUsed;
+
     [TabGroup("Build")]
     [Button] void ImportDebugPackages() => settings.ManagePackages(false);
     [TabGroup("Build")]
