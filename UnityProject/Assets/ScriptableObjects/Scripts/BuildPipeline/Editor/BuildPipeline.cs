@@ -116,10 +116,10 @@ namespace BuildAutomation
         readonly static string[] _scenesPaths = new string[6]
         {
             "Assets/Intro/Scenes/IntroLoadingScene.unity",
-            "Assets/Intro/Scenes/Intro.unity",
-            "Assets/Scenes/LoadingScene.unity",
-            "Assets/Scenes/CoreScene.unity",
             "Assets/Scenes/VikingsIslandScene_lands.unity",
+            "Assets/Scenes/CoreScene.unity",
+            "Assets/Scenes/LoadingScene.unity",
+            "Assets/Intro/Scenes/Intro.unity",
             "Assets/Scenes/PreloadScene.unity",
         };
 
@@ -135,7 +135,7 @@ namespace BuildAutomation
         #endregion
 
         #endregion
-        private static RemoteConfigModel RemoteConfigModel => ModelsSystem.Instance._remoteConfigModel;
+        //private static RemoteConfigModel RemoteConfigModel => ModelsSystem.Instance._remoteConfigModel;
 
         public static Action OnBuildFailed { get; set; }
 
