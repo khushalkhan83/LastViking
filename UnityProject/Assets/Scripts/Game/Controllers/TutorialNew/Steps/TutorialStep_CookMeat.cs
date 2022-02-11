@@ -12,6 +12,7 @@ namespace Game.Controllers.TutorialSteps
 {
     public class TutorialStep_CookMeat : TutorialStepBase
     {
+        #region Dependencies
         [Inject] public CampFireViewModel CampFireViewModel { get; private set; }
         [Inject] public TutorialSimpleDarkViewModel TutorialSimpleDarkViewModel { get; private set; }
         [Inject] public ApplyItemModel ApplyItemModel { get; private set; }
@@ -27,23 +28,39 @@ namespace Game.Controllers.TutorialSteps
         private CampFireModel TutorialCampFire;
         private TokenTarget firePlaceToken;
         private ITutorialStep stepTapHint;
+        #endregion
 
         public TutorialStep_CookMeat(TutorialEvent StepStartedEvent) : base(StepStartedEvent) { }
+
+        #region Base Methods
 
         public override void OnStart()
         {
             Init();
+            Subscribe();
+            ProcessState();
+        }
+        public override void OnEnd()
+        {
+            UnSubscribe();
+            UnDoTutorialModifications();
+        }
 
+        #endregion 
+
+        #region Subscriptions
+
+        private void Subscribe()
+        {
             CampFireViewModel.OnShowChanged += ProcessState;
             CampFireViewModel.OnIsHasDragChanged += ProcessDragChanged;
             TutorialCampFire.OnCook += ProcessCoockedItemMessage;
             TutorialCampFire.OnChangeFireState += ProcessState; // TODO: handle null camp fire model subscription
             TutorialCampFire.OnStartBoost += ProcessState; // TODO: handle null camp fire model subscription
             ApplyItemModel.OnPreApplyItem += ProcessApllyItem;
-
-            ProcessState();
         }
-        public override void OnEnd()
+
+        private void UnSubscribe()
         {
             firePlaceToken.enabled = false;
             CampFireViewModel.OnShowChanged -= ProcessState;
@@ -52,11 +69,19 @@ namespace Game.Controllers.TutorialSteps
             TutorialCampFire.OnChangeFireState -= ProcessState;
             TutorialCampFire.OnStartBoost -= ProcessState;
             ApplyItemModel.OnPreApplyItem -= ProcessApllyItem;
-
-            UnDoTutorialModifications();
-            stepTapHint.Exit();
         }
 
+        #endregion
+
+        #region Event Processing
+
+        private void ProcessDragChanged() { DoActionAfterFrame(() => { if(!CampFireViewModel.IsHasDrag) { ProcessState();}});}
+        private void ProcessCoockedItemMessage(string itemName, int count) {if(itemName == k_coockedMeatName) ProcessState();}
+        private void ProcessApllyItem(ItemsContainer container, CellModel cellModel) { if( cellModel.IsHasItem && cellModel.Item.Name == k_coockedMeatName) CheckConditions();}
+
+        #endregion
+
+        #region Initialization and Deinitialization
         private void Init()
         {
             var sceneContext = GameObject.FindObjectOfType<SimpleTutorialController>();
@@ -69,6 +94,7 @@ namespace Game.Controllers.TutorialSteps
             InjectionSystem.Inject(stepTapHint);
         }
 
+
         private void UnDoTutorialModifications()
         {
             TutorialCampFire.BlockCoockingOnFire = false;
@@ -76,7 +102,10 @@ namespace Game.Controllers.TutorialSteps
             ShowDarkScreen(false);
             RemoveTutorialHilights();
             ShowTaskMessage(false);
+
+            stepTapHint.Exit();
         }
+
 
         private void RemoveTutorialHilights()
         {
@@ -86,6 +115,10 @@ namespace Game.Controllers.TutorialSteps
             CampFireViewModel.RemoveAllTutorialCellsHilight();
             CampFireViewModel.StopTutorialDragAnimation();
         }
+
+        #endregion
+
+        #region State Processing
 
         private void ProcessState()
         {
@@ -145,6 +178,20 @@ namespace Game.Controllers.TutorialSteps
             }
         }
 
+        #endregion
+
+        #region State Conditions
+        private bool HasConsumableMeatInCoockingSection() => HasItemInCoockingSection(k_coockedMeatName);
+        private bool HasRawMeatInCoockingSection() => HasItemInCoockingSection(k_rawMeatName);
+        private bool HasItemInCoockingSection(string itemName)
+        {
+            var target = TutorialCampFire.ItemsContainer.Cells.ToList().Find(x => x.IsHasItem && x.Item.Name == itemName);
+            return target != null;
+        }
+        #endregion
+
+        #region States
+
         private void OpenCoockingWindowState()
         {
             stepTapHint.Enter();
@@ -188,16 +235,9 @@ namespace Game.Controllers.TutorialSteps
             CampFireViewModel.GetBoostsButton().SafeActivateComponent<TutorialHilightAndAnimation>();
         }
 
-        private void ProcessDragChanged() { DoActionAfterFrame(() => { if(!CampFireViewModel.IsHasDrag) { ProcessState();}});}
-        private void ProcessCoockedItemMessage(string itemName, int count) {if(itemName == k_coockedMeatName) ProcessState();}
-        private void ProcessApllyItem(ItemsContainer container, CellModel cellModel) { if( cellModel.IsHasItem && cellModel.Item.Name == k_coockedMeatName) CheckConditions();}
-        private bool HasConsumableMeatInCoockingSection() => HasItemInCoockingSection(k_coockedMeatName);
-        private bool HasRawMeatInCoockingSection() => HasItemInCoockingSection(k_rawMeatName);
-        private bool HasItemInCoockingSection(string itemName)
-        {
-            var target = TutorialCampFire.ItemsContainer.Cells.ToList().Find(x => x.IsHasItem && x.Item.Name == itemName);
-            return target != null;
-        }
+        #endregion
+
+        #region Final conditions
 
         private void CheckConditions()
         {
@@ -205,6 +245,10 @@ namespace Game.Controllers.TutorialSteps
 
             if (nextStep) TutorialNextStep();
         }
+
+        #endregion
+
+        #region Help Functions
 
         private void ShowDarkScreen(bool show) => TutorialSimpleDarkViewModel.SetShow(show);
         private void AddNotEnoughCoinsForBoost()
@@ -270,5 +314,7 @@ namespace Game.Controllers.TutorialSteps
                 return raycastGameObject.TryGetComponent<CampFireModel>(out var campFire);
             }
         }
+
+        #endregion
     }
 }
