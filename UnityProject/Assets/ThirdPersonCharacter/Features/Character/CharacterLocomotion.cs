@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Game.Models;
+using UltimateSurvival;
 using UnityEngine;
 
 namespace Game.ThirdPerson
@@ -17,7 +18,11 @@ namespace Game.ThirdPerson
         [SerializeField] private float inputMultyplier = 1;
 
 
-        [SerializeField] private float maxInputScale = 1;
+        [SerializeField] private float maxInputScale = 2;
+
+        private PlayerStaminaModel PlayerStaminaModel => ModelsSystem.Instance._playerStaminaModel;
+        private PlayerRunModel PlayerRunModel => ModelsSystem.Instance._playerRunModel;
+
 
         [System.Serializable]
         private struct Settings
@@ -26,13 +31,14 @@ namespace Game.ThirdPerson
             public float movementSpeed;
         }
 
-        public enum Preset { Aiming, Run }
+        public enum Preset { Aiming, Run, Walk }
 
         [Space]
         [SerializeField] private Preset preset;
 
         [SerializeField] private Settings aimingSettings;
         [SerializeField] private Settings runSettings;
+        [SerializeField] private Settings walkSettings;
 
 #if UNITY_EDITOR
         [SerializeField] private bool forbidExternalPresetChange = false;
@@ -50,7 +56,8 @@ namespace Game.ThirdPerson
         private Settings GetSettings()
         {
             if (preset == Preset.Aiming) return aimingSettings;
-            else return runSettings;
+            else if (preset == Preset.Run) return runSettings;
+            return walkSettings;
         }
 
         private Animator animator;
@@ -59,10 +66,13 @@ namespace Game.ThirdPerson
         private Vector3 velocity;
         private bool isJump;
         private CharacterController characterController;
+        private PlayerEventHandler PlayerEventHandler;
 
         private int hashInputX;
         private int hashInputY;
         private int hashIsJumping;
+
+        private bool IsRun => PlayerRunModel.IsRun;
 
         private PlayerLandModel PlayerLandModel => ModelsSystem.Instance._playerLandModel;
 
@@ -70,6 +80,7 @@ namespace Game.ThirdPerson
         {
             animator = GetComponent<Animator>();
             characterController = GetComponent<CharacterController>();
+            PlayerEventHandler = GetComponent<PlayerEventHandler>();
             hashInputX = Animator.StringToHash("InputX");
             hashInputY = Animator.StringToHash("InputY");
             hashIsJumping = Animator.StringToHash("isJumping");
@@ -120,11 +131,18 @@ namespace Game.ThirdPerson
             animator.SetBool(hashIsJumping, isJump);
 
             //Player landed
-            if(!isJump) PlayerLandModel.OnPlayerLand(velocity);
+            if (!isJump) PlayerLandModel.OnPlayerLand(velocity);
         }
 
         private void UpdateOnGround()
         {
+            var isGrounded = characterController.isGrounded;
+            var velocityLast = characterController.velocity;
+            var velocitySqrMagnitude = velocityLast.sqrMagnitude;
+
+            var isRunStop = (isGrounded && !isJump && IsRun && !PlayerStaminaModel.IsHasStamina) || (!isGrounded && IsRun);
+            var isRunStopToggle = isGrounded && !isJump && IsRun && Vector3.Angle(transform.forward, velocityLast) > 90 || velocitySqrMagnitude < 0.1f;
+
             Vector3 stepForwardAmount = rootMotion * groundSpeed;
             Vector3 stepDownAmount = Vector3.down * stepDown;
 
@@ -137,10 +155,28 @@ namespace Game.ThirdPerson
             characterController.Move(clampedMovement * Time.deltaTime * speedModifier);
             rootMotion = Vector3.zero;
 
+            if (isRunStop)
+            {
+                Debug.LogError("WALK");
+                SetPreset(Preset.Walk);
+                PlayerRunModel.RunStop();
+            }
+            if (isRunStopToggle)
+            {
+                Debug.LogError("WALK");
+                SetPreset(Preset.Walk);
+                PlayerRunModel.RunStop();
+                PlayerRunModel.RunTogglePassive();
+            }
+
             if (!characterController.isGrounded)
             {
                 SetInAir(0);
             }
+
+            PlayerEventHandler.IsGrounded.Set(isGrounded);
+            PlayerEventHandler.Velocity.Set(velocityLast);
+            PlayerEventHandler.OnPreSaveHandler();
         }
 
         private Vector3 CalculateAirControl()

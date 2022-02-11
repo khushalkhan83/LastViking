@@ -21,14 +21,23 @@ public class PlayerInput : MonoBehaviour
     protected bool m_Jump;
     protected bool m_AttackTap;
     protected bool m_AimInput;
+    protected bool m_RunInput;
     protected bool m_Pause;
     protected bool m_ExternalInputBlocked;
+
+    private bool _isCanRun = false;
+
+    public bool IsCanRun
+    {
+        get { return _isCanRun; }
+        set { _isCanRun = value; }
+    }
 
     public Vector2 MoveInput
     {
         get
         {
-            if(playerControllerInputBlocked || m_ExternalInputBlocked)
+            if (playerControllerInputBlocked || m_ExternalInputBlocked)
                 return Vector2.zero;
             return m_Movement;
         }
@@ -38,7 +47,7 @@ public class PlayerInput : MonoBehaviour
     {
         get
         {
-            if(playerControllerInputBlocked || m_ExternalInputBlocked)
+            if (playerControllerInputBlocked || m_ExternalInputBlocked)
                 return Vector2.zero;
             return m_Camera;
         }
@@ -52,6 +61,11 @@ public class PlayerInput : MonoBehaviour
     public bool AimInput
     {
         get { return m_AimInput && !playerControllerInputBlocked && !m_ExternalInputBlocked; }
+    }
+
+    public bool RunInput
+    {
+        get { return m_RunInput && !playerControllerInputBlocked && !m_ExternalInputBlocked; }
     }
 
     public bool AttackTap
@@ -88,21 +102,24 @@ public class PlayerInput : MonoBehaviour
     private bool wasMovingTouchpad;
     void Update()
     {
-        if(mobileInput)
+        if (mobileInput)
         {
             var movement = TCKInput.GetAxis("Joystick");
-            m_Movement.Set(movement.x,movement.y);
+            m_Movement.Set(movement.x, movement.y);
 
-            Vector2 look = TCKInput.GetAxis( "Touchpad" );
+            Vector2 look = TCKInput.GetAxis("Touchpad");
             m_Camera.Set(look.x, look.y);
-            m_Jump = TCKInput.GetAction( "jumpBtn", EActionEvent.Press );
+            m_Jump = TCKInput.GetAction("jumpBtn", EActionEvent.Press);
 
             m_AimInput = TCKInput.GetAction("AimBtn", EActionEvent.Click);
 
-            if(!wasMovingTouchpad)
+            if (!wasMovingTouchpad)
             {
                 m_AttackTap = TCKInput.GetAction("fireBtn", EActionEvent.Click);
             }
+
+            m_RunInput = TCKInput.GetAction("RunBtn", EActionEvent.Click);
+
 
             wasMovingTouchpad = look != Vector2.zero;
 
@@ -142,29 +159,32 @@ public class PlayerInput : MonoBehaviour
             }
 
             m_AttackTap = false;
-            if(Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown("Fire1"))
             {
                 m_StartTapTime = Time.time;
                 startTapPos = Input.mousePosition;
             }
-            else if(Input.GetButtonUp("Fire1"))
+            else if (Input.GetButtonUp("Fire1"))
             {
-                if((startTapPos - (Vector2)Input.mousePosition).magnitude < k_AttackMaxTapDeltaPosition)
+                if ((startTapPos - (Vector2)Input.mousePosition).magnitude < k_AttackMaxTapDeltaPosition)
                 {
                     m_AttackTap = true;
                 }
             }
 
+            if (IsCanRun)
+                m_RunInput = Input.GetButtonDown("Run");
+
             // m_Pause = Input.GetButtonDown ("Pause");
         }
 
-        #if UNITY_EDITOR
-        if(Input.GetKeyDown(KeyCode.Tab))
+#if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
             mobileInput = !mobileInput;
             Debug.Log($"Switched input source: mobile input = {mobileInput}");
         }
-        #endif
+#endif
     }
 
 

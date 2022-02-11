@@ -20,7 +20,12 @@ namespace Game.ThirdPerson
         private IWeaponInteractor weapon;
 
         private bool aim;
+
+        private bool run;
+
         private bool attackPressed;
+
+        private bool isRunningOrAiming;
 
         private PlayerEventHandler PlayerEventHandler => ModelsSystem.Instance._playerEventHandler;
         private WorldCameraModel WorldCameraModel => ModelsSystem.Instance._worldCameraModel;
@@ -39,37 +44,49 @@ namespace Game.ThirdPerson
 
         private void Update()
         {
-            if(weapon.RangedWeaponEquiped)
+            if (weapon.RangedWeaponEquiped)
             {
-                if(PlayerInput.Instance.AimInput) aim = !aim;
+                if (PlayerInput.Instance.AimInput) aim = !aim;
 
                 aimButton.gameObject.SetActive(true);
-                if(aim && PlayerEventHandler.CanUseWeapon)
+                if (aim && PlayerEventHandler.CanUseWeapon)
                 {
                     SetActiveAimingController();
                 }
-                else if(!aim)
+                else if (!aim)
                 {
                     StartCoroutine(DeactivateAim());
                 }
             }
-            else    
+            else
             {
                 aimButton.gameObject.SetActive(false);
                 aim = false;
             }
 
-            locomotion.SetPreset(aim ? CharacterLocomotion.Preset.Aiming : CharacterLocomotion.Preset.Run);
+            if (PlayerInput.Instance.RunInput) run = !run;
+
+            isRunningOrAiming = run || aim;
+
+            if (isRunningOrAiming)
+            {
+                Debug.LogError("SET RUN");
+                locomotion.SetPreset(aim ? CharacterLocomotion.Preset.Aiming : CharacterLocomotion.Preset.Run);
+            }
+            else
+            {
+                locomotion.SetPreset(CharacterLocomotion.Preset.Walk);
+            }
         }
         #endregion
 
         public void Reset()
         {
             aim = false;
-            SetActiveAimingController(); 
+            SetActiveAimingController();
         }
 
-        public bool CanShowUI {get; set;}
+        public bool CanShowUI { get; set; }
 
         private void SwapMovementType()
         {
@@ -91,7 +108,7 @@ namespace Game.ThirdPerson
         {
             yield return null;
             // aim = false;
-            SetActiveAimingController(); 
+            SetActiveAimingController();
         }
     }
 }
