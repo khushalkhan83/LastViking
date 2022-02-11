@@ -65,6 +65,7 @@ public class PerformanceTester : MonoBehaviour
 
     public void StartTestPerformance()
     {
+        _slider.value=3;
         HandleSliderValue();
 
         SetupDontDestroyOnLoadObjects();
