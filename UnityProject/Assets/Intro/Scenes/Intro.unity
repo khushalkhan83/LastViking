@@ -22339,6 +22339,159 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2000770870}
   m_CullTransparentMesh: 0
+--- !u!1 &2001362671
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2001362673}
+  - component: {fileID: 2001362672}
+  - component: {fileID: 2001362674}
+  m_Layer: 0
+  m_Name: IntroActivationController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2001362672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001362671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d30c3479cbc1d143be4ff7eb3165d84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    _uuid: 084ecce703e63d14d960fc03b4f1090b
+    QualityID: 0
+    VSyncCount: -1
+    AudioLevel: 1
+  _androidQualityConfiguration:
+    _defaultQuaityID: 2
+    _qualityConfigs:
+    - _quaityID: 1
+      _isHasGrass: 0
+      _isHasButterflies: 0
+      _isHasClouds: 0
+      _isHasStars: 0
+      _isHasMoon: 1
+      _sizeWaterReflectionTexture: 0
+      _skyboxSunKeywordID: 0
+      _shaderLODEnvironmentID: 1
+      _shaderLODVegetationID: 1
+      _shaderLODToolsID: 2
+      _waterQualitySettingsID: 1
+      _defaultVSync: 2
+      _targetResolution: 480
+    - _quaityID: 2
+      _isHasGrass: 1
+      _isHasButterflies: 0
+      _isHasClouds: 1
+      _isHasStars: 1
+      _isHasMoon: 1
+      _sizeWaterReflectionTexture: 0
+      _skyboxSunKeywordID: 1
+      _shaderLODEnvironmentID: 2
+      _shaderLODVegetationID: 2
+      _shaderLODToolsID: 2
+      _waterQualitySettingsID: 2
+      _defaultVSync: 2
+      _targetResolution: 720
+    - _quaityID: 3
+      _isHasGrass: 1
+      _isHasButterflies: 1
+      _isHasClouds: 1
+      _isHasStars: 1
+      _isHasMoon: 1
+      _sizeWaterReflectionTexture: 512
+      _skyboxSunKeywordID: 2
+      _shaderLODEnvironmentID: 2
+      _shaderLODVegetationID: 2
+      _shaderLODToolsID: 3
+      _waterQualitySettingsID: 3
+      _defaultVSync: 1
+      _targetResolution: -1
+  _iosQualityConfiguration:
+    _defaultQuaityID: 3
+    _qualityConfigs:
+    - _quaityID: 1
+      _isHasGrass: 1
+      _isHasButterflies: 0
+      _isHasClouds: 0
+      _isHasStars: 1
+      _isHasMoon: 1
+      _sizeWaterReflectionTexture: 0
+      _skyboxSunKeywordID: 1
+      _shaderLODEnvironmentID: 2
+      _shaderLODVegetationID: 2
+      _shaderLODToolsID: 2
+      _waterQualitySettingsID: 1
+      _defaultVSync: 2
+      _targetResolution: -1
+    - _quaityID: 2
+      _isHasGrass: 1
+      _isHasButterflies: 1
+      _isHasClouds: 1
+      _isHasStars: 1
+      _isHasMoon: 1
+      _sizeWaterReflectionTexture: 512
+      _skyboxSunKeywordID: 2
+      _shaderLODEnvironmentID: 2
+      _shaderLODVegetationID: 2
+      _shaderLODToolsID: 2
+      _waterQualitySettingsID: 2
+      _defaultVSync: 2
+      _targetResolution: -1
+    - _quaityID: 3
+      _isHasGrass: 1
+      _isHasButterflies: 1
+      _isHasClouds: 1
+      _isHasStars: 1
+      _isHasMoon: 1
+      _sizeWaterReflectionTexture: 1024
+      _skyboxSunKeywordID: 2
+      _shaderLODEnvironmentID: 2
+      _shaderLODVegetationID: 2
+      _shaderLODToolsID: 3
+      _waterQualitySettingsID: 3
+      _defaultVSync: 1
+      _targetResolution: -1
+  _frameRateProvider: {fileID: 11400000, guid: 298f7a538023d924685f43a41b01d212, type: 2}
+--- !u!4 &2001362673
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001362671}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -69.15953, y: 36.898453, z: 57.918995}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2001362674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001362671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f3c95c83c51d2442b8c5be351105fd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  qualityModel: {fileID: 2001362672}
 --- !u!1 &2003409586
 GameObject:
   m_ObjectHideFlags: 0
