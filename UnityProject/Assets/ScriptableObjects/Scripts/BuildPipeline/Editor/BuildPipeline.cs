@@ -488,7 +488,7 @@ namespace BuildAutomation
 
             PlayerSettings.Android.keystorePass = password;
 
-            PlayerSettings.Android.keyaliasName = "lastpirate";
+            PlayerSettings.Android.keyaliasName = "lastViking";
             PlayerSettings.Android.keyaliasPass = password;
         }
 
