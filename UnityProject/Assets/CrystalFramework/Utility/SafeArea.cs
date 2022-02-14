@@ -1,203 +1,299 @@
 using UnityEngine;
+using UnityEngine.UI;
 
-namespace Crystal
+using AlmostEngine.Screenshot;
+
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
+namespace AlmostEngine.Preview
 {
-    /// <summary>
-    /// Safe area implementation for notched mobile devices. Usage:
-    ///  (1) Add this component to the top level of any GUI panel. 
-    ///  (2) If the panel uses a full screen background image, then create an immediate child and put the component on that instead, with all other elements childed below it.
-    ///      This will allow the background image to stretch to the full extents of the screen behind the notch, which looks nicer.
-    ///  (3) For other cases that use a mixture of full horizontal and vertical background stripes, use the Conform X & Y controls on separate elements as needed.
-    /// </summary>
-    public class SafeArea : MonoBehaviour
-    {
-        #region Simulations
-        /// <summary>
-        /// Simulation device that uses safe area due to a physical notch or software home bar. For use in Editor only.
-        /// </summary>
-        public enum SimDevice
-        {
-            /// <summary>
-            /// Don't use a simulated safe area - GUI will be full screen as normal.
-            /// </summary>
-            None,
-            /// <summary>
-            /// Simulate the iPhone X and Xs (identical safe areas).
-            /// </summary>
-            iPhoneX,
-            /// <summary>
-            /// Simulate the iPhone Xs Max and XR (identical safe areas).
-            /// </summary>
-            iPhoneXsMax,
-            /// <summary>
-            /// Simulate the Google Pixel 3 XL using landscape left.
-            /// </summary>
-            Pixel3XL_LSL,
-            /// <summary>
-            /// Simulate the Google Pixel 3 XL using landscape right.
-            /// </summary>
-            Pixel3XL_LSR
-        }
+	[ExecuteInEditMode]
+	public class SafeArea : MonoBehaviour
+	{
+		[HideInInspector]
+		public RectTransform m_Panel;
 
-        /// <summary>
-        /// Simulation mode for use in editor only. This can be edited at runtime to toggle between different safe areas.
-        /// </summary>
-        public static SimDevice Sim = SimDevice.None;
+		#region Constraints
 
-        /// <summary>
-        /// Normalised safe areas for iPhone X with Home indicator (ratios are identical to iPhone Xs). Absolute values:
-        ///  PortraitU x=0, y=102, w=1125, h=2202 on full extents w=1125, h=2436;
-        ///  PortraitD x=0, y=102, w=1125, h=2202 on full extents w=1125, h=2436 (not supported, remains in Portrait Up);
-        ///  LandscapeL x=132, y=63, w=2172, h=1062 on full extents w=2436, h=1125;
-        ///  LandscapeR x=132, y=63, w=2172, h=1062 on full extents w=2436, h=1125.
-        ///  Aspect Ratio: ~19.5:9.
-        /// </summary>
-        Rect[] NSA_iPhoneX = new Rect[]
-        {
-            new Rect (0f, 102f / 2436f, 1f, 2202f / 2436f),  // Portrait
-            new Rect (132f / 2436f, 63f / 1125f, 2172f / 2436f, 1062f / 1125f)  // Landscape
-        };
+		public enum HorizontalConstraint
+		{
+			LEFT,
+			RIGHT,
+			LEFT_AND_RIGHT}
+		;
 
-        /// <summary>
-        /// Normalised safe areas for iPhone Xs Max with Home indicator (ratios are identical to iPhone XR). Absolute values:
-        ///  PortraitU x=0, y=102, w=1242, h=2454 on full extents w=1242, h=2688;
-        ///  PortraitD x=0, y=102, w=1242, h=2454 on full extents w=1242, h=2688 (not supported, remains in Portrait Up);
-        ///  LandscapeL x=132, y=63, w=2424, h=1179 on full extents w=2688, h=1242;
-        ///  LandscapeR x=132, y=63, w=2424, h=1179 on full extents w=2688, h=1242.
-        ///  Aspect Ratio: ~19.5:9.
-        /// </summary>
-        Rect[] NSA_iPhoneXsMax = new Rect[]
-        {
-            new Rect (0f, 102f / 2688f, 1f, 2454f / 2688f),  // Portrait
-            new Rect (132f / 2688f, 63f / 1242f, 2424f / 2688f, 1179f / 1242f)  // Landscape
-        };
+		public enum VerticalConstraint
+		{
+			UP,
+			DOWN,
+			UP_AND_DOWN}
+		;
 
-        /// <summary>
-        /// Normalised safe areas for Pixel 3 XL using landscape left. Absolute values:
-        ///  PortraitU x=0, y=0, w=1440, h=2789 on full extents w=1440, h=2960;
-        ///  PortraitD x=0, y=0, w=1440, h=2789 on full extents w=1440, h=2960;
-        ///  LandscapeL x=171, y=0, w=2789, h=1440 on full extents w=2960, h=1440;
-        ///  LandscapeR x=0, y=0, w=2789, h=1440 on full extents w=2960, h=1440.
-        ///  Aspect Ratio: 18.5:9.
-        /// </summary>
-        Rect[] NSA_Pixel3XL_LSL = new Rect[]
-        {
-            new Rect (0f, 0f, 1f, 2789f / 2960f),  // Portrait
-            new Rect (0f, 0f, 2789f / 2960f, 1f)  // Landscape
-        };
 
-        /// <summary>
-        /// Normalised safe areas for Pixel 3 XL using landscape right. Absolute values and aspect ratio same as above.
-        /// </summary>
-        Rect[] NSA_Pixel3XL_LSR = new Rect[]
-        {
-            new Rect (0f, 0f, 1f, 2789f / 2960f),  // Portrait
-            new Rect (171f / 2960f, 0f, 2789f / 2960f, 1f)  // Landscape
-        };
-        #endregion
+		public enum Constraint
+		{
+			NONE,
+			SNAP,
+			PUSH,
+			ENLARGE}
+		;
 
-        RectTransform Panel;
-        Rect LastSafeArea = new Rect (0, 0, 0, 0);
-        [SerializeField] bool ConformX = true;  // Conform to screen safe area on X-axis (default true, disable to ignore)
-        [SerializeField] bool ConformY = true;  // Conform to screen safe area on Y-axis (default true, disable to ignore)
+		public Constraint m_HorizontalConstraintType = Constraint.NONE;
+		public HorizontalConstraint m_HorizontalConstraint = HorizontalConstraint.LEFT_AND_RIGHT;
 
-        void Awake ()
-        {
-            Panel = GetComponent<RectTransform> ();
+		public Constraint m_VerticalConstraintType = Constraint.NONE;
+		public VerticalConstraint m_VerticalConstraint = VerticalConstraint.UP_AND_DOWN;
 
-            if (Panel == null)
-            {
-                Debug.LogError ("Cannot apply safe area - no RectTransform found on " + name);
-                Destroy (gameObject);
-            }
+		#endregion
 
-            Refresh ();
-        }
+		#region Handle Callbacks
 
-        void Update ()
-        {
-            Refresh ();
-        }
+		public Vector2 m_DefaultAnchorMin = new Vector2 (-99f, -99f);
+		public Vector2 m_DefaultAnchorMax = new Vector2 (-99f, -99f);
 
-        void Refresh ()
-        {
-            Rect safeArea = GetSafeArea ();
+		#endregion
 
-            if (safeArea != LastSafeArea)
-                ApplySafeArea (safeArea);
-        }
+		#region Start & update
 
-        Rect GetSafeArea ()
-        {
-            Rect safeArea = Screen.safeArea;
+		void Start ()
+		{
 
-            if (Application.isEditor && Sim != SimDevice.None)
-            {
-                Rect nsa = new Rect (0, 0, Screen.width, Screen.height);
+			// PlayerSettings.Android.renderOutsideSafeArea = false;
 
-                switch (Sim)
-                {
-                    case SimDevice.iPhoneX:
-                        if (Screen.height > Screen.width)  // Portrait
-                            nsa = NSA_iPhoneX[0];
-                        else  // Landscape
-                            nsa = NSA_iPhoneX[1];
-                        break;
-                    case SimDevice.iPhoneXsMax:
-                        if (Screen.height > Screen.width)  // Portrait
-                            nsa = NSA_iPhoneXsMax[0];
-                        else  // Landscape
-                            nsa = NSA_iPhoneXsMax[1];
-                        break;
-                    case SimDevice.Pixel3XL_LSL:
-                        if (Screen.height > Screen.width)  // Portrait
-                            nsa = NSA_Pixel3XL_LSL[0];
-                        else  // Landscape
-                            nsa = NSA_Pixel3XL_LSL[1];
-                        break;
-                    case SimDevice.Pixel3XL_LSR:
-                        if (Screen.height > Screen.width)  // Portrait
-                            nsa = NSA_Pixel3XL_LSR[0];
-                        else  // Landscape
-                            nsa = NSA_Pixel3XL_LSR[1];
-                        break;
-                    default:
-                        break;
-                }
 
-                safeArea = new Rect (Screen.width * nsa.x, Screen.height * nsa.y, Screen.width * nsa.width, Screen.height * nsa.height);
-            }
+			#if UNITY_EDITOR 
+			if (!Application.isPlaying) {
+				return;
+			}
+			#endif
 
-            return safeArea;
-        }
+			// Apply safe area at startup
+			ApplySafeAreaIfNeeded ();
+		}
 
-        void ApplySafeArea (Rect r)
-        {
-            LastSafeArea = r;
+		void Update ()
+		{
+			#if UNITY_EDITOR 
+			// In editor (update execute in edit mode) we only apply the safe area when previewing a device
+			if (!m_CanUpdateSafeArea) {
+				return;
+			}
+			#endif
 
-            // Ignore x-axis?
-            if (!ConformX)
-            {
-                r.x = 0;
-                r.width = Screen.width;
-            }
+			// We constantly check if the safe area changed, for instance if the screen is rotated
+			ApplySafeAreaIfNeeded ();
+		}
 
-            // Ignore y-axis?
-            if (!ConformY)
-            {
-                r.y = 0;
-                r.height = Screen.height;
-            }
+		#endregion
 
-            // Convert safe area rectangle from absolute pixels to normalised anchor coordinates
-            Vector2 anchorMin = r.position;
-            Vector2 anchorMax = r.position + r.size;
-            anchorMin.x /= Screen.width;
-            anchorMin.y /= Screen.height;
-            anchorMax.x /= Screen.width;
-            anchorMax.y /= Screen.height;
-            Panel.anchorMin = anchorMin;
-            Panel.anchorMax = anchorMax;
-        }
-    }
+		#region Safe Area & constraints
+
+		Rect m_LastSafeArea = new Rect (0, 0, 0, 0);
+
+		public void Restore ()
+		{
+			// Restore default anchor
+			m_Panel.anchorMin = m_DefaultAnchorMin;
+			m_Panel.anchorMax = m_DefaultAnchorMax;
+		}
+
+		public void ApplySafeArea (Rect rect)
+		{
+//			Debug.Log ("Apply " + name + " safe area " + rect);
+
+			if (m_Panel == null || Application.isEditor) {
+				m_Panel = GetComponent<RectTransform> ();
+			}
+			if (m_DefaultAnchorMin == new Vector2 (-99f, -99f)) {
+				m_DefaultAnchorMin = m_Panel.anchorMin;
+				m_DefaultAnchorMax = m_Panel.anchorMax;
+			}
+
+			#if UNITY_EDITOR
+			if (!Application.isPlaying) {
+				// Save current values to enable UNDO if something goes wrong
+				Undo.RecordObject (m_Panel, "Safe Area");
+			}
+			#endif
+
+			// Safe current safe area to apply the modification only when changed
+			m_LastSafeArea = rect;
+
+			// Restore default anchor
+			m_Panel.anchorMin = m_DefaultAnchorMin;
+			m_Panel.anchorMax = m_DefaultAnchorMax;
+
+			// HORIZONTAL
+			if (m_HorizontalConstraintType == Constraint.SNAP) {
+				if (m_HorizontalConstraint == HorizontalConstraint.LEFT || m_HorizontalConstraint == HorizontalConstraint.LEFT_AND_RIGHT) {
+					Vector2 anchorMin = m_Panel.anchorMin;
+					anchorMin.x = rect.position.x / Screen.width;
+					m_Panel.anchorMin = anchorMin;
+				}
+				if (m_HorizontalConstraint == HorizontalConstraint.RIGHT || m_HorizontalConstraint == HorizontalConstraint.LEFT_AND_RIGHT) {
+					Vector2 anchorMax = m_Panel.anchorMax; 
+					anchorMax.x = (rect.position.x + rect.size.x) / Screen.width;
+					m_Panel.anchorMax = anchorMax;
+				}
+			}
+
+			if (m_HorizontalConstraintType == Constraint.ENLARGE) {
+				if (m_HorizontalConstraint == HorizontalConstraint.LEFT || m_HorizontalConstraint == HorizontalConstraint.LEFT_AND_RIGHT) {
+					Vector2 anchorMax = m_Panel.anchorMax; 
+					anchorMax.x = anchorMax.x + rect.position.x / Screen.width;
+					m_Panel.anchorMax = anchorMax;
+				}
+				if (m_HorizontalConstraint == HorizontalConstraint.RIGHT || m_HorizontalConstraint == HorizontalConstraint.LEFT_AND_RIGHT) {
+					Vector2 anchorMin = m_Panel.anchorMin; 
+					anchorMin.x = anchorMin.x - (Screen.width - rect.width - rect.position.x) / Screen.width;
+					m_Panel.anchorMin = anchorMin;
+				}
+			}
+
+
+			if (m_HorizontalConstraintType == Constraint.PUSH) {
+				if (m_HorizontalConstraint == HorizontalConstraint.LEFT || m_HorizontalConstraint == HorizontalConstraint.LEFT_AND_RIGHT) {
+					Vector2 anchorMin = m_Panel.anchorMin;
+					anchorMin.x = anchorMin.x + rect.position.x / Screen.width;
+					m_Panel.anchorMin = anchorMin;
+					Vector2 anchorMax = m_Panel.anchorMax; 
+					anchorMax.x = anchorMax.x + rect.position.x / Screen.width;
+					m_Panel.anchorMax = anchorMax;
+				}
+				if (m_HorizontalConstraint == HorizontalConstraint.RIGHT || m_HorizontalConstraint == HorizontalConstraint.LEFT_AND_RIGHT) {
+					Vector2 anchorMin = m_Panel.anchorMin;
+					anchorMin.x = anchorMin.x - (Screen.width - rect.width - rect.position.x) / Screen.width;
+					m_Panel.anchorMin = anchorMin;
+					Vector2 anchorMax = m_Panel.anchorMax; 
+					anchorMax.x = anchorMax.x - (Screen.width - rect.width - rect.position.x) / Screen.width;
+					m_Panel.anchorMax = anchorMax;
+				}
+			}
+
+
+			// VERTICAL
+
+			if (m_VerticalConstraintType == Constraint.SNAP) {
+				if (m_VerticalConstraint == VerticalConstraint.DOWN || m_VerticalConstraint == VerticalConstraint.UP_AND_DOWN) {
+					Vector2 anchorMin = m_Panel.anchorMin;
+					anchorMin.y = rect.position.y / Screen.height;
+					m_Panel.anchorMin = anchorMin;
+				}
+				if (m_VerticalConstraint == VerticalConstraint.UP || m_VerticalConstraint == VerticalConstraint.UP_AND_DOWN) {
+					Vector2 anchorMax = m_Panel.anchorMax; 
+					anchorMax.y = (rect.position.y + rect.size.y) / Screen.height;
+					m_Panel.anchorMax = anchorMax;
+				}
+			}
+
+			if (m_VerticalConstraintType == Constraint.ENLARGE) {
+				if (m_VerticalConstraint == VerticalConstraint.UP || m_VerticalConstraint == VerticalConstraint.UP_AND_DOWN) {
+					Vector2 anchorMin = m_Panel.anchorMin; 
+					anchorMin.y = anchorMin.y - (Screen.height - rect.height - rect.position.y) / Screen.height;
+					m_Panel.anchorMin = anchorMin;
+				}
+				if (m_VerticalConstraint == VerticalConstraint.DOWN || m_VerticalConstraint == VerticalConstraint.UP_AND_DOWN) {
+					Vector2 anchorMax = m_Panel.anchorMax; 
+					anchorMax.y = anchorMax.y + rect.position.y / Screen.height;
+					m_Panel.anchorMax = anchorMax;
+				}
+			}
+
+			if (m_VerticalConstraintType == Constraint.PUSH) {
+				if (m_VerticalConstraint == VerticalConstraint.UP || m_VerticalConstraint == VerticalConstraint.UP_AND_DOWN) {
+					Vector2 anchorMin = m_Panel.anchorMin;
+					anchorMin.y = anchorMin.y - (Screen.height - rect.height - rect.position.y) / Screen.height;
+					m_Panel.anchorMin = anchorMin;
+					Vector2 anchorMax = m_Panel.anchorMax; 
+					anchorMax.y = anchorMax.y - (Screen.height - rect.height - rect.position.y) / Screen.height;
+					m_Panel.anchorMax = anchorMax;
+				}
+				if (m_VerticalConstraint == VerticalConstraint.DOWN || m_VerticalConstraint == VerticalConstraint.UP_AND_DOWN) {
+					Vector2 anchorMin = m_Panel.anchorMin;
+					anchorMin.y = anchorMin.y + rect.position.y / Screen.height;
+					m_Panel.anchorMin = anchorMin;
+					Vector2 anchorMax = m_Panel.anchorMax; 
+					anchorMax.y = anchorMax.y + rect.position.y / Screen.height;
+					m_Panel.anchorMax = anchorMax;
+				}
+			}
+
+		}
+
+		#endregion
+
+
+
+		void ApplySafeAreaIfNeeded ()
+		{
+
+			Rect safeArea = DeviceInfo.GetSafeArea ();
+
+			#if !UNITY_EDITOR 
+			if (safeArea == m_LastSafeArea) {
+				return;
+			}
+			#endif
+
+			ApplySafeArea (safeArea);
+
+		}
+
+		#region Events and callbacks logic to update safe area in editor
+
+
+		#if UNITY_EDITOR
+
+		bool m_CanUpdateSafeArea = false;
+
+		void OnEnable ()
+		{
+			ScreenshotTaker.onResolutionUpdateStartDelegate += DeviceStartUpdated;
+			ScreenshotTaker.onResolutionUpdateEndDelegate += DeviceEndUpdated;
+			ScreenshotTaker.onResolutionScreenResizedDelegate += DeviceResized;
+		}
+
+		void OnDisable ()
+		{
+			ScreenshotTaker.onResolutionUpdateStartDelegate -= DeviceStartUpdated;
+			ScreenshotTaker.onResolutionUpdateEndDelegate -= DeviceEndUpdated;
+			ScreenshotTaker.onResolutionScreenResizedDelegate -= DeviceResized;
+		}
+
+		void DeviceStartUpdated (ScreenshotResolution device)
+		{
+			// In live preview, we ignore the resize event for non device,
+			// to prevent resizing to the device full preview with border 
+			if (Application.isPlaying && device.m_ResolutionName == "" && DeviceInfo.m_IsLivePreview) {
+				return;
+			}
+//			Debug.Log ("Start " + device.m_ResolutionName);
+
+			// When a device simulation starts, we allow the safe area to be updated
+			m_CanUpdateSafeArea = true;
+		}
+
+		void DeviceResized (ScreenshotResolution device)
+		{
+		}
+
+		void DeviceEndUpdated (ScreenshotResolution device)
+		{
+			// When the resize is done we stop the update rights
+			m_CanUpdateSafeArea = false;
+
+			// We restore the safe area except if it is a live preview to prevent flickering
+			if (!Application.isPlaying || !DeviceInfo.m_IsLivePreview) {
+				Restore ();
+			}
+		}
+
+		#endif
+
+		#endregion
+
+	}
 }

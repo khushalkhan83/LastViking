@@ -1,11 +1,16 @@
+using AlmostEngine.Preview;
 using Core;
 using Core.Controllers;
 using Core.Views;
+using CustomeEditorTools;
 using Game.Controllers;
+using NaughtyAttributes;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using UI_Template.Animations;
 using UnityEngine;
 using StackViews = System.Collections.Generic.Stack<Core.Views.IView>;
 
@@ -18,7 +23,7 @@ namespace Game.Views
         {
             get
             {
-                if(instance == null)
+                if (instance == null)
                 {
                     var variable = Resources.Load<ViewsSystemVariable>("SO_System_Views");
                     instance = variable.Value;
@@ -34,7 +39,7 @@ namespace Game.Views
         [SerializeField] private LayersProvider _layersProvider;
         [SerializeField] private ViewsMapper _ViewsMapper;
         [SerializeField] private InjectionSystem _injectionSystem;
-        
+
         [Header("Pool settings")]
         [SerializeField] private Transform _defaultPool;
         [SerializeField] private Transform _baseLayerPool;
@@ -67,7 +72,8 @@ namespace Game.Views
 
         //
 
-        private void Awake() {
+        private void Awake()
+        {
             _variable.Value = this;
         }
 
@@ -286,7 +292,7 @@ namespace Game.Views
                     {
                         var poolStack = GetViews(view.GetType());
                         bool isViewInPool = poolStack != null ? poolStack.Contains(view) : false;
-                        if(!isViewInPool)
+                        if (!isViewInPool)
                         {
                             HideView(view, Configs[view]);
                         }
@@ -319,7 +325,7 @@ namespace Game.Views
 
             bool viewGameObjectExist = viewComponent != null;
 
-            if(viewGameObjectExist)
+            if (viewGameObjectExist)
             {
                 viewComponent.gameObject.SetActive(false);
                 viewComponent.transform.SetParent(GetPool());
@@ -333,7 +339,7 @@ namespace Game.Views
 
             Transform GetPool()
             {
-                if(viewConfigData.LayerID == LayerID.Base)
+                if (viewConfigData.LayerID == LayerID.Base)
                 {
                     return _baseLayerPool;
                 }
@@ -365,6 +371,200 @@ namespace Game.Views
             }
 
             stack.Push(viewController);
+        }
+        [Button] void TestSaveAreas() => ValidateViewsSafeArea(true);
+        [Button] void TestAnimations() => ValidateUIOpenAnimations(true);
+
+        public bool ValidateViewsSafeArea(bool showPopup = false, bool forceShowPopupOnError = false)
+        {
+            bool isValid = true;
+
+            var views = Enum.GetValues(typeof(ViewConfigID)) as ViewConfigID[];
+
+            Dictionary<LayerID, StringBuilder> stringContainerByLayer = new Dictionary<LayerID, StringBuilder>();
+
+            var layers = (Enum.GetValues(typeof(LayerID)) as LayerID[]).ToList();
+
+            foreach (var layer in layers)
+            {
+                stringContainerByLayer.Add(layer, new StringBuilder());
+            }
+
+            foreach (var viewID in views)
+            {
+                if (viewID == ViewConfigID.None) continue;
+
+                var data = ViewsMapper[viewID];
+
+                var viewPrefab = ViewsProvider[data.ViewID];
+
+                var safeArea = viewPrefab.GetComponentInChildren<SafeArea>(true);
+
+                StringBuilder sb;
+
+                try
+                {
+                    sb = stringContainerByLayer[data.LayerID];
+                }
+                catch (System.Exception)
+                {
+                    Debug.Log("Error");
+                    throw;
+                }
+
+                SafeArea layerSafeArea = GetSafeAreaFromLayerCanvas(data);
+
+                if (safeArea != null)
+                {
+                    if (layerSafeArea != null)
+                    {
+                        sb.AppendLine($"++ {viewID} has Safe Area. Olso it contains safe area on Layer");
+                    }
+                    else
+                    {
+                        sb.AppendLine($"+ {viewID} has Safe Area");
+                    }
+                }
+                else
+                {
+                    if (data.LayerID == LayerID.None)
+                    {
+                        sb.AppendLine($"+ {data.ViewID} has no Layer");
+                        continue;
+                    }
+
+                    if (layerSafeArea != null)
+                    {
+                        sb.AppendLine($"+ {data.ViewID} has Safe Area on {data.LayerID.ToString()}");
+                    }
+                    else
+                    {
+                        sb.AppendLine($"- {data.ViewID} no safe area");
+                        isValid = false;
+                    }
+                }
+            }
+
+            StringBuilder output = new StringBuilder();
+
+            foreach (var layer in layers)
+            {
+                var sb = stringContainerByLayer[layer];
+                output.AppendLine($"======={layer.ToString()} Layer=======");
+                output.AppendLine(sb.ToString());
+                output.AppendLine();
+            }
+
+            if (showPopup)
+            {
+                EditorOutputUtil.PresentMessage(output.ToString());
+            }
+            else
+            {
+                if (!isValid && forceShowPopupOnError)
+                    EditorOutputUtil.PresentMessage(output.ToString());
+            }
+
+            return isValid;
+
+            SafeArea GetSafeAreaFromLayerCanvas(ViewConfigData data)
+            {
+                if (data.LayerID == LayerID.None) return null;
+                var layer = LayersProvider[data.LayerID];
+                var layerSafeArea = layer.GetComponent<SafeArea>();
+                return layerSafeArea;
+            }
+        }
+
+        public bool ValidateUIOpenAnimations(bool showPopup = false, bool forceShowPopupOnError = false)
+        {
+            Type animationComponentType = typeof(OpenAnimation);
+            string animationComponentaName = animationComponentType.Name;
+            var layersWithAnimationEffect = new LayerID[] { LayerID.Popup, LayerID.Window };
+
+            bool isValid = true;
+
+            var views = Enum.GetValues(typeof(ViewConfigID)) as ViewConfigID[];
+
+            Dictionary<LayerID, StringBuilder> stringContainerByLayer = new Dictionary<LayerID, StringBuilder>();
+
+            var layers = (Enum.GetValues(typeof(LayerID)) as LayerID[]).ToList();
+
+            foreach (var layer in layers)
+            {
+                stringContainerByLayer.Add(layer, new StringBuilder());
+            }
+
+            foreach (var viewID in views)
+            {
+                if (viewID == ViewConfigID.None) continue;
+
+                var data = ViewsMapper[viewID];
+
+                var viewPrefab = ViewsProvider[data.ViewID];
+
+                var windowOpenEffect = viewPrefab.GetComponentInChildren(animationComponentType, true);
+
+                StringBuilder sb;
+
+                try
+                {
+                    sb = stringContainerByLayer[data.LayerID];
+                }
+                catch (System.Exception)
+                {
+                    Debug.Log("Error");
+                    throw;
+                }
+
+                var layerID = data.LayerID;
+                if (windowOpenEffect != null)
+                {
+                    if (layersWithAnimationEffect.Contains(layerID))
+                    {
+                        sb.AppendLine($"+ {viewID} has {animationComponentaName} component");
+                    }
+                    else
+                    {
+                        sb.AppendLine($"- {viewID} not expected {animationComponentaName} component for layer {layerID}");
+                        isValid = false;
+                    }
+                }
+                else
+                {
+                    if (layersWithAnimationEffect.Contains(layerID))
+                    {
+                        sb.AppendLine($"- {data.ViewID} missing {animationComponentaName} component");
+                        isValid = false;
+                    }
+                    else
+                    {
+                        sb.AppendLine($"+ {data.ViewID} {layerID} no need {animationComponentaName} component");
+                    }
+                }
+            }
+
+            StringBuilder output = new StringBuilder();
+
+            foreach (var layer in layers)
+            {
+                var sb = stringContainerByLayer[layer];
+                output.AppendLine($"======={layer.ToString()} Layer=======");
+                output.AppendLine(sb.ToString());
+                output.AppendLine();
+            }
+
+            if (showPopup)
+            {
+                EditorOutputUtil.PresentMessage(output.ToString());
+            }
+            else
+            {
+                if (!isValid && forceShowPopupOnError)
+                    EditorOutputUtil.PresentMessage(output.ToString());
+            }
+
+            return isValid;
         }
     }
 }
