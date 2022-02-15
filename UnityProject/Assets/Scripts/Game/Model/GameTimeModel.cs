@@ -46,6 +46,8 @@ namespace Game.Models
         [SerializeField] private ObscuredULong _dayDuration;
         [SerializeField] private ObscuredULong _startTicks;
         [SerializeField] private ObscuredULong _maxOneUpdateTicks;
+        [SerializeField] private int _dayStartHour = 6;
+        [SerializeField] private int _dayEndHour = 20;
 
 #pragma warning restore 0649
         #endregion
@@ -79,7 +81,7 @@ namespace Game.Models
         public ulong Minutes => GetMinutes(Ticks);
         public ulong Seconds => GetSeconds(Ticks);
         public ulong Miliseconds => GetMiliseconds(Ticks);
-        public float TimeOfDay => GetTimeOfDay(TimeOfDayTicks); 
+        public float TimeOfDay => GetTimeOfDay(TimeOfDayTicks);
 
         public ulong GetDays(ulong ticks) => ticks / DayDurationTicks;
         public ulong GetHours(ulong ticks) => (ticks / (DayDurationTicks / 24)) % 24;
@@ -106,9 +108,10 @@ namespace Game.Models
         public ulong EnviroTimeOfDayTicks => EnviroTicks % DayDurationTicks;
         public long EnviroTicksRealLast { get; private set; }
         public long EnviroTicksRealNow { get; private set; }
+        public bool IsDayNow { get; private set; }
 
         public event Action OnChangeDay;
-
+        public event Action OnChangeDayNight;
         //
 
         public long GetTicks(float seconds) => TimeSpan.FromSeconds(seconds).Ticks;
@@ -122,9 +125,9 @@ namespace Game.Models
             TicksRealNow = RealTimeNowTick;
 
             ulong updateTicks = (ulong)((TicksRealNow - TicksRealLast) * Scale);
-            if(updateTicks > _maxOneUpdateTicks)
+            if (updateTicks > _maxOneUpdateTicks)
                 updateTicks = _maxOneUpdateTicks;
-            else if(updateTicks < 0)
+            else if (updateTicks < 0)
                 updateTicks = 0;
 
             Ticks += updateTicks;
@@ -148,6 +151,8 @@ namespace Game.Models
 
                 Scale = Mathf.Lerp(FadeScaleFrom, FadeScaleTo, 1 - RemainingFadeTime / FadeTime);
             }
+
+            UpdateDayNightTime();
         }
 
         public void EnviroUpdateProcess(float deltaTime)
@@ -156,9 +161,9 @@ namespace Game.Models
             EnviroTicksRealNow = RealTimeNowTick;
 
             ulong updateTicks = (ulong)((EnviroTicksRealNow - EnviroTicksRealLast) * Scale);
-            if(updateTicks > _maxOneUpdateTicks)
+            if (updateTicks > _maxOneUpdateTicks)
                 updateTicks = _maxOneUpdateTicks;
-            else if(updateTicks < 0)
+            else if (updateTicks < 0)
                 updateTicks = 0;
 
             EnviroTicks += updateTicks;
@@ -176,6 +181,8 @@ namespace Game.Models
 
         public void InGame()
         {
+            if (IsInGame) return;
+
             TicksRealLast = RealTimeNowTick;
             ScaleRestore();
             StartGame();
@@ -186,6 +193,12 @@ namespace Game.Models
             ScaleSave();
             ScaleStop();
             StopGame();
+        }
+
+        public void SetGameOnPause(bool pause)
+        {
+            if (pause) OutGame();
+            else InGame();
         }
 
         public void PauseEnviroTime()
@@ -262,7 +275,23 @@ namespace Game.Models
             }
         }
 
-        private void Awake() {
+        private void UpdateDayNightTime()
+        {
+            bool isDay = (int)Hours >= _dayStartHour && (int)Hours < _dayEndHour;
+            SetIsDayNow(isDay);
+        }
+
+        private void SetIsDayNow(bool value)
+        {
+            if(IsDayNow != value)
+            {
+                IsDayNow = value;
+                OnChangeDayNight?.Invoke();
+            }
+        }
+
+        private void Awake()
+        {
             TicksRealLast = RealTimeNowTick;
             TicksRealNow = RealTimeNowTick;
 
@@ -271,8 +300,9 @@ namespace Game.Models
             {
                 EnviroTicks = Ticks;
             }
-            
+
             DayLast = Days;
+            ScaleReset();
         }
     }
 }

@@ -42,5 +42,11 @@ namespace Core.Storage
 
         public event Action<IUnique, SaveTime> OnDataChanged;
         public void ChangeData() => OnDataChanged?.Invoke(this, TimeSave);
+
+        public void WriteData(Action action)
+        {
+            action?.Invoke();
+            ChangeData();
+        }
     }
 }

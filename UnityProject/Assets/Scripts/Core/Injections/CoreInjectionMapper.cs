@@ -1,6 +1,7 @@
 using ChunkLoaders;
 using Game.Audio;
 using Game.Controllers;
+using Game.Features.DailyRewards.Models;
 using Game.Models;
 using Game.Models.AI;
 using Game.Models.Notifications;
@@ -319,6 +320,8 @@ namespace Core
         [SerializeField] private VikingTutorialModel _vikingTutorialModel;
         [SerializeField] private ZoneModel _zoneModel;
         [SerializeField] private HouseBuildingViewModel _houseBuildingViewModel;
+        [SerializeField] private GameUnscaledTimeModel _gameUnscaledTimeModel;
+        [SerializeField] private TimeInGameModel _timeInGameModel;
         ///CODE_GENERATION_FIELDS
 
 #pragma warning restore 0649
@@ -621,6 +624,8 @@ namespace Core
                 { typeof(VikingTutorialModel), _vikingTutorialModel},
                 { typeof(ZoneModel), _zoneModel},
                 { typeof(HouseBuildingViewModel), _houseBuildingViewModel},
+                { typeof(GameUnscaledTimeModel), _gameUnscaledTimeModel},
+                { typeof(TimeInGameModel), _timeInGameModel},
                 ///CODE_GENERATION_LINKS
             };
         }

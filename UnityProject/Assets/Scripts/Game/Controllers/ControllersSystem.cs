@@ -270,6 +270,7 @@ namespace Game.Controllers
             { ControllerID.ActivateLearnInputViewController, typeof(IActivateLearnInputViewController) },
             { ControllerID.WipeSaveController, typeof(IWipeSaveController) },
             { ControllerID.DeleteItemController, typeof(IDeleteItemController) },
+            { ControllerID.TimeInGameController, typeof(ITimeInGameController) },
             ///CODE_GENERATION_IDS
         };
 
@@ -506,6 +507,7 @@ namespace Game.Controllers
             { typeof(IActivateLearnInputViewController), typeof(ActivateLearnInputViewController) },
             { typeof(IWipeSaveController), typeof(WipeSaveController) },
             { typeof(IDeleteItemController), typeof(DeleteItemController) },
+            { typeof(ITimeInGameController), typeof(TimeInGameController) },
             ///CODE_GENERATION_INTERFACES
         };
 

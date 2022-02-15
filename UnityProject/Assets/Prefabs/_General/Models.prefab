@@ -173,6 +173,7 @@ Transform:
   - {fileID: 5472042945343734099}
   - {fileID: 2173955379371378353}
   - {fileID: 6448943005705466623}
+  - {fileID: 92305952483073851}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4548,6 +4549,7 @@ MonoBehaviour:
   _chanelID: last_pirate
   _chanelName: Last Pirate
   _chanelDescriptoin: Last Pirate's Local Notifications
+  _chanelImportance: 4
   _smallIcon: icon_small
   _largeIcon: icon_large
   _iOSCategoryIdentifier: last_pirate
@@ -4558,6 +4560,49 @@ MonoBehaviour:
   _minMorningHours: 9
   _maxEveningHours: 23
   testNoficationID: 0
+--- !u!1 &4300854760005593203
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 92305952483073851}
+  - component: {fileID: 7336948588775923458}
+  m_Layer: 0
+  m_Name: GameUnscaledTime
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &92305952483073851
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4300854760005593203}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4902888046486332}
+  m_RootOrder: 51
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7336948588775923458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4300854760005593203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813143950f69f19449e1f41fcbe30774, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4611204321068920875
 GameObject:
   m_ObjectHideFlags: 0
@@ -4662,6 +4707,7 @@ GameObject:
   - component: {fileID: 3205510594856202900}
   - component: {fileID: 3158591269996272425}
   - component: {fileID: 8793457904894844986}
+  - component: {fileID: 37722476254212982}
   m_Layer: 0
   m_Name: Time
   m_TagString: Untagged
@@ -4729,6 +4775,8 @@ MonoBehaviour:
     inited: 1
     fakeValue: 10000000
     fakeValueActive: 1
+  _dayStartHour: 6
+  _dayEndHour: 20
 --- !u!114 &1424917199525493534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4775,6 +4823,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48037c72e105f954c951239d5e794349, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &37722476254212982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4817699618886693626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e4f572f43df0284592c452efca3f1ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5091658252546979443
@@ -9442,6 +9502,8 @@ MonoBehaviour:
   _learnInputViewModel: {fileID: 9123447375143999644}
   _wipeSaveModel: {fileID: 0}
   _deleteItemModel: {fileID: 5882230758976891429}
+  _gameUnscaledTimeModel: {fileID: 7336948588775923458}
+  _timeInGameModel: {fileID: 37722476254212982}
 --- !u!1 &8826425175795988081
 GameObject:
   m_ObjectHideFlags: 0

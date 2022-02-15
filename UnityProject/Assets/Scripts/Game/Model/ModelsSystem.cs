@@ -18,6 +18,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Game.Models.Notifications;
+using Game.Features.DailyRewards.Models;
 
 namespace Game.Models
 {
@@ -252,6 +253,9 @@ namespace Game.Models
         public LearnInputViewModel _learnInputViewModel;
         public WipeSaveModel _wipeSaveModel;
         public DeleteItemModel _deleteItemModel;
+        public GameUnscaledTimeModel _gameUnscaledTimeModel;
+        public RealTimeModel _realTimeModel;
+        public TimeInGameModel _timeInGameModel;
         ///CODE_GENERATION_MODELS_SYSTEM
 
         private void Awake() 

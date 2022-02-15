@@ -237,6 +237,7 @@ namespace Game.Controllers
         ActivateLearnInputViewController = 232,
         WipeSaveController = 233,
         DeleteItemController = 234,
+        TimeInGameController = 235,
         ///CODE_GENERATION_IDS
     }
 }

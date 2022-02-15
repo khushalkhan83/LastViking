@@ -25,6 +25,7 @@ namespace Game.Controllers
         [Inject] public ItemsDB ItemsDB { get; private set; }
         [Inject] public InventoryOperationsModel InventoryOperationsModel { get; private set; }
         [Inject] public DropItemModel DropItemModel { get; private set; }
+        [Inject] public GameUnscaledTimeModel GameUnscaledTimeModel { get; private set; }
 
         public InventoryIsFillPopupView InventoryIsFillPopupView { get; private set; }
 
@@ -55,7 +56,7 @@ namespace Game.Controllers
             CraftModel.OnCraftedItem -= OnCraftedItemHandler;
         }
 
-        private void OnUpdate() => CraftModel.CraftProcess(Time.deltaTime);
+        private void OnUpdate() => CraftModel.CraftProcess(GameUnscaledTimeModel.DeltaTime);
 
         private void OnCraftedItemHandler(int itemId)
         {

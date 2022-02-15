@@ -58,19 +58,19 @@ namespace Game.Controllers
 
         private void OnBeginHideWindow()
         {
-            if(ViewsStateModel.OpenWindowsCount > 0) ViewsStateModel.SetOpenWindowsCount(ViewsStateModel.OpenWindowsCount - 1);
+            if(ViewsStateModel.OpenedWindowsCount > 0) ViewsStateModel.SetOpenWindowsCount(ViewsStateModel.OpenedWindowsCount - 1);
         }
         private void OnBeginShowWindow()
         {
-            ViewsStateModel.SetOpenWindowsCount(ViewsStateModel.OpenWindowsCount + 1);
+            ViewsStateModel.SetOpenWindowsCount(ViewsStateModel.OpenedWindowsCount + 1);
         }
         private void OnBeginHidePopup()
         {
-            if(ViewsStateModel.OpenPopupsCount > 0) ViewsStateModel.SetOpenPopupsCount(ViewsStateModel.OpenPopupsCount - 1);
+            if(ViewsStateModel.OpenedPopupsCount > 0) ViewsStateModel.SetOpenPopupsCount(ViewsStateModel.OpenedPopupsCount - 1);
         }
         private void OnBeginShowPopup()
         {
-            ViewsStateModel.SetOpenPopupsCount(ViewsStateModel.OpenPopupsCount + 1);
+            ViewsStateModel.SetOpenPopupsCount(ViewsStateModel.OpenedPopupsCount + 1);
         }
 
 

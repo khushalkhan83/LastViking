@@ -10,6 +10,9 @@ namespace Game.Controllers
         [Inject] public GameUpdateModel GameUpdateModel { get; private set; }
         [Inject] public GameTimeModel GameTimeModel { get; private set; }
         [Inject] public ApplicationCallbacksModel ApplicationCallbacksModel { get; private set; }
+        [Inject] public ViewsStateModel ViewsStateModel { get; private set; }
+        [Inject] public CinematicModel CinematicModel { get; private set; }
+        [Inject] public GameUnscaledTimeModel GameUnscaledTimeModel { get; private set; }
 
         private EditorGameSettings EditorGameSettings => EditorGameSettings.Instance;
 
@@ -19,6 +22,7 @@ namespace Game.Controllers
             GameUpdateModel.OnUpdate += OnUpdate;
             ApplicationCallbacksModel.ApplicationFocus += OnApplicationFocus;
             ApplicationCallbacksModel.ApplicationPause += OnApplicationPause;
+            ViewsStateModel.OnIsHUDBlockedChanged += OnIsHUDBlockedChanged;
         }
 
         void IController.Start()
@@ -31,43 +35,64 @@ namespace Game.Controllers
             GameUpdateModel.OnUpdate -= OnUpdate;
             ApplicationCallbacksModel.ApplicationFocus -= OnApplicationFocus;
             ApplicationCallbacksModel.ApplicationPause -= OnApplicationPause;
+            ViewsStateModel.OnIsHUDBlockedChanged -= OnIsHUDBlockedChanged;
         }
 
         // TODO: split on 2 & make sub + unsub
         private void OnUpdate()
         {
-            GameTimeModel.UpdateProcess(Time.unscaledDeltaTime);
+            GameTimeModel.UpdateProcess(GameUnscaledTimeModel.DeltaTime);
 
             if (!GameTimeModel.IsEnviroTimePaused)
-                GameTimeModel.EnviroUpdateProcess(Time.unscaledDeltaTime);
+                GameTimeModel.EnviroUpdateProcess(GameUnscaledTimeModel.DeltaTime);
+        }
+
+        private void OnIsHUDBlockedChanged()
+        {
+            bool pause = ViewsStateModel.IsHUDBlocked;
+
+            // Don't pause game in cinematics
+            if (pause && CinematicModel.CinematicStarted) return;
+
+            GameTimeModel.SetGameOnPause(pause);
         }
 
         private void OnApplicationFocus(bool isHasfocus)
         {
-            if(!EditorGameSettings.PauseGameOnRefocus) return;
-            
-            UpdateGamePause(isHasfocus);
+            if (!EditorGameSettings.PauseGameOnRefocus) return;
+
+            if (!ViewsStateModel.IsHUDBlocked)
+            {
+                GameTimeModel.SetGameOnPause(!isHasfocus);
+            }
         }
 
-        private void OnApplicationPause(bool isPause) => UpdateGamePause(!isPause);
-
-        private void UpdateGamePause(bool isInGame)
+        private void OnApplicationPause(bool isPause)
         {
-            if (GameTimeModel.IsOutGame && isInGame)
+            if (!ViewsStateModel.IsHUDBlocked)
             {
-                GameTimeModel.InGame();
+                GameTimeModel.SetGameOnPause(isPause);
             }
-
-            if (GameTimeModel.IsInGame && !isInGame)
-            {
-                GameTimeModel.OutGame();
-            }
+            //UpdateGamePause(!isPause);
         }
+
+        // private void UpdateGamePause(bool isInGame)
+        // {
+        //     if (GameTimeModel.IsOutGame && isInGame)
+        //     {
+        //         GameTimeModel.InGame();
+        //     }
+
+        //     if (GameTimeModel.IsInGame && !isInGame)
+        //     {
+        //         GameTimeModel.OutGame();
+        //     }
+        // }
 
         private void HandleBug_EnvironmentTimeBigerThenRegularTime()
         {
             //FIXME: for example, if GameTimeModel.EnviroDays became very big number (12345325), then skeletons waves will stop to spawn
-            if(GameTimeModel.EnviroTicks > GameTimeModel.Ticks)
+            if (GameTimeModel.EnviroTicks > GameTimeModel.Ticks)
             {
                 GameTimeModel.EnviroTicks = GameTimeModel.Ticks;
             }

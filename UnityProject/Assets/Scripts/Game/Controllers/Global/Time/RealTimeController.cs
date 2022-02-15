@@ -16,11 +16,13 @@ namespace Game.Controllers
         [Inject] public RealTimeModel realTimeModel { get; private set; }
         [Inject] public GameUpdateModel updateModel { get; private set; }
         [Inject] public NetworkModel networkModel { get; private set; }
-        
+        [Inject] public ApplicationCallbacksModel callbacks { get; private set; }
+
         public void Enable()
         {
             realTimeModel.OnTimeReset += StartUpdate;
             networkModel.OnInternetConnectionStateChange += InternetStateChangeHandler;
+            callbacks.ApplicationPause += ApplicationPauseHandler;
             StartUpdate();
         }
 
@@ -28,9 +30,16 @@ namespace Game.Controllers
         {
             realTimeModel.OnTimeReset -= StartUpdate;
             networkModel.OnInternetConnectionStateChange -= InternetStateChangeHandler;
+            callbacks.ApplicationPause -= ApplicationPauseHandler;
         }
 
-        public void Start() {
+        public void Start()
+        {
+        }
+
+        void ApplicationPauseHandler(bool isPause)
+        {
+
         }
 
         void InternetStateChangeHandler()
@@ -74,7 +83,7 @@ namespace Game.Controllers
                         RealTimeModel.TimeJSON tObj = JsonUtility.FromJson<RealTimeModel.TimeJSON>(timeString);
                         timeString = tObj.UTC;
                     }
-                    catch(System.Exception e)
+                    catch (System.Exception e)
                     {
                         realTimeModel.UpdateTimeError(e.ToString());
                         return;
