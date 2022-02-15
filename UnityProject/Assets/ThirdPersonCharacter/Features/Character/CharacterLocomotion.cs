@@ -157,13 +157,13 @@ namespace Game.ThirdPerson
 
             if (isRunStop)
             {
-                Debug.LogError("WALK");
+                //Debug.LogError("WALK");
                 SetPreset(Preset.Walk);
                 PlayerRunModel.RunStop();
             }
             if (isRunStopToggle)
             {
-                Debug.LogError("WALK");
+                //Debug.LogError("WALK");
                 SetPreset(Preset.Walk);
                 PlayerRunModel.RunStop();
                 PlayerRunModel.RunTogglePassive();
