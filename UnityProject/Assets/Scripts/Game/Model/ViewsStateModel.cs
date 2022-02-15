@@ -48,7 +48,6 @@ namespace Game.Models
         {
             if (oldIsHUDBlocked != IsHUDBlocked)
             {
-                Debug.LogError("HUD BLOCKED");
                 oldIsHUDBlocked = IsHUDBlocked;
                 OnIsHUDBlockedChanged?.Invoke();
             }
