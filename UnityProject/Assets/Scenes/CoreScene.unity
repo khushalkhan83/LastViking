@@ -432,22 +432,22 @@ PrefabInstance:
         type: 3}
       propertyPath: _worldCamera
       value: 
-      objectReference: {fileID: 661391305}
+      objectReference: {fileID: 22316894}
     - target: {fileID: 2348918568183793896, guid: 42c98127cc397c2488a243b14a3d21a7,
         type: 3}
       propertyPath: _cinemachineBrain
       value: 
-      objectReference: {fileID: 417981669}
+      objectReference: {fileID: 1631610485}
     - target: {fileID: 2348918568183793896, guid: 42c98127cc397c2488a243b14a3d21a7,
         type: 3}
       propertyPath: _firstPersonVirtualCamera
       value: 
-      objectReference: {fileID: 4333475018703413706}
+      objectReference: {fileID: 1883549520}
     - target: {fileID: 2969732679759048632, guid: 42c98127cc397c2488a243b14a3d21a7,
         type: 3}
       propertyPath: _fPManager
       value: 
-      objectReference: {fileID: 1384326441}
+      objectReference: {fileID: 0}
     - target: {fileID: 2969732679759048632, guid: 42c98127cc397c2488a243b14a3d21a7,
         type: 3}
       propertyPath: _lightModel
@@ -462,7 +462,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _playerCameras
       value: 
-      objectReference: {fileID: 67097923}
+      objectReference: {fileID: 0}
     - target: {fileID: 2969732679759048632, guid: 42c98127cc397c2488a243b14a3d21a7,
         type: 3}
       propertyPath: _sheltersModel
@@ -4648,7 +4648,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SurfaceDatabase: {fileID: 11400000, guid: 550c5497625ad5e4b9c9a47965d86d5c, type: 2}
   m_ItemDatabase: {fileID: 11400000, guid: bc944b4b21cccff41ad2a9d034ad66b7, type: 2}
-  _worldCamera: {fileID: 661391305}
+  _worldCamera: {fileID: 0}
   _audioUtils: {fileID: 881410071}
 --- !u!4 &881410073
 Transform:
@@ -6884,7 +6884,7 @@ PrefabInstance:
     - target: {fileID: 1638026306, guid: 4f08eeb0b444fe045933279b6e30dc01, type: 3}
       propertyPath: FPManager
       value: 
-      objectReference: {fileID: 1384326441}
+      objectReference: {fileID: 0}
     - target: {fileID: 1638026306, guid: 4f08eeb0b444fe045933279b6e30dc01, type: 3}
       propertyPath: m_WorldCamera
       value: 
@@ -6900,7 +6900,7 @@ PrefabInstance:
     - target: {fileID: 1638026309, guid: 4f08eeb0b444fe045933279b6e30dc01, type: 3}
       propertyPath: m_AudioSource
       value: 
-      objectReference: {fileID: 498900948}
+      objectReference: {fileID: 0}
     - target: {fileID: 1638026310, guid: 4f08eeb0b444fe045933279b6e30dc01, type: 3}
       propertyPath: m_Camera
       value: 
@@ -6920,15 +6920,15 @@ PrefabInstance:
     - target: {fileID: 1638026310, guid: 4f08eeb0b444fe045933279b6e30dc01, type: 3}
       propertyPath: m_CollidersToDisable.Array.data[0]
       value: 
-      objectReference: {fileID: 498900944}
+      objectReference: {fileID: 0}
     - target: {fileID: 1638026313, guid: 4f08eeb0b444fe045933279b6e30dc01, type: 3}
       propertyPath: FPManager
       value: 
-      objectReference: {fileID: 1384326441}
+      objectReference: {fileID: 0}
     - target: {fileID: 1638026313, guid: 4f08eeb0b444fe045933279b6e30dc01, type: 3}
       propertyPath: m_WorldCamera
       value: 
-      objectReference: {fileID: 661391305}
+      objectReference: {fileID: 0}
     - target: {fileID: 204762728237220752, guid: 4f08eeb0b444fe045933279b6e30dc01,
         type: 3}
       propertyPath: aimUI
@@ -8980,7 +8980,7 @@ PrefabInstance:
     - target: {fileID: 969935511, guid: 63af4a1c2d8e8564ba7d7557da52a55e, type: 3}
       propertyPath: _PlayerCameras
       value: 
-      objectReference: {fileID: 67097923}
+      objectReference: {fileID: 0}
     - target: {fileID: 969935511, guid: 63af4a1c2d8e8564ba7d7557da52a55e, type: 3}
       propertyPath: _autosaveModel
       value: 
@@ -9017,6 +9017,10 @@ PrefabInstance:
       propertyPath: _outLineBanana
       value: 
       objectReference: {fileID: 85810763}
+    - target: {fileID: 969935511, guid: 63af4a1c2d8e8564ba7d7557da52a55e, type: 3}
+      propertyPath: _playerCameras
+      value: 
+      objectReference: {fileID: 728048352}
     - target: {fileID: 969935511, guid: 63af4a1c2d8e8564ba7d7557da52a55e, type: 3}
       propertyPath: _realTimeModel
       value: 
@@ -9536,7 +9540,7 @@ PrefabInstance:
     - target: {fileID: 969935511, guid: 63af4a1c2d8e8564ba7d7557da52a55e, type: 3}
       propertyPath: _chunkLoadersProvider
       value: 
-      objectReference: {fileID: 1382394767}
+      objectReference: {fileID: 0}
     - target: {fileID: 969935511, guid: 63af4a1c2d8e8564ba7d7557da52a55e, type: 3}
       propertyPath: _cinematicCameraModel
       value: 
@@ -10485,6 +10489,16 @@ PrefabInstance:
       propertyPath: children.Array.data[10].shadowLightType
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4566360790829062308, guid: e7f7192d2f20bd14e9ef1556f775a291,
+        type: 3}
+      propertyPath: _brain
+      value: 
+      objectReference: {fileID: 1255475393}
+    - target: {fileID: 4566360790829062308, guid: e7f7192d2f20bd14e9ef1556f775a291,
+        type: 3}
+      propertyPath: _cameraWorld
+      value: 
+      objectReference: {fileID: 22316894}
     - target: {fileID: 4676253974670439509, guid: e7f7192d2f20bd14e9ef1556f775a291,
         type: 3}
       propertyPath: m_Enabled
@@ -10819,12 +10833,12 @@ PrefabInstance:
         type: 3}
       propertyPath: _cameraWorld
       value: 
-      objectReference: {fileID: 661391305}
+      objectReference: {fileID: 0}
     - target: {fileID: 6325181265764284575, guid: a66d4596b738fd948b5cbf56c1a9dba4,
         type: 3}
       propertyPath: _cameraBackground
       value: 
-      objectReference: {fileID: 1417366342}
+      objectReference: {fileID: 0}
     - target: {fileID: 6325181266130144647, guid: a66d4596b738fd948b5cbf56c1a9dba4,
         type: 3}
       propertyPath: m_Mesh

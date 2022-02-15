@@ -90,7 +90,7 @@ namespace Core
         [SerializeField] private PlacementModel _placementModel;
         [SerializeField] private PlayerAudioModel playerAudioModel;
         [SerializeField] private PlayerBleedingDamagerModel _playerBleedingDamagerModel;
-        [SerializeField] private PlayerCameras _PlayerCameras;
+        [SerializeField] private PlayerCameras _playerCameras;
         [SerializeField] private PlayerColdDamagerModel _playerColdDamagerModel;
         [SerializeField] private PlayerWarmModel _playerWarmModel;
         [SerializeField] private PlayerConsumeModel _playerConsumeModel;
@@ -395,7 +395,7 @@ namespace Core
                 { typeof(PlacementModel), _placementModel},
                 { typeof(PlayerAudioModel), playerAudioModel},
                 { typeof(PlayerBleedingDamagerModel), _playerBleedingDamagerModel},
-                { typeof(PlayerCameras), _PlayerCameras},
+                { typeof(PlayerCameras), _playerCameras},
                 { typeof(PlayerColdDamagerModel), _playerColdDamagerModel},
                 { typeof(PlayerWarmModel), _playerWarmModel},
                 { typeof(PlayerConsumeModel), _playerConsumeModel},

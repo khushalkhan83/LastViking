@@ -271,6 +271,7 @@ namespace Game.Controllers
             { ControllerID.WipeSaveController, typeof(IWipeSaveController) },
             { ControllerID.DeleteItemController, typeof(IDeleteItemController) },
             { ControllerID.TimeInGameController, typeof(ITimeInGameController) },
+            { ControllerID.PlayerCamerasController, typeof(IPlayerCamerasController) },
             ///CODE_GENERATION_IDS
         };
 
@@ -508,6 +509,7 @@ namespace Game.Controllers
             { typeof(IWipeSaveController), typeof(WipeSaveController) },
             { typeof(IDeleteItemController), typeof(DeleteItemController) },
             { typeof(ITimeInGameController), typeof(TimeInGameController) },
+            { typeof(IPlayerCamerasController), typeof(PlayerCamerasController) },
             ///CODE_GENERATION_INTERFACES
         };
 

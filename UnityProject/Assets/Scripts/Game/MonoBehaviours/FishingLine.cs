@@ -101,8 +101,8 @@ public class FishingLine : MonoBehaviour
         if (worldCamera == null)
         {
             PlayerCameras holder = transform.root.GetComponent<PlayerCameras>();
-            worldCamera = holder.CameraWorld;
-            weaponCamera = holder.CameraTools;
+            // worldCamera = holder.CameraWorld;
+            // weaponCamera = holder.CameraTools;
         }
         Hide();
     }

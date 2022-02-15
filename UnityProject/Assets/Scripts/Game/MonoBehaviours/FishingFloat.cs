@@ -46,9 +46,9 @@ public class FishingFloat : MonoBehaviour
         startFishingEffect.SetActive(false);
         if (worldCamera == null)
         {
-            PlayerCameras holder = transform.root.GetComponent<PlayerCameras>();
-            worldCamera = holder.CameraWorld;
-            weaponCamera = holder.CameraTools;
+            //PlayerCameras holder = transform.root.GetComponent<PlayerCameras>();
+            // worldCamera = holder.CameraWorld;
+            // weaponCamera = holder.CameraTools;
         }
 
         Hide();

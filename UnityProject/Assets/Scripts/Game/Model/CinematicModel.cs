@@ -10,6 +10,7 @@ namespace Game.Models
     {
         public event Action OnStartCinematic;
         public event Action OnEndCinematic;
+        public event Action OnCinematicActiveStateChanged;
 
         public bool CanResetInEditor {get; private set;}
         public bool CinematicStarted {get; private set;}

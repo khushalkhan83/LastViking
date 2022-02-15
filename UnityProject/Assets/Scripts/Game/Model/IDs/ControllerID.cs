@@ -238,6 +238,7 @@ namespace Game.Controllers
         WipeSaveController = 233,
         DeleteItemController = 234,
         TimeInGameController = 235,
+        PlayerCamerasController = 236,
         ///CODE_GENERATION_IDS
     }
 }

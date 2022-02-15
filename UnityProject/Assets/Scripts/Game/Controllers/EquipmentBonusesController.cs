@@ -13,7 +13,7 @@ namespace Game.Controllers
         [Inject] public PlayerFoodModel PlayerFoodModel { get; set; }
         [Inject] public PlayerWaterModel PlayerWaterModel { get; set; }
         [Inject] public PlayerStaminaModel PlayerStaminaModel { get; set; }
-        [Inject] public PlayerMovementControllerGround MovementControllerGround { get; private set; }
+        //[Inject] public PlayerMovementControllerGround MovementControllerGround { get; private set; }
         [Inject] public PlayerHealthRegenerationModel PlayerHealthRegenerationModel { get; private set; }
         [Inject] public EquipmentModel EquipmentModel { get; private set; }
 
@@ -96,7 +96,7 @@ namespace Game.Controllers
             PlayerWaterModel.SetEquipmentBonus(waterBonus);
             PlayerStaminaModel.SetEquipmentPercentageBonus(staminaPercentageBonus);
             PlayerStaminaModel.SetEquipmentPercentageBonus(staminaPercentageBonus);
-            MovementControllerGround.SetEquipmentPercentageBonus(speedPercentageBonus);
+            //MovementControllerGround.SetEquipmentPercentageBonus(speedPercentageBonus);
             PlayerHealthRegenerationModel.SetRegenValue(regenHealthBonus);
 
             void UpdateSetBonuses()

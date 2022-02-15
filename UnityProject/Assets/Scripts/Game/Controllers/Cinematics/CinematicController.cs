@@ -85,7 +85,7 @@ namespace Game.Controllers
         private void HandleCameras(bool cinematicActive)
         {
             CinematicCameraModel.SetCameraActive(cinematicActive);
-            PlayerCameras.CameraTools.enabled = !cinematicActive;
+            // PlayerCameras.CameraTools.enabled = !cinematicActive;
             ViewsSystemCameraModel.Camera.enabled = !cinematicActive;
         }
 
