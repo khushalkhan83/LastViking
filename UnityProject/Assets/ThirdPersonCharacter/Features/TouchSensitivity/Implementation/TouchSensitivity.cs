@@ -17,7 +17,7 @@ namespace Game.ThirdPerson.TouchSensitivity.Implementation
         [SerializeField] private float sensitivity = 1;
 
         [Header("Resolution presets")]
-        [SerializeField] private float lowPreset = 3f;
+        [SerializeField] private float lowPreset = 1;//3f;
         [SerializeField] private float midPreset = 1.2f;
         [SerializeField] private float highPreset = 0.35f;
 
@@ -46,7 +46,7 @@ namespace Game.ThirdPerson.TouchSensitivity.Implementation
             // textField.text = $"Sensativity: {touchpad.sensitivity}";
         }
 
-        private float CalculateSensitivity() => sensitivity * sensitivityModifier;
+        private float CalculateSensitivity() => sensitivity * sensitivityModifier * Time.deltaTime*100;
 
         private void PresentResultSensativity()
         {

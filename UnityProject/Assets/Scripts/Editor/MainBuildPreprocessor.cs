@@ -130,7 +130,7 @@ class MainBuildPreprocessor : IPreprocessBuild
         if (debugBuild && eneableAnalitics)
         {
             DisplayDialogWrapper(
-                "Вы пытались сделать релизный билд с выключенной аналитикой.",
+                "Вы пытались сделать дебажный билд с включеной аналитикой.",
                 positiveAction: null,"Продолжить");
         }
         else if (!debugBuild && !eneableAnalitics)

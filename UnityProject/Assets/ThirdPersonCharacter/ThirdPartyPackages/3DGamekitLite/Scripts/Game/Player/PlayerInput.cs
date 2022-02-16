@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System;
 using System.Collections;
 using Gamekit3D;
@@ -93,7 +93,7 @@ public class PlayerInput : MonoBehaviour
             var movement = TCKInput.GetAxis("Joystick");
             m_Movement.Set(movement.x,movement.y);
 
-            Vector2 look = TCKInput.GetAxis( "Touchpad" );
+            Vector2 look = TCKInput.GetAxis("fireBtn") ;
             m_Camera.Set(look.x, look.y);
             m_Jump = TCKInput.GetAction( "jumpBtn", EActionEvent.Press );
 

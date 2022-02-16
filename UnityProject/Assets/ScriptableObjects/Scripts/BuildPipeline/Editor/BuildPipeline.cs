@@ -134,7 +134,7 @@ namespace BuildAutomation
         #endregion
 
         #endregion
-        private static RemoteConfigModel RemoteConfigModel => ModelsSystem.Instance._remoteConfigModel;
+        //private static RemoteConfigModel RemoteConfigModel => ModelsSystem.Instance._remoteConfigModel;
 
         public static Action OnBuildFailed { get; set; }
 
@@ -487,7 +487,7 @@ namespace BuildAutomation
 
             PlayerSettings.Android.keystorePass = password;
 
-            PlayerSettings.Android.keyaliasName = "lastpirate";
+            PlayerSettings.Android.keyaliasName = "lastviking";
             PlayerSettings.Android.keyaliasPass = password;
         }
 
