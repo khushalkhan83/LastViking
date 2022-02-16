@@ -19,7 +19,8 @@ namespace Game.Controllers
 
         private bool IsCanHungerProcess => PlayerFoodModel.FoodCurrent > 0
             && !PlayerDeathModel.IsImmunable
-            && !PlayerHealthModel.IsDead;
+            && !PlayerHealthModel.IsDead
+            && !TutorialModel.IsTutorialNow;
 
         void IController.Enable()
         {

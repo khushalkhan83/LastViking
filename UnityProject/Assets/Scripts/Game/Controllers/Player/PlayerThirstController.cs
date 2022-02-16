@@ -20,7 +20,8 @@ namespace Game.Controllers
 
         private bool IsCanThirstProcess => PlayerWaterModel.WaterCurrent > 0
             && !PlayerDeathModel.IsImmunable
-            && !PlayerHealthModel.IsDead;
+            && !PlayerHealthModel.IsDead
+            && !TutorialModel.IsTutorialNow;
 
         void IController.Enable()
         {
