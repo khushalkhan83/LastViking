@@ -10,6 +10,8 @@ namespace Game.Controllers
         [Inject] public FullInventoryModel FullInventoryModel { get; private set; }
         [Inject] public ViewsSystem ViewsSystem { get; private set; }
         [Inject] public ExpandInventoryModel ExpandInventoryModel { get; private set; }
+        [Inject] public TutorialModel TutorialModel { get; private set; }
+        [Inject] public TutorialSimpleDarkViewModel TutorialSimpleDarkViewModel { get; private set; }
 
         protected InventoryIsFillPopupView InventoryIsFillPopupView { get; private set; }
 
@@ -31,6 +33,10 @@ namespace Game.Controllers
 
         private void ShowFullPopup()
         {
+            if(TutorialModel.IsTutorialNow)
+            {
+                TutorialSimpleDarkViewModel.SetShow(true);
+            }
             InventoryIsFillPopupView = ViewsSystem.Show<InventoryIsFillPopupView>(ViewConfigID.InventoryIsFillPopup);
             InventoryIsFillPopupView.OnBack += OnBack;
             InventoryIsFillPopupView.OnExpand += OnExpandInventory;
@@ -38,6 +44,10 @@ namespace Game.Controllers
 
         private void HideFullPopup()
         {
+            if(TutorialModel.IsTutorialNow)
+            {
+                TutorialSimpleDarkViewModel.SetShow(false);
+            }
             InventoryIsFillPopupView.OnBack -= OnBack;
             InventoryIsFillPopupView.OnExpand -= OnExpandInventory;
             ViewsSystem.Hide(InventoryIsFillPopupView);

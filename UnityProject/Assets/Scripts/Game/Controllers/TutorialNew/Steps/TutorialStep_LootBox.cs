@@ -10,6 +10,7 @@ namespace Game.Controllers.TutorialSteps
         [Inject] public InventoryLootViewModel ViewModel { get; private set; }
         [Inject] public LootGroupModel LootGroupModel { get; private set; }
         [Inject] public TutorialSimpleDarkViewModel TutorialSimpleDarkViewModel { get; private set; }
+        [Inject] public InventoryModel InventoryModel { get; private set; }
         private TutorialLootBoxSpawner TutorialLootBoxSpawner => TutorialLootBoxSpawner.Instance;
 
         public TutorialStep_LootBox(TutorialEvent StepStartedEvent) : base(StepStartedEvent) { }
@@ -21,7 +22,7 @@ namespace Game.Controllers.TutorialSteps
             ViewModel.OnShowChanged += UpdateHilight;
             TutorialLootBoxSpawner.OnLootBoxCollected += CheckConditions;
 
-            if(TutorialLootBoxSpawner.Inited)
+            if (TutorialLootBoxSpawner.Inited)
             {
                 TutorialLootBoxSpawner.TrySpawnLootBox();
             }
@@ -37,7 +38,7 @@ namespace Game.Controllers.TutorialSteps
         public override void OnEnd()
         {
             ViewModel.OnShowChanged -= UpdateHilight;
-            TutorialLootBoxSpawner.OnLootBoxCollected -= CheckConditions;  
+            TutorialLootBoxSpawner.OnLootBoxCollected -= CheckConditions;
             TutorialLootBoxSpawner.OnInit -= OnSpawnerInit;
 
             UpdateHilight(forceDisableHilight: true);
@@ -47,7 +48,7 @@ namespace Game.Controllers.TutorialSteps
         private void InitState()
         {
             ShowTaskMessage(true, "Get items from box", TutorialLootBoxSpawner.LootBoxIcon);
-            stepTapHint = new TutorialStep_TapHint(null,ShowTapCondition, null);
+            stepTapHint = new TutorialStep_TapHint(null, ShowTapCondition, null);
             InjectionSystem.Inject(stepTapHint);
             stepTapHint.Enter();
         }
@@ -67,7 +68,7 @@ namespace Game.Controllers.TutorialSteps
         private bool IsTargetSelected()
         {
             var activeLoot = LootGroupModel.ActiveLoot;
-            if(activeLoot == null) return false;
+            if (activeLoot == null) return false;
 
             bool asnwer = TutorialLootBoxSpawner.IsSpawnedLootObject(activeLoot);
             return asnwer;
@@ -78,21 +79,25 @@ namespace Game.Controllers.TutorialSteps
         private void UpdateHilight(bool forceDisableHilight = false)
         {
             bool show = forceDisableHilight ? false : ViewModel.IsShow && IsTargetSelected();
-            TutorialSimpleDarkViewModel.SetShow(show);
 
-            if(show)
+            if (InventoryModel.ItemsContainer.GetEmptyCell() != null)
             {
-                TutorialSimpleDarkViewModel.PlayAnimation();
-            }
+                TutorialSimpleDarkViewModel.SetShow(show);
 
-            ViewModel.SetTakeAllButtonHilight(show);
+                if (show)
+                {
+                    TutorialSimpleDarkViewModel.PlayAnimation();
+                }
+
+                ViewModel.SetTakeAllButtonHilight(show);
+            }
         }
 
         private void CheckConditions()
         {
             bool nextStep = TutorialLootBoxSpawner.IsLootBoxCollected;
 
-            if(nextStep) TutorialNextStep();
+            if (nextStep) TutorialNextStep();
         }
 
         private bool ShowTapCondition(GameObject raycastGameObject)

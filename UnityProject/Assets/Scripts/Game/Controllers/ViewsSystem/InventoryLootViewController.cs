@@ -726,7 +726,8 @@ namespace Game.Controllers
         {
             foreach (var cellFrom in LootObject.ItemsContainer.Cells.Take(LootObject.CountOpenStart + ExpandModel.ExpandLevel))
             {
-                TryAddAllItems(cellFrom, InventoryModel.ItemsContainer);
+                if (!TryAddAllItems(cellFrom, InventoryModel.ItemsContainer))
+                    break;
             }
 
             InventoryLootViewModel.RemoveSelectCell();
@@ -775,6 +776,11 @@ namespace Game.Controllers
                 {
                     cellTo.Item = cellFrom.Item;
                     cellFrom.Item = null;
+                }
+                else 
+                {
+                    FullInventoryModel.ShowFullPopup();
+                    return false;
                 }
             }
 
