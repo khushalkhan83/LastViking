@@ -17,7 +17,8 @@ namespace Game.Controllers
         [Inject] public CinematicCameraModel CinematicCameraModel { get; private set; }
 
         private Camera CameraWorld => PlayerCameras.CameraWorld;
-        private CinemachineFreeLook Camera=>PlayerCameras.Camera;
+        private CinemachineFreeLook Camera => PlayerCameras.Camera;
+        private CinemachineBrain Brain => PlayerCameras.Brain;
 
         void IController.Enable()
         {
@@ -60,9 +61,10 @@ namespace Game.Controllers
             }
 
             bool hubBlockedByWindow = !ViewsStateModel.IsHUDBlocked_ByWindows;
-            
+
             CameraWorld.enabled = hubBlockedByWindow;
             Camera.enabled = hubBlockedByWindow;
+            Brain.enabled= hubBlockedByWindow;
         }
     }
 }

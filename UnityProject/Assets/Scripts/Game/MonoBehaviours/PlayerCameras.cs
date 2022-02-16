@@ -8,12 +8,14 @@ public class PlayerCameras : MonoBehaviour
 
     [SerializeField] private Camera _cameraWorld;
     [SerializeField] private CinemachineFreeLook _camera;
+    [SerializeField] private CinemachineBrain _brain;
 
 #pragma warning restore 0649
     #endregion
 
     public Camera CameraWorld => _cameraWorld;
     public CinemachineFreeLook Camera=>_camera;
+    public CinemachineBrain Brain=>_brain;
 
     public void ShowAllCameras() => SetIsVisibleCameras(true);
     public void HideAllCameras() => SetIsVisibleCameras(false);
