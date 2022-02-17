@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Core;
@@ -358,7 +358,9 @@ namespace Game.Controllers
                 || CantDropConsumeCheck(consumeContainerID, containerFromId, containerToId, cellFrom, cellTo)
                 || CantDropWithoutProperties(cellFrom, containerToId)
                 || CantDropToEquipmentSlot(containerToId, cellFrom, cellToData)
-                || CantDropFromEquipmentSlot(containerFromId, cellFrom, cellTo);
+                || CantDropFromEquipmentSlot(containerFromId, cellFrom, cellTo)
+                || CantDropFromArrowsSlot(containerFromId, cellFrom, cellTo)
+                || CantDropToOrFromCampfireSlot(containerFromId, containerToId, cellFrom, cellTo);
         }
 
         private bool CantDropContainerNoneCheck(ContainerID containerFromId, ContainerID containerToId) => containerFromId == ContainerID.None || containerToId == ContainerID.None;
@@ -427,16 +429,16 @@ namespace Game.Controllers
 
         private bool CantDropFromEquipmentSlot(ContainerID containerFromId, CellModel cellFromModel, CellModel cellToModel)
         {
-            if(containerFromId != ContainerID.Equipment)
+            if (containerFromId != ContainerID.Equipment)
                 return false;
 
-            if(cellToModel.IsHasItem)
+            if (cellToModel.IsHasItem)
             {
-                if(cellToModel.Item.TryGetProperty("EquipmentCategory", out var property))
+                if (cellToModel.Item.TryGetProperty("EquipmentCategory", out var property))
                 {
                     EquipmentCategory itemToCategory = property.EquipmentCategory;
                     EquipmentCategory slotCategory = InventoryEquipmentModel.GetSlotCategory(cellFromModel.Id);
-                    if(itemToCategory == slotCategory)
+                    if (itemToCategory == slotCategory)
                         return false;
                 }
                 return true;
@@ -445,6 +447,46 @@ namespace Game.Controllers
             return false;
         }
 
+        private bool CantDropFromArrowsSlot(ContainerID containerFromId, CellModel cellFromModel, CellModel cellToModel)
+        {
+            if(containerFromId != ContainerID.Equipment)
+                return false;
+
+            if(cellToModel.IsHasItem)
+            {
+                if(cellToModel.Item.TryGetProperty("Is Arrow", out _))
+                {
+                    return false;
+                }
+                
+                return true;
+            }
+
+            return false;
+        }
+
+        private bool CantDropToOrFromCampfireSlot(ContainerID containerFromId, ContainerID containerToId, CellModel cellFrom, CellModel cellTo)
+        {
+            if (containerToId == ContainerID.CampFire)
+            {
+                bool isFuel = cellFrom.Item.TryGetProperty("IsFuel", out var isFuelProperty);
+                bool isFoodItem = cellFrom.Item.ItemData.Category == "Food";
+                bool canDrag = isFuel || isFoodItem;
+                return !canDrag;
+            }
+            else if (containerFromId == ContainerID.CampFire)
+            {
+                if (cellTo.IsHasItem)
+                {
+                    bool isFoodInTargetCell = cellTo.Item.ItemData.Category == "Food";
+                    bool canDrag = isFoodInTargetCell;
+                    bool cantDragCell = !canDrag;
+                    return cantDragCell;
+                }
+            }
+
+            return false;
+        }
         private int GetViewCellId(GameObject cell) => cell.GetComponent<CellView>()?.Id
                 ?? cell.GetComponent<CookCellView>()?.Id
                 ?? cell.GetComponent<WeaveCellView>()?.Id
