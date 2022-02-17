@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using Game.Models;
 using UnityEngine;
@@ -16,7 +16,7 @@ namespace Game.QuestSystem.Map.Extra
         private void Start()
         {
             int shipLevel = 0;
-            if (SheltersModel.ShelterActive != ShelterModelID.None)
+            if (SheltersModel.ShelterActive == ShelterModelID.None)
             {
                 shipLevel = SheltersModel.ShelterModel.Level + 1;
             }

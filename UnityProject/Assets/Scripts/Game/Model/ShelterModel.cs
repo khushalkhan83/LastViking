@@ -1,4 +1,4 @@
-﻿using CodeStage.AntiCheat.ObscuredTypes;
+using CodeStage.AntiCheat.ObscuredTypes;
 using Core.Storage;
 using SOArchitecture;
 using System;
@@ -98,6 +98,7 @@ namespace Game.Models
 
         public void Buy(ulong timeTicks)
         {
+            ++Level;
             StartAliveTimeTicks = timeTicks;
             OnBuy?.Invoke();
 
