@@ -13522,6 +13522,7 @@ GameObject:
   - component: {fileID: 1638026315}
   - component: {fileID: 1638026316}
   - component: {fileID: 8400414441975968771}
+  - component: {fileID: 9105634103650949059}
   m_Layer: 11
   m_Name: ThirdPersonPlayerNew
   m_TagString: Target
@@ -14033,6 +14034,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20b2b3110598b9b4f92fcc1a43ba9f44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &9105634103650949059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753185364419241137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e081c8215e160d94688383020cf996d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FootstepSelectionMethod: 0
+  m_LandSpeedThreeshold: 3
+  m_Mask:
+    serializedVersion: 2
+    m_Bits: 4113
+  _waterFootLevelOffset: 0
+  _groundStepIds: 4d0000004e0000004f000000
+  _waterStepIds: 4700000048000000
+  _waterSwimIds: 4a0000004b0000004c000000
+  m_WalkStepLength: 1.7
+  m_RunStepLength: 2
+  m_SwimStepLength: 4
+  m_WalkVolumeFactor: 0.5
+  m_RunVolumeFactor: 1
+  _playerCharacterController: {fileID: 1850568699100416655}
 --- !u!1 &1753310160721517611
 GameObject:
   m_ObjectHideFlags: 0
