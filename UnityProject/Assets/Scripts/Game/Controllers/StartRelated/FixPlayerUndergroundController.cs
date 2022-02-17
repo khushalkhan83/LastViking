@@ -22,11 +22,13 @@ namespace Game.Controllers
         void IController.Start() {}
         void IController.Enable() 
         {
+            PlayerEventHandler.OnInited+=OnEnvironmentLoadedHandler;
             PlayerRespawnPointsModel.OnPlayerRespawnedAndChunksAreLoaded += OnPlayerRespawnedAndChunksAreLoadedHandler;
             PlayerScenesModel.OnEnvironmentLoaded += OnEnvironmentLoadedHandler;
         }
         void IController.Disable() 
         {
+            PlayerEventHandler.OnInited-=OnEnvironmentLoadedHandler;
             PlayerRespawnPointsModel.OnPlayerRespawnedAndChunksAreLoaded -= OnPlayerRespawnedAndChunksAreLoadedHandler;
             PlayerScenesModel.OnEnvironmentLoaded -= OnEnvironmentLoadedHandler;
         }

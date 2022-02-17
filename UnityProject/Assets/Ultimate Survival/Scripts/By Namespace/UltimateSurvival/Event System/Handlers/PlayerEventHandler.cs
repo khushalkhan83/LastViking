@@ -151,6 +151,7 @@ namespace UltimateSurvival
             InitLogic(defaultPosition);
         }
 
+        public event Action OnInited;
         private void InitLogic(bool defaultPosition = false)
         {
             if (StorageModel.TryProcessing(_data))
@@ -181,6 +182,7 @@ namespace UltimateSurvival
             Health.OnChange += OnChangeHealth;
             PlayerHealthModel.OnChangeHealth += PlayerHealthModel_OnChangeHealth;
             StorageModel.OnPreSaveAll += OnPreSaveHandler;
+            OnInited?.Invoke();
         }
 
         #region MonoBehaviour
