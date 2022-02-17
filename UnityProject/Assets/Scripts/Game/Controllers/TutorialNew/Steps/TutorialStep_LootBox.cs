@@ -46,7 +46,7 @@ namespace Game.Controllers.TutorialSteps
 
         private void InitState()
         {
-            ShowTaskMessage(true, "Get items from box", TutorialLootBoxSpawner.LootBoxIcon);
+            ShowTaskMessage(true, LocalizationModel.GetString(LocalizationKeyID.Tutorial_Get_Items), TutorialLootBoxSpawner.LootBoxIcon);
             stepTapHint = new TutorialStep_TapHint(null,ShowTapCondition, null);
             InjectionSystem.Inject(stepTapHint);
             stepTapHint.Enter();

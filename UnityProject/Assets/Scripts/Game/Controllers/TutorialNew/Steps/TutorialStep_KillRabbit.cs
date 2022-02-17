@@ -7,7 +7,7 @@ namespace Game.Controllers.TutorialSteps
     {
         private const string targetItemID = "food_meat_chicken_raw";
         private const int tokenConfigID = 0;
-        private const string killRabbitMessage = "You need food. Kill rabbit!";
+        private string killRabbitMessage;
         private const string takeHisMeatMessage = "Take your loot";
 
         private GameObject rabbit;
@@ -34,6 +34,7 @@ namespace Game.Controllers.TutorialSteps
 
         private void KillTargetTask()
         {
+            killRabbitMessage = LocalizationModel.GetString(Models.LocalizationKeyID.Tutorial_Kill_Rabbit);
             ITutorialStep subStep = new TutorialStep_KillEnemy(null,onCompleatedAsSubStep: TakeItemTask, rabbit,killRabbitMessage);
             SetState(subStep);
         }
@@ -42,7 +43,7 @@ namespace Game.Controllers.TutorialSteps
         {
             ITutorialStep subStep = new TutorialStep_TakeItem(null,OnCompleatedAsSubStep: CheckConditions,targetItemID,tokenConfigID);
             SetState(subStep);
-            ShowTaskMessage(true,takeHisMeatMessage);
+            ShowTaskMessage(true, LocalizationModel.GetString(Models.LocalizationKeyID.Tutorial_Take_Loot));
         }
 
         private void CheckConditions()

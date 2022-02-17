@@ -70,7 +70,7 @@ namespace Game.Controllers.TutorialSteps
 
         private void ShowNotification()
         {
-            ShowTaskMessage(true,"Destroy barrel and get pickaxe", icon);
+            ShowTaskMessage(true, LocalizationModel.GetString(LocalizationKeyID.Tutorial_Task01_Start), icon);
         }
 
         private bool ShowTapCondition(GameObject raycastGameObject)

@@ -36,7 +36,7 @@ namespace Game.Controllers.TutorialSteps
             ViewsSystem.OnEndShow.AddListener(ViewConfigID.InventoryPlayer, OnEndShowInentoryView);
             slotCell.OnChange += OnSlotCellChanged;
             var icon = ItemsDB.ItemDatabase.GetItemByName(k_equipItemName).Icon;
-            ShowTaskMessage(true, "Open inventory and equip shoes", icon);
+            ShowTaskMessage(true, LocalizationModel.GetString(LocalizationKeyID.Tutorial_Equip_Shoes), icon);
             ProcessState();
         }
            

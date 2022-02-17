@@ -13,6 +13,7 @@ namespace Game.Controllers
         [Inject] public TutorialModel TutorialModel { get; private set; }
         [Inject] public ControllersModel ControllersModel { get; private set; }
         [Inject] public VikingTutorialModel VikingTutorialModel { get; private set; }
+        [Inject] public LocalizationModel LocalizationModel { get; private set; }
 
         #region Events
         private TutorialEvent learnInputStarted = new TutorialEvent("learnInputStarted");
@@ -108,8 +109,8 @@ namespace Game.Controllers
 
                 new TutorialStep_LearnInput(learnInputStarted),
                 new TutorialStep_GetPickaxe(getPickaxeStarted,approchedBarrel,approachedPickaxe,tookPickaxe), //TODO: step only action
-                new TutorialStep_MineStone(getRocksStarted, "Stone",5,12,"toeken_stone",OutLineMinableObjectID.Stone,null,"Mine stone"),
-                new TutorialStep_MineWood(mineWoodStarted, "Wood",5,11,"toeken_tree",OutLineMinableObjectID.Tree,null, "Mine wood"),
+                new TutorialStep_MineStone(getRocksStarted, "Stone",5,12,"toeken_stone",OutLineMinableObjectID.Stone,null,LocalizationModel.GetString(LocalizationKeyID.Task_Collect_Stone)),
+                new TutorialStep_MineWood(mineWoodStarted, "Wood",5,11,"toeken_tree",OutLineMinableObjectID.Tree,null, LocalizationModel.GetString(LocalizationKeyID.Task_Collect_Wood)),
                 new TutorialStep_BuildTownhall(buildTownhallStared), //TODO: step only action
                 new TutorialStep_LootBox(lootBoxStarted),
                 new TutorialStep_Equipment(equipmentStarted),

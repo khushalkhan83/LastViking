@@ -625,6 +625,22 @@ namespace Game.Models
         medical_warming = 618,
         items_box_wooden_middle_DisplayName = 619,
         items_box_wooden_middle_Description = 620,
+        Tutorial_Build_Townhall = 621,
+        Tutorial_Build_Tools = 622,
+        Tutorial_Get_Items = 623,
+        Tutorial_Equip_Shoes = 624,
+        Tutorial_Kill_Rabbit = 625,
+        Tutorial_Take_Loot = 626,
+        Tutorial_Use_Campfire = 627,
+        Tutorial_Meat_Campfire = 628,
+        Tutorial_TurnOn_Fire = 629,
+        Tutorial_SpeedUp_Process = 630,
+        Tutorial_Wait = 631,
+        Tutorial_Eat_Meat = 632,
+        Tutorial_Kill_Wolf = 633,
+        Tutorial_Secrets = 634,
+        Tutorial_Collect_Lootbox = 635,
+        Tutorial_Final_Message = 636,
 
     }
 }

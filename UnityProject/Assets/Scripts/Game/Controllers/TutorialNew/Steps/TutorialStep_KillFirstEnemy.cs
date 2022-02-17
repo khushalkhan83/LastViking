@@ -26,7 +26,7 @@ namespace Game.Controllers.TutorialSteps
             var enemy = sceneContext.woolf;
         
             enemy.SetActive(true); // TODO: move inside kill enemy tutorial step ?
-            step = new TutorialStep_KillEnemy(null,CheckConditions,enemy,"Kill wolf");
+            step = new TutorialStep_KillEnemy(null,CheckConditions,enemy,LocalizationModel.GetString(Models.LocalizationKeyID.Tutorial_Kill_Wolf));
             InjectionSystem.Inject(step);
         }
 

@@ -96,7 +96,7 @@ namespace Game.Controllers.TutorialSteps
             bool coockWindowIsOpened = CampFireViewModel.IsShow;
             if(!coockWindowIsOpened)
             {
-                ShowTaskMessage(true,"Use campfire");
+                ShowTaskMessage(true, LocalizationModel.GetString(LocalizationKeyID.Tutorial_Use_Campfire));
                 OpenCoockingWindowState();
                 return;
             }
@@ -104,7 +104,7 @@ namespace Game.Controllers.TutorialSteps
             bool meatIsReadyToEat = HasConsumableMeatInCoockingSection();
             if(meatIsReadyToEat)
             {
-                ShowTaskMessage(true,"Eat meat");
+                ShowTaskMessage(true, LocalizationModel.GetString(LocalizationKeyID.Tutorial_Eat_Meat));
                 ShowDarkScreen(true);
                 ConsumeCoockedMeatState();
                 return;
@@ -113,7 +113,7 @@ namespace Game.Controllers.TutorialSteps
             bool meatIsInCoockingSection = HasRawMeatInCoockingSection();
             if(!meatIsInCoockingSection)
             {
-                ShowTaskMessage(true,"Put meat in campfire");
+                ShowTaskMessage(true, LocalizationModel.GetString(LocalizationKeyID.Tutorial_Meat_Campfire));
                 ShowDarkScreen(true);
                 EnsureEnoughItem(k_rawMeatName, k_requiaredRawMeatCount);
                 DragFoodToCoockingSectionState();
@@ -123,7 +123,7 @@ namespace Game.Controllers.TutorialSteps
             bool fireIsOn = TutorialCampFire.IsFire;
             if(!fireIsOn)
             {
-                ShowTaskMessage(true,"Turn on the fire");
+                ShowTaskMessage(true, LocalizationModel.GetString(LocalizationKeyID.Tutorial_TurnOn_Fire));
                 ShowDarkScreen(true);
                 TurnOnFireState();
                 return;
@@ -132,14 +132,14 @@ namespace Game.Controllers.TutorialSteps
             bool boostIsActive = TutorialCampFire.IsBoost;
             if(!boostIsActive)
             {
-                ShowTaskMessage(true,"Speed up the process");
+                ShowTaskMessage(true, LocalizationModel.GetString(LocalizationKeyID.Tutorial_SpeedUp_Process));
                 ShowDarkScreen(true);
                 TurnCoockingBoostState();
                 return;
             }
             else
             {
-                ShowTaskMessage(true,"Wait");
+                ShowTaskMessage(true,LocalizationModel.GetString(LocalizationKeyID.Tutorial_Wait));
                 ShowDarkScreen(true);
                 TutorialCampFire.BlockCoockingOnFire = false;
             }

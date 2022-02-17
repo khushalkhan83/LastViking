@@ -84,13 +84,13 @@ namespace Game.Controllers.TutorialSteps
 
         private void HitButtonsState()
         {
-            ShowTaskMessage(true, "There is secretes on the map. Hit triggers to open secret door.");
+            ShowTaskMessage(true, LocalizationModel.GetString(LocalizationKeyID.Tutorial_Secrets));
             UpdateTriggersTokens();
         }
 
         private void CollectLootBoxState()
         {
-            ShowTaskMessage(true, "Collect items from loot box");
+            ShowTaskMessage(true, LocalizationModel.GetString(LocalizationKeyID.Tutorial_Collect_Lootbox));
             HideTriggersTokens();
             ShowChestToken();
         }

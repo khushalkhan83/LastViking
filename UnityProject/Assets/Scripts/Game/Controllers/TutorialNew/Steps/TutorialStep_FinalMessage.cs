@@ -17,7 +17,7 @@ namespace Game.Controllers.TutorialSteps
 
         public override void OnStart()
         {
-            ShowTaskMessage(true,"Use your new skills to survive for as long as you can!");
+            ShowTaskMessage(true, LocalizationModel.GetString(LocalizationKeyID.Tutorial_Final_Message));
             coroutineIndex = CoroutineModel.InitCoroutine(CDoActionAfterSeconds(() => CheckConditions(),messageDuration));
         }
         public override void OnEnd()

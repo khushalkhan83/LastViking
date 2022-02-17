@@ -12,7 +12,7 @@ namespace Game.Controllers.TutorialSteps
         public override void OnStart()
         {
             houseBuilding = ModelsSystem.Instance._villageBuildingModel.GetHouseBuildingByType(Models.HouseBuildingType.Tools);
-            message = "Build Tools";
+            message = LocalizationModel.GetString(LocalizationKeyID.Tutorial_Build_Tools);
             icon = ModelsSystem.Instance._villageBuildingModel.GetHouseBuildingInfo(Models.HouseBuildingType.Tools).icon;
             base.OnStart();
         }

@@ -11,7 +11,7 @@ namespace Game.Controllers.TutorialSteps
             
             houseBuilding = VillageBuildingModel.GetHouseBuildingByType(houseBuildingType);
             var houseInfo = VillageBuildingModel.GetHouseBuildingInfo(houseBuildingType);
-            message = "Build Townhall";
+            message = LocalizationModel.GetString(LocalizationKeyID.Tutorial_Build_Townhall);
             icon = houseInfo.icon;
 
             base.OnStart();
