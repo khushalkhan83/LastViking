@@ -70,7 +70,6 @@ namespace Game.ThirdPerson
 
             if (isRunningOrAiming)
             {
-                Debug.LogError("SET RUN");
                 locomotion.SetPreset(aim ? CharacterLocomotion.Preset.Aiming : CharacterLocomotion.Preset.Run);
             }
             else
