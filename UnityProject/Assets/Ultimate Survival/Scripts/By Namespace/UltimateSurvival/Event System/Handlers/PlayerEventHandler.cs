@@ -37,6 +37,7 @@ namespace UltimateSurvival
 
         [SerializeField] private Data _data;
         [SerializeField] private ImpactReceiver _impactReceiver;
+        [SerializeField] private Vector3 heightOffset;
 
 #pragma warning restore 0649
         #endregion
@@ -156,7 +157,7 @@ namespace UltimateSurvival
             {
                 if (!defaultPosition && CheckPositionCorrectness(Position))
                 {
-                    transform.position = Position;
+                    transform.position = Position + heightOffset;
                     transform.rotation = Rotation;
                 }
                 else

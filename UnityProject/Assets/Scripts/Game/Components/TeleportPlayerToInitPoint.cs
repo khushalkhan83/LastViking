@@ -19,14 +19,14 @@ public class TeleportPlayerToInitPoint : Activatable
 
     public override void OnActivate()
     {
-        if(PlayerEventHandler == null) return;
+        // if(PlayerEventHandler == null) return;
 
-        PlayerEventHandler.transform.position = PlayerRespawnPoints.GetRandomRespawnPoint().position;
-        var characterController = PlayerEventHandler.GetComponent<CharacterController>();
+        // PlayerEventHandler.transform.position = PlayerRespawnPoints.GetRandomRespawnPoint().position;
+        // var characterController = PlayerEventHandler.GetComponent<CharacterController>();
 
-        if(characterController == null) return;
+        // if(characterController == null) return;
 
-        PlayerEventHandler.Velocity.Set(Vector3.zero);
-        characterController.Move(Vector3.zero);
+        // PlayerEventHandler.Velocity.Set(Vector3.zero);
+        // characterController.Move(Vector3.zero);
     }
 }

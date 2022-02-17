@@ -101,11 +101,11 @@ namespace Game.Controllers
 
         private void MovePlayerToDestination(EnvironmentTransition destination)
         {
-            Transform transitionPoint = SceneTransitionsModel.TransitionPoint(destination);
-            Vector3 position = transitionPoint.position;
-            Vector3 rotation = new Vector3(0, transitionPoint.eulerAngles.y, 0);
-            TeleportActionGeneric action = new TeleportActionGeneric("Teleport", position, rotation);
-            action.DoAction();
+            // Transform transitionPoint = SceneTransitionsModel.TransitionPoint(destination);
+            // Vector3 position = transitionPoint.position;
+            // Vector3 rotation = new Vector3(0, transitionPoint.eulerAngles.y, 0);
+            // TeleportActionGeneric action = new TeleportActionGeneric("Teleport", position, rotation);
+            //action.DoAction();
         }
 
         private void OnEnvironmentChange()
