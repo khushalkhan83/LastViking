@@ -641,6 +641,13 @@ namespace Game.Models
         Tutorial_Secrets = 634,
         Tutorial_Collect_Lootbox = 635,
         Tutorial_Final_Message = 636,
+        Tutorial_Move = 637,
+        Tutorial_Attack = 638,
+        Tutorial_Jump = 639,
+        Tutorial_Run = 640,
+        Tutorial_Swipe = 641,
+        Tutorial_Tap_Attack = 642,
+        Tutorial_Missions = 643,
 
     }
 }
