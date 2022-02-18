@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Game.Models;
 using UltimateSurvival;
@@ -182,10 +183,12 @@ namespace Game.ThirdPerson
             return ((transform.forward * input.y) + (transform.right * input.x)) * (airControl / 100f);
         }
 
+        public event Action OnJump;
         private void Jump()
         {
             if (!isJump)
             {
+                OnJump?.Invoke();
                 float jumpVelocity = Mathf.Sqrt(2 * gravity * jumpHeight);
                 SetInAir(jumpVelocity);
             }

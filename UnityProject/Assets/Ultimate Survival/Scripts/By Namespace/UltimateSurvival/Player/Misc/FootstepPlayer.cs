@@ -1,5 +1,6 @@
 ﻿using Game.Audio;
 using Game.Models;
+using Game.ThirdPerson;
 using UnityEngine;
 
 namespace UltimateSurvival
@@ -40,6 +41,7 @@ namespace UltimateSurvival
         [SerializeField] private float m_WalkVolumeFactor = 0.5f;
 
         [SerializeField] private float m_RunVolumeFactor = 1f;
+        [SerializeField] private CharacterLocomotion CharacterLocomotion;
 
 #pragma warning restore 0649
         #endregion
@@ -53,6 +55,7 @@ namespace UltimateSurvival
 
         private PlayerRunModel PlayerRunModel => ModelsSystem.Instance._playerRunModel;
         private PlayerMovementModel PlayerMovementModel => ModelsSystem.Instance._playerMovementModel;
+        private PlayerLandModel PlayerLandModel => ModelsSystem.Instance._playerLandModel;
 
         [SerializeField] private CharacterController _playerCharacterController;
         public CharacterController PlayerCharacterController => _playerCharacterController;
@@ -70,8 +73,9 @@ namespace UltimateSurvival
         private void Start()
         {
             // Make sure we get notified when the player jumps or lands.
-            Player.Jump.AddStartListener(OnStart_PlayerJump);
-            Player.Land.AddListener(On_PlayerLanded);
+            CharacterLocomotion.OnJump += OnStart_PlayerJump;
+            // Player.Jump.AddStartListener(OnStart_PlayerJump);
+            // Player.Land.AddListener(On_PlayerLanded);
 
             OnChangePlayerMovement();
         }
