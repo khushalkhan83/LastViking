@@ -727,7 +727,11 @@ namespace Game.Controllers
             foreach (var cellFrom in LootObject.ItemsContainer.Cells.Take(LootObject.CountOpenStart + ExpandModel.ExpandLevel))
             {
                 if (!TryAddAllItems(cellFrom, InventoryModel.ItemsContainer))
-                    continue;
+                    if (!TryAddAllItems(cellFrom, HotBarModel.ItemsContainer))
+                    {
+                        FullInventoryModel.ShowFullPopup();
+                        break;
+                    }
             }
 
             InventoryLootViewModel.RemoveSelectCell();
@@ -777,17 +781,7 @@ namespace Game.Controllers
                     cellTo.Item = cellFrom.Item;
                     cellFrom.Item = null;
                 }
-                cellTo = HotBarModel.ItemsContainer.GetEmptyCell();
-                if (cellTo != null)
-                {
-                    cellTo.Item = cellFrom.Item;
-                    cellFrom.Item = null;
-                }
-                else
-                {
-                    FullInventoryModel.ShowFullPopup();
-                    return false;
-                }
+                else return false;
             }
 
             return true;
