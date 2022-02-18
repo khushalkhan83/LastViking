@@ -1,4 +1,5 @@
-﻿using System.Linq;
+using System.Collections;
+using System.Linq;
 using Game.Audio;
 using Game.Models;
 using UltimateSurvival;
@@ -81,6 +82,7 @@ namespace Game.ThirdPerson.Weapon.Settings.Implementation
                     HintsModel.TryShowMinableToolHint(_targetColliders[i].gameObject);
                 }
             }
+            AudioSystem.PlayOnce(AudioID.Whoosh02);
 
             weaponUsed = weaponUsed || TryUseTool();
 
