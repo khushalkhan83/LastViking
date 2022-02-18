@@ -38,6 +38,12 @@ namespace Game.Components
             base.RemoveEffect();
             animator.Play(Model.NoAnimationClipName);
             DoActionAfterFrame(() => animator.enabled = false);
+            var cg = GetComponent<CanvasGroup>();
+            if (cg)
+                cg.alpha = 1;
+
+            if (canvas.overrideSorting)
+                canvas.sortingOrder = 100;
         }
 
         private void DoActionAfterFrame(Action action) => CoroutineModel.InitCoroutine(CDoActionAfterFrame(action));

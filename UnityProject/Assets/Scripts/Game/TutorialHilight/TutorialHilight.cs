@@ -7,7 +7,7 @@ namespace Game.Components
     [RequireComponent(typeof(Canvas))]
     public class TutorialHilight : MonoBehaviour
     {
-        private Canvas canvas;
+        protected Canvas canvas;
 
         #region MonoBehaviour
 
