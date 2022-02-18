@@ -1,5 +1,6 @@
 ﻿using CodeStage.AntiCheat.ObscuredTypes;
 using Core.Storage;
+using Game.Audio;
 using SOArchitecture;
 using System;
 using UnityEngine;
@@ -96,6 +97,8 @@ namespace Game.Models
         public event Action OnBuy;
         public event Action OnActivate;
 
+        private AudioSystem AudioSystem => AudioSystem.Instance;
+
         public void Buy(ulong timeTicks)
         {
             StartAliveTimeTicks = timeTicks;
@@ -135,6 +138,8 @@ namespace Game.Models
             {
                 CraftViewModel.SetShelterMax(Level);
             }
+
+            AudioSystem.PlayOnce(AudioID.ObjectiveCompleate);
         }
 
         public void SetIsChangeLevel(bool value)

@@ -1,7 +1,8 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Core.Storage;
+using Game.Audio;
 using Game.Models;
 using NaughtyAttributes;
 using UltimateSurvival;
@@ -58,6 +59,7 @@ namespace Game.VillageBuilding
         public event Action<HouseBuilding> OnCompleteBuildingProcess;
         public event Action OnDataInitialize;
 
+        private AudioSystem AudioSystem => AudioSystem.Instance;
         public long StartBuildingTimeTicks
         {
             get{return data.startBuildingTimeTicks;}
@@ -206,6 +208,7 @@ namespace Game.VillageBuilding
                 if(buildingHealthModel != null) buildingHealthModel.SetHealth(buildingHealthModel.HealthMax);
                 OnStateChanged?.Invoke();
                 OnCompleteBuildingProcess?.Invoke(this);
+                AudioSystem.PlayOnce(AudioID.CraftEnd);
             }
         }
 
