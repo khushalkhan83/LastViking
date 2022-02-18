@@ -1,4 +1,4 @@
-﻿using CodeStage.AntiCheat.ObscuredTypes;
+using CodeStage.AntiCheat.ObscuredTypes;
 using Game.Models;
 using Game.Providers;
 using UnityEngine;
@@ -109,14 +109,17 @@ namespace Game.Controllers
 
         private void UpdateShelterLevel()
         {
-            var health = ViewObjctCurrent.GetComponent<IHealth>();
-            var healthPercent = health.Health / health.HealthMax;
+            var health = ViewObjctCurrent?.GetComponent<IHealth>();
+            float healthPercent=1;
+            if (health != null)
+                healthPercent = health.Health / health.HealthMax;
 
             SetView(ShelterModel.Level);
             SetCorePosition();
 
-            health = ViewObjctCurrent.GetComponent<IHealth>();
-            health.SetHealth(health.HealthMax * healthPercent);
+            health = ViewObjctCurrent?.GetComponent<IHealth>();
+            if (health != null)
+                health.SetHealth(health.HealthMax * healthPercent);
         }
 
         private void SetCorePosition()

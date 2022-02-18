@@ -16,12 +16,12 @@ namespace Game.QuestSystem.Map.Extra
         private void Start()
         {
             int shipLevel = 0;
-            if (SheltersModel.ShelterActive == ShelterModelID.None)
+            if (SheltersModel.ShelterActive == ShelterModelID.None || SheltersModel.ShelterActive == ShelterModelID.Ship)
             {
-                shipLevel = SheltersModel.ShelterModel.Level + 1;
+                shipLevel = SheltersModel.ShelterModel.Level;// + 1;
             }
 
-            shelterLevelText.text = shelterLevelText.text = LocalizationModel.GetString(LocalizationKeyID.ShelterUpgradeMenu_Level) + " " + shipLevel;    
+            shelterLevelText.text = LocalizationModel.GetString(LocalizationKeyID.ShelterUpgradeMenu_Level) + " " + shipLevel;    
         }
     }
 }

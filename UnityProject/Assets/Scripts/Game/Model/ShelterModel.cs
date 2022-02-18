@@ -98,7 +98,6 @@ namespace Game.Models
 
         public void Buy(ulong timeTicks)
         {
-            ++Level;
             StartAliveTimeTicks = timeTicks;
             OnBuy?.Invoke();
 
@@ -106,6 +105,7 @@ namespace Game.Models
             {
                 CraftViewModel.SetShelterMax(Level);
             }
+            //++Level;
 
             _gameEventShelterLevelChanged?.Raise();
         }

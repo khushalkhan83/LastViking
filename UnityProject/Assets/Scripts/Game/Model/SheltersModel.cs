@@ -1,4 +1,4 @@
-﻿using Core.Storage;
+using Core.Storage;
 using Game.Providers;
 using System;
 using System.Collections;
@@ -128,6 +128,8 @@ namespace Game.Models
                 shelterModel.OnActivate += events.OnActivate;
                 shelterModel.OnUpgrade += events.OnUpgrade;
                 shelterModel.OnDeath += events.OnDeath;
+                
+                ShelterModel = shelterModel;
             }
         }
 
