@@ -110,7 +110,11 @@ namespace Game.ThirdPerson.Weapon.Settings.Implementation
             if (mineable)
             {
                 mineable.OnToolHit(raycastData.CameraRay, raycastData.HitInfo, _extractionSettings);
-
+                var audioIdentifier = raycastData.GameObject.GetComponent<AudioIdentifier>();
+                if (audioIdentifier)
+                {
+                    AudioSystem.PlayOnce(audioIdentifier.AudioID[UnityEngine.Random.Range(0, audioIdentifier.AudioID.Length)], raycastData.HitInfo.point);
+                }
                 var tool = _extractionSettings.FirstOrDefault(x => x.ToolID == mineable.RequiredToolPurpose);
                 if (tool != null)
                 {
