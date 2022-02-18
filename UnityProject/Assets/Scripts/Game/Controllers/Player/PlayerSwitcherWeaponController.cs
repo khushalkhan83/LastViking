@@ -1,5 +1,6 @@
 ﻿using Core;
 using Core.Controllers;
+using Game.Audio;
 using Game.Models;
 using UltimateSurvival;
 
@@ -11,6 +12,8 @@ namespace Game.Controllers
         [Inject] public PlayerEventHandler PlayerEventHandler { get; private set; }
         [Inject] public HotBarModel HotBarModel { get; private set; }
         [Inject] public ItemsDB ItemsDB { get; private set; }
+
+        public AudioSystem AudioSystem => AudioSystem.Instance;
 
         void IController.Enable()
         {
@@ -35,11 +38,17 @@ namespace Game.Controllers
         {
             if (PlayerMovementModel.MovementID == PlayerMovementID.Water)
             {
-                PlayerEventHandler.ChangeEquippedItem.Try(null, false);
+                if (PlayerEventHandler.ChangeEquippedItem.Try(null, false))
+                {
+                    AudioSystem.PlayOnce(AudioID.Draw02);
+                }
             }
             else
             {
-                PlayerEventHandler.ChangeEquippedItem.Try(HotBarModel.EquipCell.Item, false);
+                if (PlayerEventHandler.ChangeEquippedItem.Try(HotBarModel.EquipCell.Item, false))
+                {
+                    AudioSystem.PlayOnce(AudioID.Draw02);
+                }
             }
         }
     }
