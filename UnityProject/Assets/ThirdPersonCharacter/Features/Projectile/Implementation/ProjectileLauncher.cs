@@ -42,7 +42,7 @@ namespace Game.Weapon.ProjectileLauncher.Implementation
             Debug.Log("Can`t shoot");
 
             GameObject projectile = Instantiate(arrowPrefab);
-            projectile.transform.forward = aimFollow.transform.forward;
+            
             float x = Screen.width * 0.5f;
             float y = Screen.height * 0.5f;
 
@@ -50,7 +50,7 @@ namespace Game.Weapon.ProjectileLauncher.Implementation
 
             Vector3 aimPoint;
             RaycastHit hit;
-            if (Physics.Raycast(crosshair, out hit, 1000))
+            if (Physics.Raycast(crosshair, out hit, 100))
             {
                 aimPoint = hit.point;
             }
@@ -61,7 +61,7 @@ namespace Game.Weapon.ProjectileLauncher.Implementation
 
             Ray beam = new Ray(aimFollow.position, aimPoint - aimFollow.position);
 
-            projectile.transform.forward = beam.direction.normalized;
+            projectile.transform.forward = beam.direction;
             projectile.transform.position = fireTransform.position + fireTransform.forward;
 
             if(projectile.TryGetComponent<ProjectileDamager>(out var damager))
