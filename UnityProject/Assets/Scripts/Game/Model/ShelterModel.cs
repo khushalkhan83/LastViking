@@ -100,6 +100,7 @@ namespace Game.Models
         {
             StartAliveTimeTicks = timeTicks;
             OnBuy?.Invoke();
+            ++Level;
 
             if (Level > CraftViewModel.ShelterLevelMax)
             {

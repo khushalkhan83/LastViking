@@ -110,16 +110,15 @@ namespace Game.Controllers
         private void UpdateShelterLevel()
         {
             var health = ViewObjctCurrent?.GetComponent<IHealth>();
-            float healthPercent=1;
-            if (health != null)
-                healthPercent = health.Health / health.HealthMax;
+            float healthPercent = 1;
+            healthPercent = health.Health / health.HealthMax;
 
             SetView(ShelterModel.Level);
             SetCorePosition();
 
             health = ViewObjctCurrent?.GetComponent<IHealth>();
             if (health != null)
-                health.SetHealth(health.HealthMax * healthPercent);
+            health.SetHealth(health.HealthMax * healthPercent);
         }
 
         private void SetCorePosition()

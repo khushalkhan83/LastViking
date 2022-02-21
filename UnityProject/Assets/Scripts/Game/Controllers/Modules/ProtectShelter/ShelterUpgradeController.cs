@@ -112,7 +112,7 @@ namespace Game.Controllers
         private bool GetUpgradedInThisChapter()
         {
             bool wasUpgraded = RealShelterLevel >= QuestsModel.TargetShipLevel;
-            return wasUpgraded;
+            return false;// wasUpgraded;
         }
 
         private bool GetIsConstructed()
@@ -167,7 +167,7 @@ namespace Game.Controllers
 
         private void RealUpgrade()
         {
-            if (SheltersModel.ShelterActive == ShelterModelID.None)
+            if (SheltersModel.ShelterActive == ShelterModelID.None || SheltersModel.ShelterActive == ShelterModelID.Ship)
             {
                 SheltersModel.SetShelter(ShipShelterModel);
                 SheltersModel.ShelterModel.Buy(GameTimeModel.Ticks);
