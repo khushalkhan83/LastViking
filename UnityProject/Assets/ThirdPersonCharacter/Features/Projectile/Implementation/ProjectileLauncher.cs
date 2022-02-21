@@ -43,6 +43,25 @@ namespace Game.Weapon.ProjectileLauncher.Implementation
 
             GameObject projectile = Instantiate(arrowPrefab);
             projectile.transform.forward = aimFollow.transform.forward;
+            float x = Screen.width * 0.5f;
+            float y = Screen.height * 0.5f;
+
+            Ray crosshair = Camera.main.ScreenPointToRay(new Vector3(x, y, 0));
+
+            Vector3 aimPoint;
+            RaycastHit hit;
+            if (Physics.Raycast(crosshair, out hit, 1000))
+            {
+                aimPoint = hit.point;
+            }
+            else
+            {
+                aimPoint = crosshair.origin + crosshair.direction;
+            }
+
+            Ray beam = new Ray(aimFollow.position, aimPoint - aimFollow.position);
+
+            projectile.transform.forward = beam.direction.normalized;
             projectile.transform.position = fireTransform.position + fireTransform.forward;
 
             if(projectile.TryGetComponent<ProjectileDamager>(out var damager))
