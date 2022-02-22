@@ -46,6 +46,10 @@ namespace Game.ThirdPerson
 #endif
         public void SetPreset(Preset preset)
         {
+            if (preset == Preset.Run)
+                PlayerRunModel.RunStart();
+            else
+                PlayerRunModel.RunStop();
 
 #if UNITY_EDITOR
             if (forbidExternalPresetChange) return;
@@ -56,8 +60,17 @@ namespace Game.ThirdPerson
 
         private Settings GetSettings()
         {
-            if (preset == Preset.Aiming) return aimingSettings;
-            else if (preset == Preset.Run) return runSettings;
+            if (preset == Preset.Aiming)
+            {
+                PlayerRunModel.RunStop();
+                return aimingSettings;
+            }
+            else if (preset == Preset.Run)
+            {
+                PlayerRunModel.RunStart();
+                return runSettings;
+            }
+            //PlayerRunModel.RunStop();
             return walkSettings;
         }
 
@@ -156,17 +169,17 @@ namespace Game.ThirdPerson
             characterController.Move(clampedMovement * Time.deltaTime * speedModifier);
             rootMotion = Vector3.zero;
 
-            if (isRunStop)
-            {
-                SetPreset(Preset.Walk);
-                PlayerRunModel.RunStop();
-            }
-            if (isRunStopToggle)
-            {
-                SetPreset(Preset.Walk);
-                PlayerRunModel.RunStop();
-                PlayerRunModel.RunTogglePassive();
-            }
+            // if (isRunStop)
+            // {
+            //     SetPreset(Preset.Walk);
+            //     // PlayerRunModel.RunStop();
+            // }
+            // if (isRunStopToggle)
+            // {
+            //     SetPreset(Preset.Walk);
+            //     // PlayerRunModel.RunStop();
+            //     //PlayerRunModel.RunTogglePassive();
+            // }
 
             if (!characterController.isGrounded)
             {
