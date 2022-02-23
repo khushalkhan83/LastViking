@@ -21,7 +21,12 @@ namespace Game.Weapon.ProjectileLauncher.Implementation
         private HotBarModel HotBarModel => ModelsSystem.Instance._hotBarModel;
         private AudioSystem AudioSystem => AudioSystem.Instance;
         private PlayerEventHandler PlayerEventHandler => ModelsSystem.Instance._playerEventHandler;
+        private Camera mainCamera;
 
+        private void Awake()
+        {
+            mainCamera = Camera.main;
+        }
 
         public LaunchProjectileResponse Launch(LaunchProjectileRequest request)
         {
@@ -42,7 +47,26 @@ namespace Game.Weapon.ProjectileLauncher.Implementation
             Debug.Log("Can`t shoot");
 
             GameObject projectile = Instantiate(arrowPrefab);
-            projectile.transform.forward = aimFollow.transform.forward;
+            
+            float x = Screen.width * 0.5f;
+            float y = Screen.height * 0.5f;
+
+            Ray crosshair = mainCamera.ScreenPointToRay(new Vector3(x, y, 0));
+
+            Vector3 aimPoint;
+            RaycastHit hit;
+            if (Physics.Raycast(crosshair, out hit, 100))
+            {
+                aimPoint = hit.point;
+            }
+            else
+            {
+                aimPoint = crosshair.origin + crosshair.direction;
+            }
+
+            Ray beam = new Ray(aimFollow.position, aimPoint - aimFollow.position);
+
+            projectile.transform.forward = beam.direction;
             projectile.transform.position = fireTransform.position + fireTransform.forward;
 
             if(projectile.TryGetComponent<ProjectileDamager>(out var damager))
