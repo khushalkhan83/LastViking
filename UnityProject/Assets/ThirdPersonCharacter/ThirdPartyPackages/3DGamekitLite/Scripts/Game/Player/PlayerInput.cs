@@ -121,13 +121,9 @@ public class PlayerInput : MonoBehaviour
                 m_AttackTap = TCKInput.GetAction("fireBtn", EActionEvent.Click);
             }
 
-            // if (PlayerStaminaModel.IsHasStamina)
-            //     m_RunInput = TCKInput.GetAction("RunBtn", EActionEvent.Click) && PlayerStaminaModel.IsHasStamina;
-            // else m_RunInput = false;
-
             if (TCKInput.GetAction("RunBtn", EActionEvent.Click))
                 m_RunInput = !m_RunInput;
-            if (!PlayerStaminaModel.IsHasStamina)
+            if (!PlayerStaminaModel.IsHasStamina || m_AttackTap)
                 m_RunInput = false;
 
             wasMovingTouchpad = look != Vector2.zero;
@@ -181,10 +177,9 @@ public class PlayerInput : MonoBehaviour
                 }
             }
 
-            //if (PlayerStaminaModel.IsHasStamina) //IsCanRun &&
             if (Input.GetButtonDown("Run"))
                 m_RunInput = !m_RunInput;
-            if (!PlayerStaminaModel.IsHasStamina)
+            if (!PlayerStaminaModel.IsHasStamina || m_AttackTap)
                 m_RunInput = false;
 
             // m_Pause = Input.GetButtonDown ("Pause");
