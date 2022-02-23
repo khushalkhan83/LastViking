@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using Game.Models;
 using UltimateSurvival;
@@ -45,7 +45,6 @@ namespace Game.ThirdPerson
 #endif
         public void SetPreset(Preset preset)
         {
-
 #if UNITY_EDITOR
             if (forbidExternalPresetChange) return;
 #endif
@@ -157,14 +156,11 @@ namespace Game.ThirdPerson
 
             if (isRunStop)
             {
-                SetPreset(Preset.Walk);
                 PlayerRunModel.RunStop();
             }
             if (isRunStopToggle)
             {
-                SetPreset(Preset.Walk);
                 PlayerRunModel.RunStop();
-                PlayerRunModel.RunTogglePassive();
             }
 
             if (!characterController.isGrounded)

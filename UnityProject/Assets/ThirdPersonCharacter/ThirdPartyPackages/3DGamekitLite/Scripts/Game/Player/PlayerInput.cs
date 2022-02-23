@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using Gamekit3D;
 using TouchControlsKit;
+using Game.Models;
 
 public class PlayerInput : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class PlayerInput : MonoBehaviour
     {
         get { return s_Instance; }
     }
+
+    private PlayerStaminaModel PlayerStaminaModel => ModelsSystem.Instance._playerStaminaModel;
 
     protected static PlayerInput s_Instance;
 
@@ -107,7 +110,7 @@ public class PlayerInput : MonoBehaviour
             var movement = TCKInput.GetAxis("Joystick");
             m_Movement.Set(movement.x, movement.y);
 
-            Vector2 look = TCKInput.GetAxis("Touchpad");
+            Vector2 look = TCKInput.GetAxis("fireBtn");//("Touchpad");
             m_Camera.Set(look.x, look.y);
             m_Jump = TCKInput.GetAction("jumpBtn", EActionEvent.Press);
 
@@ -118,8 +121,14 @@ public class PlayerInput : MonoBehaviour
                 m_AttackTap = TCKInput.GetAction("fireBtn", EActionEvent.Click);
             }
 
-            m_RunInput = TCKInput.GetAction("RunBtn", EActionEvent.Click);
+            // if (PlayerStaminaModel.IsHasStamina)
+            //     m_RunInput = TCKInput.GetAction("RunBtn", EActionEvent.Click) && PlayerStaminaModel.IsHasStamina;
+            // else m_RunInput = false;
 
+            if (TCKInput.GetAction("RunBtn", EActionEvent.Click))
+                m_RunInput = !m_RunInput;
+            if (!PlayerStaminaModel.IsHasStamina)
+                m_RunInput = false;
 
             wasMovingTouchpad = look != Vector2.zero;
 
@@ -172,8 +181,11 @@ public class PlayerInput : MonoBehaviour
                 }
             }
 
-            if (IsCanRun)
-                m_RunInput = Input.GetButtonDown("Run");
+            //if (PlayerStaminaModel.IsHasStamina) //IsCanRun &&
+            if (Input.GetButtonDown("Run"))
+                m_RunInput = !m_RunInput;
+            if (!PlayerStaminaModel.IsHasStamina)
+                m_RunInput = false;
 
             // m_Pause = Input.GetButtonDown ("Pause");
         }

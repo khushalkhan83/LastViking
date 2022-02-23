@@ -1,4 +1,4 @@
-﻿/********************************************
+/********************************************
  * Copyright(c): 2018 Victor Klepikov       *
  *                                          *
  * Profile: 	 http://u3d.as/5Fb		    *
@@ -27,6 +27,7 @@ namespace TouchControlsKit
             , releasedFrame = -1
             , clickedFrame = -1;
 
+        private bool pressed = false;
 
         // isPRESSED
         internal bool isPRESSED {  get { return touchDown; } }
@@ -58,15 +59,34 @@ namespace TouchControlsKit
         // Button Down
         protected void ButtonDown()
         {
-            baseImage.sprite = pressedSprite;
-            baseImage.color = visible ? pressedColor : ( Color32 )Color.clear;
+            // if (pressed)
+            // {
+            //     baseImage.sprite = pressedSprite;
+            //     baseImage.color = visible ? pressedColor : (Color32)Color.clear;
+            // }
+            // else
+            // {
+            //     baseImage.sprite = normalSprite;
+            //     baseImage.color = visible ? baseImageColor : (Color32)Color.clear;
+            // }
+            pressed=!pressed;
         }
 
         // Button Up
         protected void ButtonUp()
         {
-            baseImage.sprite = normalSprite;
-            baseImage.color = visible ? baseImageColor : ( Color32 )Color.clear;
+            if (pressed)
+            {
+                baseImage.sprite = pressedSprite;
+                baseImage.color = visible ? pressedColor : (Color32)Color.clear;
+            }
+            else
+            {
+                baseImage.sprite = normalSprite;
+                baseImage.color = visible ? baseImageColor : (Color32)Color.clear;
+            }
+            // baseImage.sprite = normalSprite;
+            // baseImage.color = visible ? baseImageColor : (Color32)Color.clear;
         }
 
         // Control Reset
@@ -115,6 +135,7 @@ namespace TouchControlsKit
         public void OnPointerClick( PointerEventData pointerData )
         {
             clickedFrame = Time.frameCount;
+            pressed=!pressed;
         }
     };
 }

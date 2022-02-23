@@ -79,12 +79,12 @@ namespace UltimateSurvival
         private void FixedUpdate()
         {
             // Don't do anything if the player isn't grounded.
-            if (!Player.IsGrounded.Value && PlayerMovementModel.MovementID == PlayerMovementID.Ground)
+            if (!PlayerCharacterController.isGrounded && PlayerMovementModel.MovementID == PlayerMovementID.Ground)
                 return;
 
             // Update the distance accumulated based on the player's current speed.
-            m_AccumulatedDistance += Player.Velocity.Value.magnitude * Time.fixedDeltaTime;
-
+            m_AccumulatedDistance += PlayerCharacterController.velocity.magnitude * Time.fixedDeltaTime;//Player.Velocity.Value.magnitude
+            
             // Get the step distance we should aim for, is different for crouching, walking and sprinting.
             float stepDistance = GetStepLength();
 

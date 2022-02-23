@@ -128,16 +128,16 @@ namespace Game.Controllers
                 PlayerEventHandler.Walk.ForceStop();
             }
 
-            if (isRunStop)
-            {
-                PlayerRunModel.RunStop();
-            }
+            // if (isRunStop)
+            // {
+            //     PlayerRunModel.RunStop();
+            // }
 
-            if (isRunStopToggle)
-            {
-                PlayerRunModel.RunStop();
-                PlayerRunModel.RunTogglePassive();
-            }
+            // if (isRunStopToggle)
+            // {
+            //     PlayerRunModel.RunStop();
+            //     PlayerRunModel.RunTogglePassive();
+            // }
 
             if (isLand)
             {

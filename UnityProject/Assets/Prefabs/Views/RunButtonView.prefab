@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 224418872317470332}
   - component: {fileID: 114621118319805990}
   - component: {fileID: 222013780754012214}
-  - component: {fileID: 114614148765485456}
+  - component: {fileID: 4644849159711945452}
+  - component: {fileID: 3592979744254104220}
   m_Layer: 5
   m_Name: RunButtonView
   m_TagString: Untagged
@@ -47,7 +48,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1506939352313056}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -75,7 +76,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1506939352313056}
   m_CullTransparentMesh: 0
---- !u!114 &114614148765485456
+--- !u!114 &4644849159711945452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506939352313056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ee9621fad8887a409c5fe5d0690394d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconActive: {fileID: 21300000, guid: 06214e8de3c24fa4eb206a1ffd0bad81, type: 3}
+  iconDefault: {fileID: 21300000, guid: c5c50b8ca282a99428ff4aaf5f1a8fd5, type: 3}
+  _image: {fileID: 114621118319805990}
+  PlayerRunModel: {fileID: 0}
+  View: {fileID: 3592979744254104220}
+--- !u!114 &3592979744254104220
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

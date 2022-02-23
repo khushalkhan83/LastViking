@@ -16,7 +16,6 @@ namespace Game.ThirdPerson
         [SerializeField] private GameObject aimButton;
         [SerializeField] private CharacterLocomotion locomotion;
 
-
         private IWeaponInteractor weapon;
 
         private bool aim;
@@ -64,13 +63,14 @@ namespace Game.ThirdPerson
                 aim = false;
             }
 
-            if (PlayerInput.Instance.RunInput) run = !run;
-
-            isRunningOrAiming = run || aim;
+            isRunningOrAiming = PlayerInput.Instance.RunInput || aim;
 
             if (isRunningOrAiming)
             {
-                locomotion.SetPreset(aim ? CharacterLocomotion.Preset.Aiming : CharacterLocomotion.Preset.Run);
+                if (PlayerInput.Instance.RunInput)
+                    locomotion.SetPreset(CharacterLocomotion.Preset.Run);
+                else
+                    locomotion.SetPreset(CharacterLocomotion.Preset.Aiming);
             }
             else
             {
