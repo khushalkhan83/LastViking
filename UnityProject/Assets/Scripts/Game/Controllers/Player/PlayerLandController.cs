@@ -1,4 +1,4 @@
-﻿using Core;
+using Core;
 using Core.Controllers;
 using Game.Audio;
 using Game.Models;
@@ -18,12 +18,14 @@ namespace Game.Controllers
         [Inject] public PlayerEventHandler PlayerEventHandler { get; private set; }
 
         private CharacterController characterController;
-
+        private Models.IDamageable playereDamageReceiver;
+        
         void IController.Enable()
         {
             PlayerLandModel.OnLand += OnLandHandler;
             GameUpdateModel.OnUpdate += UpdateNotGroundedTime;
             characterController = PlayerEventHandler.GetComponent<CharacterController>();
+            playereDamageReceiver = PlayerEventHandler.GetComponent<Models.IDamageable>();
         }
 
         void IController.Start()
@@ -54,7 +56,7 @@ namespace Game.Controllers
             if (damage > 0 && PlayerLandModel.CanTakeLandedDamage)
             {
                 AudioSystem.PlayOnce(AudioID.PlayerTakeHit01);
-                PlayerHealthModel.AdjustHealth(-damage);
+                playereDamageReceiver.Damage(damage);
             }
 
             PlayerLandModel.SetLanded();
