@@ -18,8 +18,8 @@ namespace Game.Controllers
         [Inject] public PlayerEventHandler PlayerEventHandler { get; private set; }
 
         private CharacterController characterController;
-
-        Models.IDamageable playereDamageReceiver;
+        private Models.IDamageable playereDamageReceiver;
+        
         void IController.Enable()
         {
             PlayerLandModel.OnLand += OnLandHandler;
@@ -57,7 +57,6 @@ namespace Game.Controllers
             {
                 AudioSystem.PlayOnce(AudioID.PlayerTakeHit01);
                 playereDamageReceiver.Damage(damage);
-                //PlayerHealthModel.AdjustHealth(-damage);
             }
 
             PlayerLandModel.SetLanded();
