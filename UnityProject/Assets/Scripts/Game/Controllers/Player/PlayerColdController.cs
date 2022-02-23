@@ -15,10 +15,11 @@ namespace Game.Controllers
         [Inject] public PlayerWarmModel PlayerWarmModel { get; private set; }
         [Inject] public StorageModel StorageModel { get; private set; }
         [Inject] public ViewsSystem ViewsSystem { get; private set; }
+        [Inject] public TutorialModel TutorialModel { get; private set; }
 
         public ColdStatusView ColdView { set; get; }
 
-        private bool IsCanColdingProcess => !PlayerDeathModel.IsImmunable && !PlayerHealthModel.IsDead;
+        private bool IsCanColdingProcess => !PlayerDeathModel.IsImmunable && !PlayerHealthModel.IsDead && !TutorialModel.IsTutorialNow;
 
         private bool isRunColdingProcess = false;
 
