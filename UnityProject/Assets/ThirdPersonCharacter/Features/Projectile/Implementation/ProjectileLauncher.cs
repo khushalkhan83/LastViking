@@ -21,7 +21,12 @@ namespace Game.Weapon.ProjectileLauncher.Implementation
         private HotBarModel HotBarModel => ModelsSystem.Instance._hotBarModel;
         private AudioSystem AudioSystem => AudioSystem.Instance;
         private PlayerEventHandler PlayerEventHandler => ModelsSystem.Instance._playerEventHandler;
+        private Camera mainCamera;
 
+        private void Awake()
+        {
+            mainCamera = Camera.main;
+        }
 
         public LaunchProjectileResponse Launch(LaunchProjectileRequest request)
         {
@@ -46,7 +51,7 @@ namespace Game.Weapon.ProjectileLauncher.Implementation
             float x = Screen.width * 0.5f;
             float y = Screen.height * 0.5f;
 
-            Ray crosshair = Camera.main.ScreenPointToRay(new Vector3(x, y, 0));
+            Ray crosshair = mainCamera.ScreenPointToRay(new Vector3(x, y, 0));
 
             Vector3 aimPoint;
             RaycastHit hit;
